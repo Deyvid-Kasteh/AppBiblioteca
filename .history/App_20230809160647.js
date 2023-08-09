@@ -5,8 +5,10 @@ import MainNavigation from "./navigation/MainNavigation.routes";
 
 
 export default function App() {
-    return <MainNavigation />;
+  return (
+      return <MainNavigation />;
 
+  );
 }
 
 const styles = StyleSheet.create({
