@@ -4,7 +4,8 @@ import React from 'react'
 export default function SignInScreen() {
   return (
     <View>
-      <Text>SignIn with google</Text>
+      <Text>SignInScreen</Text>
+      </>
     </View>
   )
 }
