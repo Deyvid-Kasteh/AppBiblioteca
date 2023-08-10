@@ -20,5 +20,5 @@ export const FIREBASE_APP = initializeApp(firebaseConfig);
 export const FIREBASE_AUTH = getAuth(FIREBASE_APP);
 
 
-// android: 222273696743-cfo2t0ghcqh0b6nau71ql0scusl0m8cr.apps.googleusercontent.com
+// android: 426033460224-jj43m9je8i0hia6a156c3qhliaa74ni7.apps.googleusercontent.com
 // npx @react-native-community/cli doctor

@@ -7,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB7Qfd75GcWhLAJqaUTaUtedKbDDmN4WhU",
-  authDomain: "appbiblioteca-afa10.firebaseapp.com",
-  projectId: "appbiblioteca-afa10",
-  storageBucket: "appbiblioteca-afa10.appspot.com",
-  messagingSenderId: "222273696743",
-  appId: "1:222273696743:web:1d3db88f54d18c56784342",
+  apiKey: "AIzaSyCiTstc0fuHYW3iJs-j8CqQVH0QWiTvFRo",
+  authDomain: "signin-a77d8.firebaseapp.com",
+  projectId: "signin-a77d8",
+  storageBucket: "signin-a77d8.appspot.com",
+  messagingSenderId: "744407928857",
+  appId: "1:744407928857:web:21ba471174a43d8137da88",
 };
 
 // Initialize Firebase
@@ -20,5 +20,5 @@ export const FIREBASE_APP = initializeApp(firebaseConfig);
 export const FIREBASE_AUTH = getAuth(FIREBASE_APP);
 
 
-// android: 222273696743-cfo2t0ghcqh0b6nau71ql0scusl0m8cr.apps.googleusercontent.com
+// android: 426033460224-jj43m9je8i0hia6a156c3qhliaa74ni7.apps.googleusercontent.com
 // npx @react-native-community/cli doctor

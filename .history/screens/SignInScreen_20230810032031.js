@@ -11,7 +11,7 @@ export default function SignInScreen({ promptAsync }) {
       }}
     >
       <Text>SignInScreen</Text>
-      <Button title="Inscrever-se com Google" onPress={ async () => await promptAsync()} />
+      <Button title="Inscrever-se com Google" onPress={async() => promptAsync()} />
       <TouchableOpacity>
         <Text>SignInScreen</Text>
       </TouchableOpacity>

@@ -26,7 +26,7 @@ export default function App() {
 
   React.useEffect(() => {
     console.log("Entrou");
-    console.log(response)
+    console.log()
     if (response?.type == "success") {
       const { id_token } = response.params;
       console.log(JSON.stringify(id_token));

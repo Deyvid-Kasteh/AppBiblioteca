@@ -24,9 +24,8 @@ export default function App() {
       "222273696743-3p3h1pfivs0ljqbvs7077h0samufab2f.apps.googleusercontent.com",
   });
 
-  React.useEffect(() => {
-    console.log("Entrou");
-    console.log(response)
+  React.useEffect(() => {console.log(JSON.stringify(id_token));
+
     if (response?.type == "success") {
       const { id_token } = response.params;
       console.log(JSON.stringify(id_token));
