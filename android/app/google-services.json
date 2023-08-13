@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "222273696743",
+    "project_id": "appbiblioteca-afa10",
+    "storage_bucket": "appbiblioteca-afa10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222273696743:android:93eb8ba9761c2a94784342",
+        "android_client_info": {
+          "package_name": "com.kasteh.AppBiblioteca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222273696743-7jshds8ak91iqe2p9lsge1gn19f2t7l6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kasteh.AppBiblioteca",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "222273696743-3p3h1pfivs0ljqbvs7077h0samufab2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABrneAskPoqtEDm-By5I5fmeZF_ko_DaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222273696743-3p3h1pfivs0ljqbvs7077h0samufab2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
