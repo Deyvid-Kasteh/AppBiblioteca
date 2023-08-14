@@ -4,11 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 import AsyncStorage, {
   useAsyncStorage,
 } from "@react-native-async-storage/async-storage";
-
-
 import MainNavigation from "./navigation/MainNavigation.routes";
 import SignInScreen from "./screens/SignInScreen";
 import LoadingAppScreen from "./screens/LoadingAppScreen";
+// import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
 
 import React, { useEffect, useState } from "react";
 import {
@@ -17,31 +17,18 @@ import {
   statusCodes,
 } from "@react-native-google-signin/google-signin";
 
+// WebBrowser.maybeCompleteAuthSession();
 
 export default function App() {
   const [userInfo, setUserInfo] = React.useState(null);
-  const [Logged, setLogged] = useState();
-
-  getMyObject = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("@user");
-      console.log(jsonValue);
-      setLogged(jsonValue);
-      // return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-      // read error
-    } finally {
-      console.log("Done.");
-    }
-  };
-
-  React.useEffect(() => {
-    getMyObject();
-  }, []);
+  let userTotal = userInfo;
+  
 
   // return <LoadingAppScreen />;
   // return <MainNavigation />;
-  // return <SignInScreen />;
+  return (
+    <SignInScreen signIn={signIn} signOut={signOut} userTotal={userTotal} />
+  );
 
-  return Logged ? <MainNavigation /> : <SignInScreen/>;
+  // return userInfo ? <MainNavigation /> : <SignInScreen signIn={signIn} />;
 }

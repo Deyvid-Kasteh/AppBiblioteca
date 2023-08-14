@@ -25,32 +25,16 @@ export default function SignInScreen() {
       const jsonValue = JSON.stringify(signInResult.user);
       console.log(jsonValue);
       await AsyncStorage.setItem("@user", jsonValue);
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.error("user cancelled the login flow");
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.error("operation (e.g. sign in) is in progress already");
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.error("play services not available or outdated");
-      } else {
-        console.error("some other error happened");
-        console.error(error);
-      }
-    }
-  };
-
-  signOut = async () => {
-    try {
-      await GoogleSignin.signOut();
-      // setUserInfo(null); // Remember to remove the user from your app's state as well
-      console.log("SAIU");
-      console.log("SAIU");
-      await AsyncStorage.removeItem("@user");
-      console.log("SAIU");
-      console.log("SAIU");
-    } catch (error) {
+    } catch (error) {if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+      console.error("user cancelled the login flow");
+    } else if (error.code === statusCodes.IN_PROGRESS) {
+      console.error("operation (e.g. sign in) is in progress already");
+    } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+      console.error("play services not available or outdated");
+    } else {
+      console.error("some other error happened");
       console.error(error);
-    }
+    }}
   };
 
   return (

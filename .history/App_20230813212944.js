@@ -20,7 +20,7 @@ import {
 
 export default function App() {
   const [userInfo, setUserInfo] = React.useState(null);
-  const [Logged, setLogged] = useState();
+  const [Logged, setLogged] = useState(initialState);
 
   getMyObject = async () => {
     try {

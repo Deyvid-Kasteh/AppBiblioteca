@@ -4,8 +4,6 @@ import { StyleSheet, Text, View } from "react-native";
 import AsyncStorage, {
   useAsyncStorage,
 } from "@react-native-async-storage/async-storage";
-
-
 import MainNavigation from "./navigation/MainNavigation.routes";
 import SignInScreen from "./screens/SignInScreen";
 import LoadingAppScreen from "./screens/LoadingAppScreen";
@@ -20,28 +18,49 @@ import {
 
 export default function App() {
   const [userInfo, setUserInfo] = React.useState(null);
-  const [Logged, setLogged] = useState();
+  let userTotal = userInfo;
 
-  getMyObject = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("@user");
-      console.log(jsonValue);
-      setLogged(jsonValue);
-      // return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-      // read error
-    } finally {
-      console.log("Done.");
-    }
-  };
 
-  React.useEffect(() => {
-    getMyObject();
-  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // return <LoadingAppScreen />;
   // return <MainNavigation />;
-  // return <SignInScreen />;
+  return (
+    <SignInScreen  />
+  );
 
-  return Logged ? <MainNavigation /> : <SignInScreen/>;
+  // return userInfo ? <MainNavigation /> : <SignInScreen signIn={signIn} />;
 }

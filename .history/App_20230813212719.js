@@ -20,7 +20,7 @@ import {
 
 export default function App() {
   const [userInfo, setUserInfo] = React.useState(null);
-  const [Logged, setLogged] = useState();
+  const [Logged, setLogged] = useState(initialState);
 
   getMyObject = async () => {
     try {
@@ -33,15 +33,23 @@ export default function App() {
     } finally {
       console.log("Done.");
     }
+
   };
 
+
+
   React.useEffect(() => {
-    getMyObject();
+    getMyObject()
+
   }, []);
+
+
 
   // return <LoadingAppScreen />;
   // return <MainNavigation />;
-  // return <SignInScreen />;
+  return (
+    <SignInScreen  />
+  );
 
-  return Logged ? <MainNavigation /> : <SignInScreen/>;
+  // return userInfo ? <MainNavigation /> : <SignInScreen signIn={signIn} />;
 }

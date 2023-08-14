@@ -39,20 +39,6 @@ export default function SignInScreen() {
     }
   };
 
-  signOut = async () => {
-    try {
-      await GoogleSignin.signOut();
-      // setUserInfo(null); // Remember to remove the user from your app's state as well
-      console.log("SAIU");
-      console.log("SAIU");
-      await AsyncStorage.removeItem("@user");
-      console.log("SAIU");
-      console.log("SAIU");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <>
       <SafeAreaView />
