@@ -39,8 +39,7 @@ function AuthProvider({ children }) {
     }
   };
   signOutProcess = async () => {
-    GoogleSignin.configure();
-
+    
     try {
       await GoogleSignin.signOut();
       // setUserInfo(null); // Remember to remove the user from your app's state as well

@@ -26,9 +26,6 @@ export default function SignOutScreen() {
       {usuarioEstaLogado ? (
         <Text>USUARIO: {JSON.stringify(usuario)}</Text>
       ) : null}
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle-outline" size={50} color="black" />
-      </TouchableOpacity>
     </View>
   );
 }

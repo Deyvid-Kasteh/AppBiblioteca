@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { AuthContext } from "../../components/contexts/Authentication.js";
-import avatarPadrao from "../images/avatarPadrao.png";
+import avatarPadrao from "../avatarPadrao.png";
 
 const Avatar = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
@@ -13,21 +13,12 @@ const Avatar = () => {
         <Image
           style={styles.profileImage}
           source={{
+            // uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
             uri: `${fotoPerfil}`,
           }}
         />
       );
-    } else {
-      return (
-        <Image
-          style={styles.profileImage}
-          source={{
-            uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
-          }}
-        />
-      );
-
-    }
+    } else {}
   } else {
     return <Image style={styles.profileImage} source={avatarPadrao} />;
   }

@@ -20,7 +20,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignInScreen() {
   const { nome, SignInProcess, usuarioEstaLogado, usuario } =
     useContext(AuthContext);
-  const navigation = useNavigation()
 
 
   return (

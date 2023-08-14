@@ -20,7 +20,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignInScreen() {
   const { nome, SignInProcess, usuarioEstaLogado, usuario } =
     useContext(AuthContext);
-  const navigation = useNavigation()
 
 
   return (
@@ -44,7 +43,7 @@ export default function SignInScreen() {
         {usuarioEstaLogado ? (
           <Text>USUARIO: {JSON.stringify(usuario)}</Text>
         ) : null}
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation goBack()}>
           <Ionicons name="arrow-back-circle-outline" size={50} color="black" />
         </TouchableOpacity>
       </View>

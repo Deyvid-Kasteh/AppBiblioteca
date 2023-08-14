@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { AuthContext } from "../../components/contexts/Authentication.js";
-import avatarPadrao from "../images/avatarPadrao.png";
+import avatarPadrao from "../..avatarPadrao.png";
 
 const Avatar = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);

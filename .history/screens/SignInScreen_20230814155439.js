@@ -14,14 +14,10 @@ import {
 } from "@react-native-google-signin/google-signin";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthContext } from "../components/contexts/Authentication";
-import { useNavigation } from "@react-navigation/native";
-
 
 export default function SignInScreen() {
   const { nome, SignInProcess, usuarioEstaLogado, usuario } =
     useContext(AuthContext);
-  const navigation = useNavigation()
-
 
   return (
     <>
@@ -44,9 +40,7 @@ export default function SignInScreen() {
         {usuarioEstaLogado ? (
           <Text>USUARIO: {JSON.stringify(usuario)}</Text>
         ) : null}
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back-circle-outline" size={50} color="black" />
-        </TouchableOpacity>
+        <Ionicons name="arrow-back-circle-outline" size={24} color="black" />
       </View>
     </>
   );

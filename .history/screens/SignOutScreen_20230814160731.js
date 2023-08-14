@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { AuthContext } from "../components/contexts/Authentication";
@@ -9,8 +9,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignOutScreen() {
   const { nome, signOutProcess, usuarioEstaLogado, usuario } =
     useContext(AuthContext);
-    const navigation = useNavigation();
-
   return (
     <View
       style={{
@@ -26,9 +24,6 @@ export default function SignOutScreen() {
       {usuarioEstaLogado ? (
         <Text>USUARIO: {JSON.stringify(usuario)}</Text>
       ) : null}
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle-outline" size={50} color="black" />
-      </TouchableOpacity>
     </View>
   );
 }

@@ -39,7 +39,7 @@ function AuthProvider({ children }) {
     }
   };
   signOutProcess = async () => {
-    GoogleSignin.configure();
+    try {
 
     try {
       await GoogleSignin.signOut();

@@ -1,36 +1,35 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { AuthContext } from "../../components/contexts/Authentication.js";
-import avatarPadrao from "../images/avatarPadrao.png";
+import avatarPadrao from "../avatarPadrao.png";
 
 const Avatar = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
 
-  if (usuario) {
-    if (usuario.user.photo) {
-      const fotoPerfil = usuario.user.photo;
-      return (
-        <Image
-          style={styles.profileImage}
-          source={{
-            uri: `${fotoPerfil}`,
-          }}
-        />
-      );
-    } else {
-      return (
-        <Image
-          style={styles.profileImage}
-          source={{
-            uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
-          }}
-        />
-      );
 
-    }
+  if (usuario) {
+    const fotoPerfil = usuario.user.photo;
+    return (
+      <Image
+        style={styles.profileImage}
+        source={{
+          // uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
+          uri: `${fotoPerfil}`,
+        }}
+      />
+    );
   } else {
     return <Image style={styles.profileImage} source={avatarPadrao} />;
   }
+
+  // return (
+  //   <Image
+  //     style={styles.profileImage}
+  //     source={{
+  //       uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
+  //     }}
+  //   />
+  // );
 };
 
 export default Avatar;

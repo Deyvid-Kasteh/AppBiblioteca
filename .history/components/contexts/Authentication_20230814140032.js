@@ -23,8 +23,8 @@ function AuthProvider({ children }) {
       console.log(jsonValue);
       await AsyncStorage.setItem("@user", jsonValue);
       setUsuarioEstaLogado(true);
-      setUsuario(signInResult);
-      console.log(signInResult.user.photo);
+      setUsuario(signInResult.user);
+      // console.log(signInResult.user.photo);
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.error("user cancelled the login flow");
@@ -39,8 +39,6 @@ function AuthProvider({ children }) {
     }
   };
   signOutProcess = async () => {
-    GoogleSignin.configure();
-
     try {
       await GoogleSignin.signOut();
       // setUserInfo(null); // Remember to remove the user from your app's state as well
