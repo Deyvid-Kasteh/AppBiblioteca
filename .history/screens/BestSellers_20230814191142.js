@@ -1,0 +1,70 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+
+export default function BestSellers({ resultadosLivrosBestSellers }) {
+
+  return (
+    <View>
+      <Text>BestSellers</Text>
+      {resultadosLivros && (
+        <View
+          style={{
+            flex: 0.75,
+            width: "100%",
+            // backgroundColor: "green",
+            marginTop: 30,
+          }}
+        >
+          <ScrollView>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {resultadosLivros?.map((livro) => (
+                <View key={livro.id}>
+                  {livro.volumeInfo.imageLinks ? (
+                    <TouchableOpacity
+                      key={livro.id}
+                      style={{
+                        borderWidth: 1,
+                        borderColor: "#f5efe1",
+                        borderRadius: 10,
+                        overflow: "hidden",
+                        margin: 8,
+                      }}
+                      onPress={() => {
+                        navigation.navigate("HomeStackRoutes", {
+                          screen: "Book",
+                          params: {
+                            name: `${livro.volumeInfo.title}`,
+                            description: `${livro.volumeInfo.description}`,
+                            image: `${livro.volumeInfo.imageLinks.thumbnail}`,
+                          },
+                          // initial: false,
+                        });
+                      }}
+                    >
+                      <Image
+                        style={{
+                          width: 80,
+                          height: 128,
+                        }}
+                        source={{
+                          uri: `${livro.volumeInfo.imageLinks.thumbnail}`,
+                        }}
+                      />
+                    </TouchableOpacity>
+                  ) : null}
+                </View>
+              ))}
+            </View>
+          </ScrollView>
+        </View>
+      )}
+    </View>
+  );
+}
