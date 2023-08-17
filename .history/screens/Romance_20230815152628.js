@@ -1,14 +1,13 @@
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 
-export default function BestSellers({ navigation }) {
-  const nomeDaObraBestSellers = "best sellers";
-  const [resultadosLivrosBestSellers, setResultadosLivrosBestSellers] =
-    useState();
+export default function Romance({ navigation }) {
+  const nomeDaObraRomance = "subject:novel";
+  const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
 
   useEffect(() => {
     fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraBestSellers}&maxResults=30`,
+      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraRomance}&maxResults=20`,
       {
         method: "GET",
         headers: {
@@ -17,8 +16,8 @@ export default function BestSellers({ navigation }) {
       }
     )
       .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosBestSellers(() => data.items))
-      .then(console.log("fetch Best Sellers"));
+      .then((data) => setResultadosLivrosRomance(() => data.items))
+      .then(console.log("fetch romance"));
   }, []);
 
   return (
@@ -30,7 +29,7 @@ export default function BestSellers({ navigation }) {
         backgroundColor: "#F2E2C4",
       }}
     >
-      {resultadosLivrosBestSellers ? (
+      {resultadosLivrosRomance ? (
         <View
           style={{
             flex: 0.88,
@@ -47,7 +46,7 @@ export default function BestSellers({ navigation }) {
                 justifyContent: "center",
               }}
             >
-              {resultadosLivrosBestSellers?.map((livro) => (
+              {resultadosLivrosRomance?.map((livro) => (
                 <View key={livro.id}>
                   {livro.volumeInfo.imageLinks ? (
                     <TouchableOpacity
@@ -63,12 +62,11 @@ export default function BestSellers({ navigation }) {
                         navigation.navigate("HomeStackRoutes", {
                           screen: "Book",
                           params: {
-                            name: livro.volumeInfo.title,
-                            description: livro.volumeInfo.description,
-                            image: livro.volumeInfo.imageLinks.thumbnail,
-                            livroImageAll: livro.volumeInfo.imageLinks
-                            ,
+                            name: `${livro.volumeInfo.title}`,
+                            description: `${livro.volumeInfo.description}`,
+                            image: `${livro.volumeInfo.imageLinks.thumbnail}`,
                           },
+                          // initial: false,
                         });
                       }}
                     >

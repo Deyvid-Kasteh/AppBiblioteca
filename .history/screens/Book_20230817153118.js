@@ -10,10 +10,7 @@ import {
 import React, { useEffect } from "react";
 
 export default function Book({ navigation: { goBack }, route }) {
-  useEffect(() => {
-    // console.log(route.params.image);
-    console.log(route.params.livroImageAll);
-  }, []);
+  useEffect
   return (
     <View
       style={{

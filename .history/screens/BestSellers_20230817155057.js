@@ -63,12 +63,13 @@ export default function BestSellers({ navigation }) {
                         navigation.navigate("HomeStackRoutes", {
                           screen: "Book",
                           params: {
-                            name: livro.volumeInfo.title,
-                            description: livro.volumeInfo.description,
-                            image: livro.volumeInfo.imageLinks.thumbnail,
+                            name: `${livro.volumeInfo.title}`,
+                            description: `${livro.volumeInfo.description}`,
+                            image: `${livro.volumeInfo.imageLinks.thumbnail}`,
                             livroImageAll: livro.volumeInfo.imageLinks
                             ,
                           },
+                          // initial: false,
                         });
                       }}
                     >

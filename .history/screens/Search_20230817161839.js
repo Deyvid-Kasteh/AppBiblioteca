@@ -96,12 +96,12 @@ export default function Search({ navigation }) {
               height: 40,
               borderWidth: 2,
               borderRadius: 40,
-              borderColor: "#2B3640",
+              borderColor: "white",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <Ionicons name="search-sharp" size={24} color="#2B3640" />
+            <Ionicons name="search-sharp" size={24} color="white" />
             {/* <Text>Press Here</Text> */}
           </TouchableOpacity>
           {resultadosLivros && (
@@ -113,12 +113,12 @@ export default function Search({ navigation }) {
                 height: 40,
                 borderWidth: 2,
                 borderRadius: 40,
-                borderColor: "#2B3640",
+                borderColor: "white",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <MaterialIcons name="clear" size={24} color="#2B3640" />
+              <MaterialIcons name="clear" size={24} color="white" />
             </TouchableOpacity>
           )}
         </View>

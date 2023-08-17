@@ -69,6 +69,7 @@ export default function BestSellers({ navigation }) {
                             livroImageAll: livro.volumeInfo.imageLinks
                             ,
                           },
+                          // initial: false,
                         });
                       }}
                     >

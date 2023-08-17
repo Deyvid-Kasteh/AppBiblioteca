@@ -118,7 +118,7 @@ export default function Search({ navigation }) {
                 alignItems: "center",
               }}
             >
-              <MaterialIcons name="clear" size={24} color="#2B3640" />
+              <MaterialIcons name="clear" size={24} color="white" />
             </TouchableOpacity>
           )}
         </View>

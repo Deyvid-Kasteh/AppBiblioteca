@@ -57,7 +57,7 @@ export default function Search({ navigation }) {
           // flexDirection: "row",
         }}
       >
-        <Text style={{ color: "#2B3640", fontSize: 55 }}>
+        <Text style={{ color: "white", fontSize: 55 }}>
           {searchText || "Biblioteca."}
         </Text>
         <View
@@ -75,14 +75,14 @@ export default function Search({ navigation }) {
               height: 40,
               borderWidth: 2,
               borderRadius: 40,
-              borderColor: "#2B3640",
+              borderColor: "white",
               textAlign: "center",
-              color: "#2B3640",
+              color: "white",
             }}
             // <Ionicons name="md-search" size={25} color={"white"} />}
 
             placeholder="Digite o nome do livro"
-            placeholderTextColor="#2B3640"
+            placeholderTextColor="white"
             onChangeText={(newText) => setSearchText(newText)}
             defaultValue={searchText}
             autoCapitalize="sentences"
@@ -96,12 +96,12 @@ export default function Search({ navigation }) {
               height: 40,
               borderWidth: 2,
               borderRadius: 40,
-              borderColor: "#2B3640",
+              borderColor: "white",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <Ionicons name="search-sharp" size={24} color="#2B3640" />
+            <Ionicons name="search-sharp" size={24} color="white" />
             {/* <Text>Press Here</Text> */}
           </TouchableOpacity>
           {resultadosLivros && (
@@ -113,12 +113,12 @@ export default function Search({ navigation }) {
                 height: 40,
                 borderWidth: 2,
                 borderRadius: 40,
-                borderColor: "#2B3640",
+                borderColor: "white",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <MaterialIcons name="clear" size={24} color="#2B3640" />
+              <MaterialIcons name="clear" size={24} color="white" />
             </TouchableOpacity>
           )}
         </View>
