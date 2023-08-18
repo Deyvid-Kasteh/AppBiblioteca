@@ -24,16 +24,13 @@ export default function DrawerRoutes() {
         drawerStyle: {
           backgroundColor: "#F2E2C4",
         },
-        drawerLabelStyle: {
-          marginLeft: -20,
-        }
       }}
     >
       <Drawer.Screen
         name="HomeStart"
         component={BottomTabRoutes}
         options={{
-          title: "Início",
+          title: "Home",
           drawerIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Ionicons name="home" size={size} color={color} />;
@@ -46,7 +43,7 @@ export default function DrawerRoutes() {
         name="Sign-in"
         component={SignInScreen}
         options={{
-          title: "Login",
+          title: "Entrar",
           drawerIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Octicons name="sign-in" size={size} color={color} />;

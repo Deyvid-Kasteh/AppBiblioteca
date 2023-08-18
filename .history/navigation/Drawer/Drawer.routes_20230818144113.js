@@ -24,9 +24,7 @@ export default function DrawerRoutes() {
         drawerStyle: {
           backgroundColor: "#F2E2C4",
         },
-        drawerLabelStyle: {
-          marginLeft: -20,
-        }
+        drawerLabelStyle: ""
       }}
     >
       <Drawer.Screen

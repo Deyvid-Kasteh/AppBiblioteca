@@ -25,7 +25,7 @@ export default function DrawerRoutes() {
           backgroundColor: "#F2E2C4",
         },
         drawerLabelStyle: {
-          marginLeft: -20,
+          mar
         }
       }}
     >
