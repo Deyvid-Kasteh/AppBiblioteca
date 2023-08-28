@@ -26,18 +26,11 @@ function AuthProvider({ children }) {
     try {
       // const response = await createSession(email, password);
       const response = await api.post("/users", data);
-      console.log(
-        "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-      );
-      console.log(response);
-      console.log(
-        "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-      );
 
-      console.log(response.data);
-      console.log(
-        "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-      );
+      console.log(response);
+      // console.log(response.data);
+      // console.log(response.data.user);
+
       // console.log("Começou STOREDATA");
       // const jsonValue = JSON.stringify(response.data.user);
       // console.log(jsonValue);
@@ -108,25 +101,33 @@ function AuthProvider({ children }) {
     }
   };
 
+
   SignInGoogleProcess = async () => {
     GoogleSignin.configure();
 
+
+
+
     try {
-      console.log("Começou SIGN-IN GOOGLE");
+      console.log("Começou SIGN-IN");
       await GoogleSignin.hasPlayServices();
       const signInResult = await GoogleSignin.signIn();
-      const { name, email, id } = signInResult?.user;
-      SignIn(name, email, id);
+      console.log(signInResult);
+      console.log("Começou STOREDATA");
+      const jsonValue = JSON.stringify(signInResult.user);
+      console.log(jsonValue);
+      await AsyncStorage.setItem("@user", jsonValue);
+      setUsuarioEstaLogado(true);
+      setUsuario(signInResult);
+      console.log(signInResult.user.photo);
 
-      // console.log(signInResult);
-      // const jsonValue = JSON.stringify(signInResult.user);
-      // console.log(jsonValue);
-      // await AsyncStorage.setItem("@user", jsonValue);
-      // setUsuarioEstaLogado(true);
-      // setUsuario(signInResult);
-      // console.log(signInResult.user.photo);
-    } catch (error) {}
-  };
+    } catch (error) {
+
+    }
+  }
+
+
+
 
   signOutProcess = async () => {
     GoogleSignin.configure();
@@ -156,7 +157,6 @@ function AuthProvider({ children }) {
         usuario,
         Login,
         SignIn,
-        SignInGoogleProcess,
       }}
     >
       {children}

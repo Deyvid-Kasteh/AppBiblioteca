@@ -196,7 +196,7 @@ export default function SignInScreen({ navigation }) {
               borderRadius: 10,
               marginTop: 20,
             }}
-            onPress={() => SignInGoogleProcess()}
+            onPress={() => SignInProcess()}
           >
             <Ionicons name="logo-google" size={35} color="#F2E2C4" />
           </TouchableOpacity>

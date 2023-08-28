@@ -38,6 +38,9 @@ function AuthProvider({ children }) {
       console.log(
         "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
       );
+
+      console.log(response.data.user);
+
       // console.log("Começou STOREDATA");
       // const jsonValue = JSON.stringify(response.data.user);
       // console.log(jsonValue);

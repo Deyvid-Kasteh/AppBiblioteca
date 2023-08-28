@@ -13,7 +13,7 @@ import { AuthContext } from "../components/contexts/Authentication";
 // import { useNavigation } from "@react-navigation/native";
 
 export default function SignInScreen({ navigation }) {
-  const { SignInGoogleProcess, SignIn } = useContext(AuthContext);
+  const { SignInProcess, SignIn } = useContext(AuthContext);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,7 +84,7 @@ export default function SignInScreen({ navigation }) {
                 paddingLeft: 20,
               }}
               placeholder="Nome"
-              onChangeText={(newName) => setName(newName)}
+              onChangeText={(newE) => setName(newE)}
               defaultValue={name}
               backgroundColor="#F2E2C4"
             />
@@ -196,7 +196,7 @@ export default function SignInScreen({ navigation }) {
               borderRadius: 10,
               marginTop: 20,
             }}
-            onPress={() => SignInGoogleProcess()}
+            onPress={() => SignInProcess()}
           >
             <Ionicons name="logo-google" size={35} color="#F2E2C4" />
           </TouchableOpacity>
