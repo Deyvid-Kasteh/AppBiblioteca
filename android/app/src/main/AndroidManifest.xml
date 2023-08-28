@@ -25,9 +25,9 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="AppBiblioteca"/>
         <data android:scheme="com.kasteh.AppBiblioteca"/>
         <data android:scheme="exp+appbiblioteca"/>
-        <data android:scheme="AppBiblioteca"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>
