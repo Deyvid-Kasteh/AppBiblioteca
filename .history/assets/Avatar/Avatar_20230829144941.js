@@ -8,7 +8,7 @@ const Avatar = (props) => {
 
   if (usuario) {
     if (usuario.details?.picture) {
-      const fotoPerfil = usuario.details.picture;
+      const fotoPerfil = usuario.user.photo;
       return (
         <Image
           style={{

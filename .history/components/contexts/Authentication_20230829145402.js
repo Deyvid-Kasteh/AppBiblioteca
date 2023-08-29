@@ -145,6 +145,7 @@ function AuthProvider({ children }) {
         password: signInResult.user.id,
       };
       const pic = signInResult.user.photo;
+      console.log(data);
       try {
         const responseSignInMongoDb = await api.post("/users", data);
         if (responseSignInMongoDb !== null) {
@@ -161,13 +162,24 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
+
             const responseUpdated = await api.get(
               `/Perfil/${responseCreateSession.data.user.id}`
             );
+            console.log("Começou STOREDATA");
             const jsonValue = JSON.stringify(responseUpdated.data);
+            console.log(jsonValue);
             await AsyncStorage.setItem("@user", jsonValue);
             setUsuario(()=> responseUpdated.data);
             setUsuarioEstaLogado(true);
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
+            console.log(responseUpdated.data.details);
+
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
           } catch (error) {
             console.error(error);
           }

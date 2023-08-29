@@ -137,6 +137,7 @@ function AuthProvider({ children }) {
   SignInGoogleProcess = async () => {
     GoogleSignin.configure();
     try {
+      console.log("Começou SIGN-IN GOOGLE");
       await GoogleSignin.hasPlayServices();
       const signInResult = await GoogleSignin.signIn();
       const data = {
@@ -145,14 +146,17 @@ function AuthProvider({ children }) {
         password: signInResult.user.id,
       };
       const pic = signInResult.user.photo;
+      console.log(data);
       try {
         const responseSignInMongoDb = await api.post("/users", data);
+        console.log(responseSignInMongoDb.data);
         if (responseSignInMongoDb !== null) {
           try {
             const responseCreateSession = await createSession(
               signInResult.user.email,
               signInResult.user.id
             );
+            console.log(responseCreateSession.data);
             api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
             const dataPic = {
               pic,
@@ -161,13 +165,26 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
+
             const responseUpdated = await api.get(
               `/Perfil/${responseCreateSession.data.user.id}`
             );
+
+            console.log("Começou STOREDATA");
             const jsonValue = JSON.stringify(responseUpdated.data);
+            console.log(jsonValue);
             await AsyncStorage.setItem("@user", jsonValue);
             setUsuario(()=> responseUpdated.data);
             setUsuarioEstaLogado(true);
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
+            console.log(responseUpdated.data.details);
+
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
+            console.log(usuario);
           } catch (error) {
             console.error(error);
           }

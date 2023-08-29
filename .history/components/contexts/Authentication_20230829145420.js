@@ -161,13 +161,23 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
+
             const responseUpdated = await api.get(
               `/Perfil/${responseCreateSession.data.user.id}`
             );
             const jsonValue = JSON.stringify(responseUpdated.data);
+            console.log(jsonValue);
             await AsyncStorage.setItem("@user", jsonValue);
             setUsuario(()=> responseUpdated.data);
             setUsuarioEstaLogado(true);
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
+            console.log(responseUpdated.data.details);
+
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
           } catch (error) {
             console.error(error);
           }

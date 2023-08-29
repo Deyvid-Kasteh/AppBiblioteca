@@ -161,6 +161,7 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
+
             const responseUpdated = await api.get(
               `/Perfil/${responseCreateSession.data.user.id}`
             );

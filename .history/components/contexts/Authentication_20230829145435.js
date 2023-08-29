@@ -161,6 +161,7 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
+
             const responseUpdated = await api.get(
               `/Perfil/${responseCreateSession.data.user.id}`
             );
@@ -168,6 +169,12 @@ function AuthProvider({ children }) {
             await AsyncStorage.setItem("@user", jsonValue);
             setUsuario(()=> responseUpdated.data);
             setUsuarioEstaLogado(true);
+
+           
+
+            console.log(
+              "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+            );
           } catch (error) {
             console.error(error);
           }

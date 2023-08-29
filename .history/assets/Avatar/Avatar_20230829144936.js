@@ -7,8 +7,8 @@ const Avatar = (props) => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
 
   if (usuario) {
-    if (usuario.details?.picture) {
-      const fotoPerfil = usuario.details.picture;
+    if (usuario.details?.photo) {
+      const fotoPerfil = usuario.user.photo;
       return (
         <Image
           style={{
