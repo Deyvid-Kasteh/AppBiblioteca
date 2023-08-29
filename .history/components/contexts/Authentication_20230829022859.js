@@ -162,10 +162,9 @@ function AuthProvider({ children }) {
               pic,
             };
             const responsePicUpdate = await api.patch(
-              `/Perfil/${responseCreateSession.data.user.id}/pic`,
+              `/Perfil/${responseCreateSession.data.}/pic`,
               dataPic
             );
-            console.log(responsePicUpdate.data);
           } catch (error) {
             console.error(error);
           }

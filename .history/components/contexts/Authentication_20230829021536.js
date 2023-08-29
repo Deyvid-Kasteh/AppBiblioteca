@@ -145,36 +145,32 @@ function AuthProvider({ children }) {
         email: signInResult.user.email,
         password: signInResult.user.id,
       };
-      const pic = signInResult.user.photo;
       console.log(data);
       try {
         const responseSignInMongoDb = await api.post("/users", data);
         console.log(responseSignInMongoDb.data);
-        if (responseSignInMongoDb !== null) {
-          try {
-            const responseCreateSession = await createSession(
-              signInResult.user.email,
-              signInResult.user.id
-            );
-            console.log(responseCreateSession.data);
-            api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
-            const dataPic = {
-              pic,
-            };
-            const responsePicUpdate = await api.patch(
-              `/Perfil/${responseCreateSession.data.user.id}/pic`,
-              dataPic
-            );
-            console.log(responsePicUpdate.data);
-          } catch (error) {
-            console.error(error);
-          }
+        if (responseSignIn !== null) {
+          consr
+          const responseCreateSession = await createSession(email: signInResult.user.email, password);
+
+
+
         }
+
+
+
+
       } catch (error) {
         console.error(error);
+
       }
 
+
+      // if (responseSignIn !== null) {
+      //   const responseCreateSession = await createSession(email, password);
+
       //   const { id } = responseCreateSession?.data?.user;
+      //   api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
       //   const pic = photo;
       //   const dataPic = {
       //     pic,

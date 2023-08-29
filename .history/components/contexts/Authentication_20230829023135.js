@@ -165,7 +165,7 @@ function AuthProvider({ children }) {
               `/Perfil/${responseCreateSession.data.user.id}/pic`,
               dataPic
             );
-            console.log(responsePicUpdate.data);
+            console.log(responsePicUpdate.);
           } catch (error) {
             console.error(error);
           }

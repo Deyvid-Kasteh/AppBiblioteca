@@ -157,15 +157,7 @@ function AuthProvider({ children }) {
               signInResult.user.id
             );
             console.log(responseCreateSession.data);
-            api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
-            const dataPic = {
-              pic,
-            };
-            const responsePicUpdate = await api.patch(
-              `/Perfil/${responseCreateSession.data.user.id}/pic`,
-              dataPic
-            );
-            console.log(responsePicUpdate.data);
+              api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
           } catch (error) {
             console.error(error);
           }
@@ -174,7 +166,9 @@ function AuthProvider({ children }) {
         console.error(error);
       }
 
+
       //   const { id } = responseCreateSession?.data?.user;
+      //   api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
       //   const pic = photo;
       //   const dataPic = {
       //     pic,

@@ -64,13 +64,13 @@ function AuthProvider({ children }) {
       const responseSignIn = await api.post("/users", data);
       const responseCreateSession = await createSession(email, password);
       console.log(responseCreateSession.data.user);
-      api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
       // console.log("Começou STOREDATA");
       // const jsonValue = JSON.stringify(responseCreateSession.data.user);
       // console.log(jsonValue);
       // await AsyncStorage.setItem("@user", jsonValue);
       // setUsuario(response.data.user);
       // setUsuarioEstaLogado(true);
+      // api.defaults.headers.authorization = `Bearer ${response.data.token}`;
       console.log("vai pro navigate pra voltar");
       navigation.goBack();
       return;
@@ -140,51 +140,16 @@ function AuthProvider({ children }) {
       console.log("Começou SIGN-IN GOOGLE");
       await GoogleSignin.hasPlayServices();
       const signInResult = await GoogleSignin.signIn();
-      const data = {
-        name: signInResult.user.name,
-        email: signInResult.user.email,
-        password: signInResult.user.id,
-      };
-      const pic = signInResult.user.photo;
-      console.log(data);
-      try {
-        const responseSignInMongoDb = await api.post("/users", data);
-        console.log(responseSignInMongoDb.data);
-        if (responseSignInMongoDb !== null) {
-          try {
-            const responseCreateSession = await createSession(
-              signInResult.user.email,
-              signInResult.user.id
-            );
-            console.log(responseCreateSession.data);
-            api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
-            const dataPic = {
-              pic,
-            };
-            const responsePicUpdate = await api.patch(
-              `/Perfil/${responseCreateSession.data.user.id}/pic`,
-              dataPic
-            );
-            console.log(responsePicUpdate.data);
-          } catch (error) {
-            console.error(error);
-          }
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      const { name, email, id, photo } = signInResult?.user;
+      SignInGoogle(name, email, id);
 
-      //   const { id } = responseCreateSession?.data?.user;
-      //   const pic = photo;
-      //   const dataPic = {
-      //     pic,
-      //   };
-      //   const responsePicUpdate = await api.patch(`/Perfil/${id}/pic`, dataPic);
-      //   console.log(responsePicUpdate);
-      // }
-      // else {
-      //   console.log("Não criou o usuário");
-      // }
+
+
+
+
+
+
+
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.error("user cancelled the login flow");
