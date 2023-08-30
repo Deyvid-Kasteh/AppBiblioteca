@@ -37,6 +37,7 @@ const Avatar = (props) => {
             }}
           />
         );
+
       }
     } else {
       return (

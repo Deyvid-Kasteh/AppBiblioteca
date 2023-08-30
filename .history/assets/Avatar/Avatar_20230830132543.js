@@ -23,20 +23,6 @@ const Avatar = (props) => {
             }}
           />
         );
-      } else {
-        return (
-          <Image
-            style={{
-              width: props.width,
-              height: props.height,
-              borderRadius: 100,
-              marginRight: 15,
-            }}
-            source={{
-              uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
-            }}
-          />
-        );
       }
     } else {
       return (

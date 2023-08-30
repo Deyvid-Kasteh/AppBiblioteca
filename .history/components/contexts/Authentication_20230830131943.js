@@ -89,10 +89,10 @@ function AuthProvider({ children }) {
       console.log(response.data);
       console.log(response.data.user);
 
-      console.log("Começou STOREDATA");
-      const jsonValue = JSON.stringify(response.data.user);
-      console.log(jsonValue);
-      await AsyncStorage.setItem("@user", jsonValue);
+      // console.log("Começou STOREDATA");
+      // const jsonValue = JSON.stringify(response.data.user);
+      // console.log(jsonValue);
+      // await AsyncStorage.setItem("@user", jsonValue);
       setUsuario(response.data.user);
       setUsuarioEstaLogado(true);
       api.defaults.headers.authorization = `Bearer ${response.data.token}`;

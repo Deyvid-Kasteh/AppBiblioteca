@@ -1,5 +1,5 @@
-import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
-import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const Favorites = () => {
   const nomeDaObraBestSellers = "best sellers";
@@ -92,6 +92,8 @@ const Favorites = () => {
       )}
     </View>
   );
-};
+}
 
-export default Favorites;
+export default Favorites
+
+const styles = StyleSheet.create({})

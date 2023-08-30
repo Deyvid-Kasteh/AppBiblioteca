@@ -95,3 +95,5 @@ const Favorites = () => {
 };
 
 export default Favorites;
+
+const styles = StyleSheet.create({});

@@ -8,36 +8,21 @@ const Avatar = (props) => {
 
   if (usuario) {
     if (usuario.details?.picture) {
-      if (typeof usuario.details.picture === "string") {
-        const fotoPerfil = usuario.details.picture;
-        return (
-          <Image
-            style={{
-              width: props.width,
-              height: props.height,
-              borderRadius: 100,
-              marginRight: 15,
-            }}
-            source={{
-              uri: `${fotoPerfil}`,
-            }}
-          />
-        );
-      } else {
-        return (
-          <Image
-            style={{
-              width: props.width,
-              height: props.height,
-              borderRadius: 100,
-              marginRight: 15,
-            }}
-            source={{
-              uri: "https://avatars.githubusercontent.com/u/99744584?s=96&v=4",
-            }}
-          />
-        );
-      }
+      if 
+      const fotoPerfil = usuario.details.picture;
+      return (
+        <Image
+          style={{
+            width: props.width,
+            height: props.height,
+            borderRadius: 100,
+            marginRight: 15,
+          }}
+          source={{
+            uri: `${fotoPerfil}`,
+          }}
+        />
+      );
     } else {
       return (
         <Image
