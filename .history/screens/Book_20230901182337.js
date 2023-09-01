@@ -47,6 +47,7 @@ export default function Book({ navigation: { goBack }, route }) {
 
   useEffect(() => {
     BuscaLivro(route.params.idLivro);
+
   }, []);
   return (
     <View
@@ -133,8 +134,9 @@ export default function Book({ navigation: { goBack }, route }) {
                 }}
               >
                 {livro.volumeInfo.title}
-                {/*                 {console.log(parse(livro.volumeInfo.description))}
-                 */}
+                {/* <Image source={backgroundImage} /> */}
+
+                {console.log(parse(livro.volumeInfo.description))}
               </Text>
 
               <View

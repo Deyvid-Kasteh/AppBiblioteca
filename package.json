@@ -39,6 +39,7 @@
     "react-native-screens": "~3.22.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-web": "~0.19.6",
+    "sanitize-html": "^2.11.0",
     "sharp-cli": "^4.1.1"
   },
   "devDependencies": {
