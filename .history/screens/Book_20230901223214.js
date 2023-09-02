@@ -21,16 +21,18 @@ export default function Book({ navigation: { goBack }, route }) {
   const [bookFav, setBookFav] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
+  
 
-
-  const getData = async () => {
+  const getData = async (idLivro) => {
     try {
       const jsonValue = await AsyncStorage.getItem("@user");
       const data = JSON.parse(jsonValue);
       console.log(
         "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
       );
+      console.log(data.books);
       const books = data.books;
+
       let fav = books.some((boo) => boo.idLivro == book);
       console.log(fav);
       setBookFav(fav);

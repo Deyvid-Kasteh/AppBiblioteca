@@ -23,7 +23,7 @@ export default function Book({ navigation: { goBack }, route }) {
   const book = route.params.idLivro;
 
 
-  const getData = async () => {
+  const getData = async (idLivro) => {
     try {
       const jsonValue = await AsyncStorage.getItem("@user");
       const data = JSON.parse(jsonValue);

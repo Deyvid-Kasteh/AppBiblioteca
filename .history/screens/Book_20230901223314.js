@@ -23,7 +23,7 @@ export default function Book({ navigation: { goBack }, route }) {
   const book = route.params.idLivro;
 
 
-  const getData = async () => {
+  const getData = async (idLivro) => {
     try {
       const jsonValue = await AsyncStorage.getItem("@user");
       const data = JSON.parse(jsonValue);
@@ -31,6 +31,7 @@ export default function Book({ navigation: { goBack }, route }) {
         "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
       );
       const books = data.books;
+
       let fav = books.some((boo) => boo.idLivro == book);
       console.log(fav);
       setBookFav(fav);
