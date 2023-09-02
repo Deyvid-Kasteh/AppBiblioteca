@@ -30,7 +30,7 @@ export default function Book({ navigation: { goBack }, route }) {
     } else {
       console.log("Desfavoritar");
       console.log("");
-      console.log("teste de mesclagem");
+      console.log("teste");
     }
   };
 
