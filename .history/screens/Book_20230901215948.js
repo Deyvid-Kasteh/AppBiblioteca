@@ -21,24 +21,6 @@ export default function Book({ navigation: { goBack }, route }) {
   const [bookFav, setBookFav] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
-  const bookfavoriter = async () => {
-    if (!bookFav) {
-      console.log("Favoritar");
-      console.log("");
-      console.log("");
-    } else {
-      console.log("Desfavoritar");
-      console.log("");
-      console.log("");
-    }
-  };
-
-
-  if (livro) {
-    const description = livro.volumeInfo.description;
-    const CleanDescription = sanitizeHtml(description);
-  }
-
   const getData = async (idLivro) => {
     try {
       const jsonValue = await AsyncStorage.getItem("@user");
@@ -134,7 +116,7 @@ export default function Book({ navigation: { goBack }, route }) {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  onPress={() => bookfavoriter()}
+                  onPress={() => setBookFav(!bookFav)}
                 >
                   {bookFav ? (
                     <AntDesign name="heart" size={30} color="#A65A49" />
@@ -152,6 +134,8 @@ export default function Book({ navigation: { goBack }, route }) {
                 }}
               >
                 {livro.volumeInfo.title}
+                {/*                 {console.log(parse(livro.volumeInfo.description))}
+                 */}
               </Text>
 
               <View
@@ -167,9 +151,7 @@ export default function Book({ navigation: { goBack }, route }) {
                       color: "#2B3640",
                     }}
                   >
-                    {/* {livro.volumeInfo.description} */}
-                    {livro ? (sanitizeHtml(livro.volumeInfo.description, {allowedTags: []})
-                    ) : (livro.volumeInfo.description)}
+                    {livro.volumeInfo.description}
                   </Text>
                 </ScrollView>
               </View>

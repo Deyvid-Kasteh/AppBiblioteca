@@ -21,18 +21,6 @@ export default function Book({ navigation: { goBack }, route }) {
   const [bookFav, setBookFav] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
-  const bookfavoriter = async () => {
-    if (!bookFav) {
-      console.log("Favoritar");
-      console.log("");
-      console.log("");
-    } else {
-      console.log("Desfavoritar");
-      console.log("");
-      console.log("");
-    }
-  };
-
 
   if (livro) {
     const description = livro.volumeInfo.description;
@@ -134,7 +122,7 @@ export default function Book({ navigation: { goBack }, route }) {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  onPress={() => bookfavoriter()}
+                  onPress={() => setBookFav(!bookFav)}
                 >
                   {bookFav ? (
                     <AntDesign name="heart" size={30} color="#A65A49" />
@@ -168,8 +156,9 @@ export default function Book({ navigation: { goBack }, route }) {
                     }}
                   >
                     {/* {livro.volumeInfo.description} */}
-                    {livro ? (sanitizeHtml(livro.volumeInfo.description, {allowedTags: []})
+                    {livro ? (sanitizeHtml(livro.volumeInfo.description)
                     ) : (livro.volumeInfo.description)}
+                    {console.log(sanitizeHtml(livro.volumeInfo.description)}
                   </Text>
                 </ScrollView>
               </View>
