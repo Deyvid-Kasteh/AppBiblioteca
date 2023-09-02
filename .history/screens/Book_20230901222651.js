@@ -158,6 +158,7 @@ export default function Book({ navigation: { goBack }, route }) {
                     {/* {livro.volumeInfo.description} */}
                     {livro ? (sanitizeHtml(livro.volumeInfo.description, {allowedTags: []})
                     ) : (livro.volumeInfo.description)}
+                    {console.log(sanitizeHtml(livro.volumeInfo.description, {allowedTags: []}))}
                   </Text>
                 </ScrollView>
               </View>

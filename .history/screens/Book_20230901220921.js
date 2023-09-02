@@ -23,8 +23,8 @@ export default function Book({ navigation: { goBack }, route }) {
   const book = route.params.idLivro;
 
   if (livro) {
-    const description = livro.volumeInfo.description;
-    const CleanDescription = sanitizeHtml(description);
+    const descriptionm = livro.volumeInfo.description;
+    const CleanDescription = sanitizeHtml(descriptionm);
   }
 
   const getData = async (idLivro) => {
@@ -140,6 +140,7 @@ export default function Book({ navigation: { goBack }, route }) {
                 }}
               >
                 {livro.volumeInfo.title}
+                {console.log(CleanDescription)}
               </Text>
 
               <View
@@ -155,9 +156,7 @@ export default function Book({ navigation: { goBack }, route }) {
                       color: "#2B3640",
                     }}
                   >
-                    {/* {livro.volumeInfo.description} */}
-                    {livro ? (sanitizeHtml(livro.volumeInfo.description, {allowedTags: []})
-                    ) : (livro.volumeInfo.description)}
+                    {livro.volumeInfo.description}
                   </Text>
                 </ScrollView>
               </View>

@@ -155,9 +155,8 @@ export default function Book({ navigation: { goBack }, route }) {
                       color: "#2B3640",
                     }}
                   >
-                    {/* {livro.volumeInfo.description} */}
-                    {livro ? (sanitizeHtml(livro.volumeInfo.description, {allowedTags: []})
-                    ) : (livro.volumeInfo.description)}
+                    {livro.volumeInfo.description}
+                    {livro}
                   </Text>
                 </ScrollView>
               </View>
