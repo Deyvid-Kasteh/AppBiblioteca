@@ -33,6 +33,12 @@ export default function Book({ navigation: { goBack }, route }) {
     }
   };
 
+
+  if (livro) {
+    const description = livro.volumeInfo.description;
+    const CleanDescription = sanitizeHtml(description);
+  }
+
   const getData = async (idLivro) => {
     try {
       const jsonValue = await AsyncStorage.getItem("@user");

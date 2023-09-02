@@ -21,17 +21,11 @@ export default function Book({ navigation: { goBack }, route }) {
   const [bookFav, setBookFav] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
-  const bookfavoriter = async () => {
-    if (!bookFav) {
-      console.log("Favoritar");
-      console.log("");
-      console.log("");
-    } else {
-      console.log("Desfavoritar");
-      console.log("");
-      console.log("");
-    }
-  };
+
+  if (livro) {
+    const description = livro.volumeInfo.description;
+    const CleanDescription = sanitizeHtml(description);
+  }
 
   const getData = async (idLivro) => {
     try {
