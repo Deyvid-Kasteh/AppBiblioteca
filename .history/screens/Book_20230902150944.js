@@ -26,7 +26,7 @@ export default function Book({ navigation: { goBack }, route }) {
       console.log("");
       console.log("");
     } else {
-      console.log("Desfavoritar");
+      console.log("");
       console.log("");
       console.log("");
     }

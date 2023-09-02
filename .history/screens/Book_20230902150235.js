@@ -22,13 +22,10 @@ export default function Book({ navigation: { goBack }, route }) {
   const book = route.params.idLivro;
   const bookfavoriter = async () => {
     if (!bookFav) {
-      console.log("Favoritar");
+      console.log("");
       console.log("");
       console.log("");
     } else {
-      console.log("Desfavoritar");
-      console.log("");
-      console.log("");
     }
   };
 

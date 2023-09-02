@@ -21,16 +21,8 @@ export default function Book({ navigation: { goBack }, route }) {
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
   const bookfavoriter = async () => {
-    if (!bookFav) {
-      console.log("Favoritar");
-      console.log("");
-      console.log("");
-    } else {
-      console.log("Desfavoritar");
-      console.log("");
-      console.log("");
-    }
-  };
+
+}
 
   const getData = async (idLivro) => {
     try {
@@ -127,7 +119,7 @@ export default function Book({ navigation: { goBack }, route }) {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  onPress={() => bookfavoriter()}
+                  onPress={() => setBookFav(!bookFav)}
                 >
                   {bookFav ? (
                     <AntDesign name="heart" size={30} color="#A65A49" />
