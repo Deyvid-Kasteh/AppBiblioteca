@@ -1,0 +1,45 @@
+{
+    "accessInfo":
+    {
+        "accessViewStatus": "SAMPLE",
+        "country": "BR",
+            "embeddable": true,
+                "epub": { "acsTokenLink": "http://books.google.com.br/books/download/Will-sample-epub.acsm?id=_5lEEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api", "isAvailable": true }, "pdf": { "acsTokenLink": "http://books.google.com.br/books/download/Will-sample-pdf.acsm?id=_5lEEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api", "isAvailable": true }, "publicDomain": false, "quoteSharingAllowed": false, "textToSpeechPermission": "ALLOWED", "viewability": "PARTIAL", "webReaderLink": "http://play.google.com/books/reader?id=_5lEEAAAQBAJ&hl=&source=gbs_api"
+    },
+    "etag": "2xxknUBkptM",
+        "id": "_5lEEAAAQBAJ",
+        "kind": "books#volume",
+        "layerInfo":
+    {
+        "layers": [[Object]]
+    },
+    "saleInfo":
+    {
+        "buyLink": "https://play.google.com/store/books/details?id=_5lEEAAAQBAJ&rdid=book-_5lEEAAAQBAJ&rdot=1&source=gbs_api", "country": "BR", "isEbook": true, "listPrice": { "amount": 39.9, "currencyCode": "BRL" }, "offers": [[Object]], "retailPrice": { "amount": 39.9, "currencyCode": "BRL" }, "saleability": "FOR_SALE"
+    },
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/_5lEEAAAQBAJ",
+        "volumeInfo":
+    {
+        "allowAnonLogging": true,
+            "authors": ["Will Smith", "Mark Manson"],
+            "canonicalVolumeLink": "https://play.google.com/store/books/details?id=_5lEEAAAQBAJ",
+
+            "categories": ["Biography & Autobiography / Personal Memoirs", "Biography & Autobiography / General"],
+            "contentVersion": "1.2.2.0.preview.3",
+            "description": "<p> <b>Em <i>Will</i>, uma das maiores personalidades do entretenimento se abre em uma biografia corajosa e inspiradora sobre sucesso, felicidade e conexão humana. Ao longo da narrativa, Will Smith descreve em detalhes uma das jornadas mais incríveis já vividas no mundo da música e do cinema. Edição limitada acompanhada de pôster.</b> </p> <p> <b> </b> </p> <p>O processo de transformação de Will Smith de um jovem do oeste da Filadélfia a um dos maiores astros do rap de sua geração e, posteriormente, um dos nomes mais conhecidos de Hollywood é uma narrativa épica — mas é apenas parte da história.</p> <p>Will pensava, com razão, que tinha vencido na loteria a vida: ele alcançara o estrelato e toda a sua família fazia parte do mais alto escalão do mundo do entretenimento. Mas não era bem assim que eles percebiam as coisas. A esposa e os filhos se sentiam atrações no espetáculo de Will, um trabalho em tempo integral para o qual não tinham se candidatado. A verdade era que a jornada de aprendizado de Will Smith ainda não havia chegado ao fim.</p> <p>Escrito em colaboração com Mark Manson, autor do best-seller mundial <i>A sutil arte de ligar o f*da-se</i>, <i>Will </i>conta a história de alguém que conseguiu tomar as rédeas das próprias emoções de uma forma que pode inspirar todos a fazerem o mesmo. Poucas pessoas terão a experiência de se apresentar nos maiores palcos do mundo, mas todas são capazes de entender que o combustível que guia experiências como essa pode ser diferente daquele que nos move no caminho para casa.</p> <p>Com dois encartes de 16 páginas de fotos inéditas do arquivo pessoal do autor. <i> Will</i> é o resultado de um profundo processo de autoconhecimento, um acerto de contas com tudo o que a motivação é capaz de conquistar e tudo o que pode deixar para trás. A união de sabedoria universal e uma história de vida incrivelmente interessante, por vezes surpreendente, coloca <i>Will</i>, o livro, assim como seu autor, em um panteão único.</p> <p> </p> <p>\"É fácil dominar o mundo material quando conseguimos dominar nossa própria mente. Eu acredito nisso. Quando conhecemos o território da nossa mente, toda experiência, emoção, circunstância — positiva ou negativa —, nos move para frente, em busca de crescimento e novas experiências. Esse é o verdadeiro propósito. Seguir em frente apesar de tudo. E seguir em frente levando aqueles ao nosso redor junto conosco, sem deixar ninguém para trás.\" - Will Smith</p>",
+
+            "imageLinks":
+        {
+            "extraLarge": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE717DUKhzJySWE5TjSXb2XgCthQSokilUj2A-EpIlMuOlrFemL9_7J_uUmnNWjyFjUy_jtqarqP6p6LLNSDf2dfaBjiJb1qGi60Kiym9h7x-_B6oTlYGCHYcyog1M9bMuEZAClox&source=gbs_api",
+                "large": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71kg2M_pCkwB458ViV6IdJcqVRlerunbTaxs6_-KOA8RbFVRpjyeQNjPPAMQ4q6dZBU7uZ63BfeHNb9BLQvr8jJ7GBvr5YtjNRzp76L3s8S4FyN2OdD744YJH9Q86R_ajyfAxhe&source=gbs_api",
+                "medium": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71RK3xq7-zjB_99uzh8_BQKtoqED2o5vM99HhmWm17ndNoR4DfWAvcvKLMm0eQb-iDZOklJhyTJpCYPv9k7Qxpr5N3m_3RtRbPgrjBFQaGueLHg2GqjD0b5GfktrIkhgRqS0JA4&source=gbs_api",
+                "small": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70hVUkKzMbIccWHjR8bie4tYw8xIk4Kg2rdHqGLX-UxOPcbtG00B3mBwayT_tHSR_G1FK9yX-iEjYLYVugIdnuV8RzkHw2HNKa1e5aOpv7wW270IostTeCaJz2TQc5H_9NWu2AK&source=gbs_api",
+                "smallThumbnail": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70HWBf-8WcTsK2IRD0CMuBJdPn5VvufW2Cq-WR-kiNL7eGXajsKD0Z_zo-1fhSSvzX0L7COwmLxodoZyQI21KsNtQ99cqfXeoPmYn06yxVRPctGTVtDmV1A5rEoUA9mAL9krp5u&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/publisher/content?id=_5lEEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71hbvNL1RJEQlUosXqs_aJR0TUBoaY9OmpuRn-W8EhSvF1RMPQ_2ZeFggnp_t3dRcQh4WCYKemkfRUP2GHaI8t_I8HscNeRJNfaatN3DCGU0XV--QUV4MvT8SddlJW4h6Uh9PyO&source=gbs_api"
+        },
+        "industryIdentifiers": [[Object], [Object]],
+            "infoLink": "https://play.google.com/store/books/details?id=_5lEEAAAQBAJ&source=gbs_api", "language": "pt-BR",
+            "maturityRating": "NOT_MATURE",
+                "pageCount": 476, "panelizationSummary": { "containsEpubBubbles": false, "containsImageBubbles": false }, "previewLink": "http://books.google.com.br/books?id=_5lEEAAAQBAJ&hl=&source=gbs_api", "printType": "BOOK", "printedPageCount": 548, "publishedDate": "2021-11-09", "publisher": "Best Seller", "readingModes": { "image": true, "text": true }, "title": "Will"
+    }
+}
