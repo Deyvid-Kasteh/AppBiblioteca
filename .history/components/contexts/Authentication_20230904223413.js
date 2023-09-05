@@ -199,7 +199,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      showToastAndroid("Livro adicionado aos favoritos ❤️");
+      showToastAndroid("✅ Livro adicionado aos seus ❤️💔");
     } catch (error) {
       console.error(error);
     }
@@ -217,7 +217,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      showToastAndroid("Livro removido dos favoritos 💔");
+      showToastAndroid("✅ Livro adicionado aos seus ❤️💔");
     } catch (error) {
       console.error(error);
     }

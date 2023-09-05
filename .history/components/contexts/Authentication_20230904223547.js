@@ -217,7 +217,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      showToastAndroid("Livro removido dos favoritos 💔");
+      showToastAndroid("Livro removido dos fa 💔");
     } catch (error) {
       console.error(error);
     }
