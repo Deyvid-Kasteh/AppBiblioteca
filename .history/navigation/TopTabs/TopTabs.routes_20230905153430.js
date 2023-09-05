@@ -21,12 +21,10 @@ export default function TopTabRoutes() {
           color: "#2B3640",
           fontWeight: "bold",
           textTransform: "capitalize",
-          // justifyContent: "center",
-          // alignItems: "center",
         },
         tabBarStyle: {
           backgroundColor: "#D9B391",
-          // height: 40,
+          height: 40,
           width: "100%",
           // alignSelf: "center",
           // alignItems: "center",

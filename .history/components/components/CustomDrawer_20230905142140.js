@@ -20,20 +20,8 @@ export default function CustomDrawer(props) {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        <View
-          style={{
-            // backgroundColor: "#D9B391",
-            backgroundColor: "#BF7F5A",
-
-            marginBottom: 40,
-            // margin: 10,
-            padding: 8,
-            borderRadius: 100,
-          }}
-        >
-          <Avatar width={110} height={110} />
-        </View>
+      ><></>
+        <Avatar width={110} height={110} />
         <Text
           style={{
             color: "#A65A49",

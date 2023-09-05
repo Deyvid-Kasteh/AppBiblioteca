@@ -145,11 +145,11 @@ function AuthProvider({ children }) {
       console.log(signInResult);
       if (signInResult !== null) {
         try {
-          navigation.navigate("HomeStart");
           const responseCreateSession = await createSession(
             signInResult.user.email,
             signInResult.user.id
           );
+          navigation.navigate("HomeStart");
           api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
           const responseUpdated = await api.get(
             `/Perfil/${responseCreateSession.data.user.id}`
@@ -163,7 +163,6 @@ function AuthProvider({ children }) {
           );
         } catch (error) {
           console.error(error);
-          showToastAndroid(`Algo deu errado 😵‍💫`);
         }
       }
     } catch (error) {

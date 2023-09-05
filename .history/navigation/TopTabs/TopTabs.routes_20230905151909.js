@@ -16,32 +16,13 @@ export default function TopTabRoutes() {
     <TopTab.Navigator
       screenOptions={{
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 10,
           // color: "#A65A49",
           color: "#2B3640",
           fontWeight: "bold",
-          textTransform: "capitalize",
-          // justifyContent: "center",
-          // alignItems: "center",
+          te
         },
-        tabBarStyle: {
-          backgroundColor: "#D9B391",
-          // height: 40,
-          width: "100%",
-          // alignSelf: "center",
-          // alignItems: "center",
-          justifyContent: "center",
-          // borderRadius: 10,
-          // borderBottomLeftRadius: 20,
-          // borderBottomRightRadius: 30,
-        },
-        tabBarIndicatorStyle: {
-          backgroundColor: "#A65A49",
-          height: 3,
-          // width: 50,
-          alignSelf: "center",
-          borderRadius: 10,
-        },
+        tabBarStyle: { backgroundColor: "#D9B391" },
       }}
     >
       <TopTab.Screen name="Best-Sellers" component={BestSellers} />

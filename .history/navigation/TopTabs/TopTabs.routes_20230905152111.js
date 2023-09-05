@@ -21,26 +21,11 @@ export default function TopTabRoutes() {
           color: "#2B3640",
           fontWeight: "bold",
           textTransform: "capitalize",
-          // justifyContent: "center",
-          // alignItems: "center",
         },
-        tabBarStyle: {
-          backgroundColor: "#D9B391",
-          // height: 40,
-          width: "100%",
-          // alignSelf: "center",
-          // alignItems: "center",
-          justifyContent: "center",
-          // borderRadius: 10,
-          // borderBottomLeftRadius: 20,
-          // borderBottomRightRadius: 30,
-        },
+        tabBarStyle: { backgroundColor: "#D9B391" },
         tabBarIndicatorStyle: {
           backgroundColor: "#A65A49",
           height: 3,
-          // width: 50,
-          alignSelf: "center",
-          borderRadius: 10,
         },
       }}
     >

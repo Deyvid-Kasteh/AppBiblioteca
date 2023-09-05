@@ -26,7 +26,7 @@ export default function TopTabRoutes() {
         },
         tabBarStyle: {
           backgroundColor: "#D9B391",
-          // height: 40,
+          height: 40,
           width: "100%",
           // alignSelf: "center",
           // alignItems: "center",

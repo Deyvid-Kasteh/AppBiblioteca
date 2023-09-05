@@ -23,13 +23,13 @@ export default function CustomDrawer(props) {
       >
         <View
           style={{
-            // backgroundColor: "#D9B391",
-            backgroundColor: "#BF7F5A",
+            backgroundColor: "#D9B391",
+            backgroundColor: "#D9B391",
 
             marginBottom: 40,
             // margin: 10,
             padding: 8,
-            borderRadius: 100,
+            borderRadius: 60,
           }}
         >
           <Avatar width={110} height={110} />

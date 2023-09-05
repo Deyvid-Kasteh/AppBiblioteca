@@ -29,7 +29,7 @@ export default function CustomDrawer(props) {
             marginBottom: 40,
             // margin: 10,
             padding: 8,
-            borderRadius: 100,
+            borderRadius: 16,
           }}
         >
           <Avatar width={110} height={110} />
