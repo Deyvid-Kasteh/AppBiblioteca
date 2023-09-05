@@ -35,7 +35,6 @@ const ShoppingCart = () => {
     >
       <Text>ShoppingCart</Text>
       <Button title="Show toast" onPress={showToast} />
-      <Button title="Show toast" onPress={showToastAndroid} />
     </View>
   );
 };

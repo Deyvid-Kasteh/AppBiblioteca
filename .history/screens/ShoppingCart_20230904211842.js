@@ -1,28 +1,10 @@
 import React, { useContext } from "react";
-import { Button, StyleSheet, Text, View, ToastAndroid } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import Toast from "react-native-toast-message";
 
 const ShoppingCart = () => {
   const { nome, signOutProcess, usuarioEstaLogado } = useContext(AuthContext);
-  const showToast = () => {
-    Toast.show({
-      type: "success",
-      text1: "Hello",
-      // text2: "This is some something 👋",
-    });
-    console.log("foi")
-  };
-
-  const showToastAndroid = () => {
-    ToastAndroid.showWithGravityAndOffset(
-      "Hello",
-      ToastAndroid.LONG,
-      ToastAndroid.BOTTOM,
-      25,
-      50
-    );
-  }
 
   return (
     <View
@@ -34,8 +16,6 @@ const ShoppingCart = () => {
       }}
     >
       <Text>ShoppingCart</Text>
-      <Button title="Show toast" onPress={showToast} />
-      <Button title="Show toast" onPress={showToastAndroid} />
     </View>
   );
 };

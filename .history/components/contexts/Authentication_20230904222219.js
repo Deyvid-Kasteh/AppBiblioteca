@@ -27,6 +27,8 @@ function AuthProvider({ children }) {
     );
   };
 
+
+
   // Inscrição sem google (SignInScreen)
   SignIn = async function (name, email, password) {
     console.log("Começou INSCRIÇÃO");
@@ -46,6 +48,8 @@ function AuthProvider({ children }) {
       console.error(error);
     }
   };
+
+
 
   // Inscrição COM google (SignInScreen)
   SignInGoogleProcess = async () => {
@@ -108,6 +112,8 @@ function AuthProvider({ children }) {
     }
   };
 
+
+
   // Login sem google (loginScreen)
   Login = async function (email, password) {
     console.log("Começou CONTEXT");
@@ -135,8 +141,11 @@ function AuthProvider({ children }) {
     }
   };
 
+
+
+
   // Login COM google (loginScreen)
-  LoginGoogleProcess = async () => {
+  SignInProcess = async () => {
     GoogleSignin.configure();
     try {
       console.log("Começou SIGN-IN");
@@ -161,9 +170,6 @@ function AuthProvider({ children }) {
           setUsuario(() => responseUpdated.data);
           setUsuarioEstaLogado(true);
           navigation.navigate("HomeStart");
-          showToastAndroid(
-            `Bem vindo! ${responseCreateSession.data.user.name} 🥳`
-          );
         } catch (error) {
           console.error(error);
         }
@@ -242,15 +248,16 @@ function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        usuario,
+        nome: "Deyvid Kasteh",
         usuarioEstaLogado,
+        SignInProcess,
+        signOutProcess,
+        usuario,
+        Login,
         SignIn,
         SignInGoogleProcess,
-        Login,
-        LoginGoogleProcess,
         Favoriter,
         Unfavorater,
-        signOutProcess,
       }}
     >
       {children}

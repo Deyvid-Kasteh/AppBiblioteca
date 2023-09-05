@@ -13,7 +13,7 @@ import { AuthContext } from "../components/contexts/Authentication";
 // import { useNavigation } from "@react-navigation/native";
 
 export default function LoginScreen({ navigation }) {
-  const { LoginGoogleProcess, Login } = useContext(AuthContext);
+  const { SignInProcess, Login } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

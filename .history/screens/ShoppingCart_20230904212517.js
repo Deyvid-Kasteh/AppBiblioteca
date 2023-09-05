@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button, StyleSheet, Text, View, ToastAndroid } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import Toast from "react-native-toast-message";
 
@@ -14,16 +14,6 @@ const ShoppingCart = () => {
     console.log("foi")
   };
 
-  const showToastAndroid = () => {
-    ToastAndroid.showWithGravityAndOffset(
-      "Hello",
-      ToastAndroid.LONG,
-      ToastAndroid.BOTTOM,
-      25,
-      50
-    );
-  }
-
   return (
     <View
       style={{
@@ -35,7 +25,6 @@ const ShoppingCart = () => {
     >
       <Text>ShoppingCart</Text>
       <Button title="Show toast" onPress={showToast} />
-      <Button title="Show toast" onPress={showToastAndroid} />
     </View>
   );
 };

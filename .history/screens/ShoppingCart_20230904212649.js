@@ -14,16 +14,6 @@ const ShoppingCart = () => {
     console.log("foi")
   };
 
-  const showToastAndroid = () => {
-    ToastAndroid.showWithGravityAndOffset(
-      "Hello",
-      ToastAndroid.LONG,
-      ToastAndroid.BOTTOM,
-      25,
-      50
-    );
-  }
-
   return (
     <View
       style={{
@@ -35,7 +25,6 @@ const ShoppingCart = () => {
     >
       <Text>ShoppingCart</Text>
       <Button title="Show toast" onPress={showToast} />
-      <Button title="Show toast" onPress={showToastAndroid} />
     </View>
   );
 };

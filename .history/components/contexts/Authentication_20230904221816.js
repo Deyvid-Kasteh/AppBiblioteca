@@ -27,7 +27,6 @@ function AuthProvider({ children }) {
     );
   };
 
-  // Inscrição sem google (SignInScreen)
   SignIn = async function (name, email, password) {
     console.log("Começou INSCRIÇÃO");
     const data = {
@@ -47,7 +46,6 @@ function AuthProvider({ children }) {
     }
   };
 
-  // Inscrição COM google (SignInScreen)
   SignInGoogleProcess = async () => {
     GoogleSignin.configure();
     try {
@@ -108,7 +106,6 @@ function AuthProvider({ children }) {
     }
   };
 
-  // Login sem google (loginScreen)
   Login = async function (email, password) {
     console.log("Começou CONTEXT");
 
@@ -132,53 +129,6 @@ function AuthProvider({ children }) {
     } catch (error) {
       console.log("veio pro error");
       console.error(error);
-    }
-  };
-
-  // Login COM google (loginScreen)
-  LoginGoogleProcess = async () => {
-    GoogleSignin.configure();
-    try {
-      console.log("Começou SIGN-IN");
-      await GoogleSignin.hasPlayServices();
-      const signInResult = await GoogleSignin.signIn();
-      console.log(signInResult);
-      if (signInResult !== null) {
-        try {
-          const responseCreateSession = await createSession(
-            signInResult.user.email,
-            signInResult.user.id
-          );
-          api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
-          console.log("============= TOKEN ===========");
-          console.log(responseCreateSession.data.token);
-          console.log("============= TOKEN ===========");
-          const responseUpdated = await api.get(
-            `/Perfil/${responseCreateSession.data.user.id}`
-          );
-          const jsonValue = JSON.stringify(responseUpdated.data);
-          await AsyncStorage.setItem("@user", jsonValue);
-          setUsuario(() => responseUpdated.data);
-          setUsuarioEstaLogado(true);
-          navigation.navigate("HomeStart");
-          showToastAndroid(
-            `Bem vindo! ${responseCreateSession.data.user.name} 🥳`
-          );
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.error("user cancelled the login flow");
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.error("operation (e.g. sign in) is in progress already");
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.error("play services not available or outdated");
-      } else {
-        console.error("some other error happened");
-        console.error(error);
-      }
     }
   };
 
@@ -221,6 +171,49 @@ function AuthProvider({ children }) {
     }
   };
 
+  SignInProcess = async () => {
+    GoogleSignin.configure();
+    try {
+      console.log("Começou SIGN-IN");
+      await GoogleSignin.hasPlayServices();
+      const signInResult = await GoogleSignin.signIn();
+      console.log(signInResult);
+      if (signInResult !== null) {
+        try {
+          const responseCreateSession = await createSession(
+            signInResult.user.email,
+            signInResult.user.id
+          );
+          api.defaults.headers.authorization = `Bearer ${responseCreateSession.data.token}`;
+          console.log("============= TOKEN ===========");
+          console.log(responseCreateSession.data.token);
+          console.log("============= TOKEN ===========");
+          const responseUpdated = await api.get(
+            `/Perfil/${responseCreateSession.data.user.id}`
+          );
+          const jsonValue = JSON.stringify(responseUpdated.data);
+          await AsyncStorage.setItem("@user", jsonValue);
+          setUsuario(() => responseUpdated.data);
+          setUsuarioEstaLogado(true);
+          navigation.navigate("HomeStart");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.error("user cancelled the login flow");
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.error("operation (e.g. sign in) is in progress already");
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.error("play services not available or outdated");
+      } else {
+        console.error("some other error happened");
+        console.error(error);
+      }
+    }
+  };
+
   signOutProcess = async () => {
     GoogleSignin.configure();
 
@@ -242,15 +235,16 @@ function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        usuario,
+        nome: "Deyvid Kasteh",
+        SignInProcess,
+        signOutProcess,
         usuarioEstaLogado,
+        usuario,
+        Login,
         SignIn,
         SignInGoogleProcess,
-        Login,
-        LoginGoogleProcess,
         Favoriter,
         Unfavorater,
-        signOutProcess,
       }}
     >
       {children}

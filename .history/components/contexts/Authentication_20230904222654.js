@@ -161,9 +161,7 @@ function AuthProvider({ children }) {
           setUsuario(() => responseUpdated.data);
           setUsuarioEstaLogado(true);
           navigation.navigate("HomeStart");
-          showToastAndroid(
-            `Bem vindo! ${responseCreateSession.data.user.name} 🥳`
-          );
+          showToastAndroid(`Bem vindo! ${response.data.user.name} 🥳`);
         } catch (error) {
           console.error(error);
         }
