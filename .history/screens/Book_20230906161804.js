@@ -14,7 +14,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthContext } from "../components/contexts/Authentication";
-import LoadingAppScreen from "./LoadingAppScreen";
 
 import sanitizeHtml from "sanitize-html";
 
@@ -253,7 +252,7 @@ export default function Book({ navigation: { goBack }, route }) {
           </View>
         </>
       ) : (
-        <LoadingAppScreen/>
+        <LoadingAppScreen/LoadingAppScreen>
       )}
     </View>
   );

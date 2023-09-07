@@ -30,7 +30,7 @@
         "projectId": "d9524dcc-444f-4d87-84e9-741a1c4ff328"
       }
     },
-    "scheme": ["AppBiblioteca"],
+    "scheme": {}"AppBiblioteca",
     "plugins": ["@react-native-google-signin/google-signin"]
   }
 }
