@@ -1,7 +1,12 @@
 import "react-native-gesture-handler";
 import {
+  Button,
   Platform,
+  SafeAreaView,
   StatusBar,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
@@ -12,7 +17,6 @@ export default function MainNavigation() {
   return (
     <NavigationContainer>
       <AuthProvider>
-        <StatusBar backgroundColor="#A65A49" barStyle="dark-content" />
         <DrawerRoutes />
       </AuthProvider>
     </NavigationContainer>

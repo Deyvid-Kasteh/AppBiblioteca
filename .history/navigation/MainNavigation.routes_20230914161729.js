@@ -12,7 +12,10 @@ export default function MainNavigation() {
   return (
     <NavigationContainer>
       <AuthProvider>
-        <StatusBar backgroundColor="#A65A49" barStyle="dark-content" />
+        <StatusBar
+          animated={true}
+          backgroundColor="#61dafb"
+        />
         <DrawerRoutes />
       </AuthProvider>
     </NavigationContainer>
