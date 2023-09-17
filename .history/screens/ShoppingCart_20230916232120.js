@@ -1,0 +1,40 @@
+import React, { useContext } from "react";
+import { Button, StyleSheet, Text, View, ToastAndroid } from "react-native";
+import { AuthContext } from "../components/contexts/Authentication";
+import Toast from "react-native-toast-message";
+
+const ShoppingCart = () => {
+  const { usuarioEstaLogado, usuario } = useContext(AuthContext);
+  const navigation = useNavigation();
+  const LivrosShoppingCart = usuario?.shoppingCart;
+
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#D9B391",
+      }}
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </View>
+  );
+};
+
+export default ShoppingCart;
+
+const styles = StyleSheet.create({});
