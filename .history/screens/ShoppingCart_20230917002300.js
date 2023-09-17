@@ -84,7 +84,6 @@ const ShoppingCart = () => {
                           backgroundColor: "blue",
                           height: 128,
                           borderRadius: 10,
-                          overflow: "hidden",
                         }}
                       >
                         <View

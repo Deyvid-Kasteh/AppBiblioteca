@@ -45,6 +45,7 @@ const ShoppingCart = () => {
                     margin: 15,
                     flexDirection: "row",
                     alignItems: "center",
+
                     borderRadius: 10,
                   }}
                   key={livro.idLivro}
@@ -81,26 +82,18 @@ const ShoppingCart = () => {
                       </TouchableOpacity>
                       <View
                         style={{
-                          backgroundColor: "blue",
-                          height: 128,
-                          borderRadius: 10,
-                          overflow: "hidden",
+                          backgroundColor: "#f5efe1",
                         }}
                       >
-                        <View
-                          style={{
-                            backgroundColor: "green",
-                            height: 100,
-                          }}
-                        >
-                          <Text>Descrição:</Text>
+                        <View style={{ backgroundColor: "#f5efe1" }}>
+                          <Text>Descrição</Text>
                         </View>
                         <View
                           style={{
                             flexDirection: "row",
                             justifyContent: "space-around",
                             width: 250,
-                            backgroundColor: "orange",
+                            backgroundColor: "#f5efe1",
                           }}
                         >
                           <View>

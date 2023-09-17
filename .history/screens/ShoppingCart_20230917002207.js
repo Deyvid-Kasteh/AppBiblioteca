@@ -45,6 +45,7 @@ const ShoppingCart = () => {
                     margin: 15,
                     flexDirection: "row",
                     alignItems: "center",
+
                     borderRadius: 10,
                   }}
                   key={livro.idLivro}
@@ -83,8 +84,6 @@ const ShoppingCart = () => {
                         style={{
                           backgroundColor: "blue",
                           height: 128,
-                          borderRadius: 10,
-                          overflow: "hidden",
                         }}
                       >
                         <View

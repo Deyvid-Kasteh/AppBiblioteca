@@ -8,6 +8,7 @@ const ShoppingCart = () => {
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
 
+
   return (
     <View
       style={{
@@ -45,6 +46,7 @@ const ShoppingCart = () => {
                     margin: 15,
                     flexDirection: "row",
                     alignItems: "center",
+
                     borderRadius: 10,
                   }}
                   key={livro.idLivro}
@@ -79,37 +81,10 @@ const ShoppingCart = () => {
                           }}
                         />
                       </TouchableOpacity>
-                      <View
-                        style={{
-                          backgroundColor: "blue",
-                          height: 128,
-                          borderRadius: 10,
-                          overflow: "hidden",
-                        }}
-                      >
-                        <View
-                          style={{
-                            backgroundColor: "green",
-                            height: 100,
-                          }}
-                        >
-                          <Text>Descrição:</Text>
-                        </View>
-                        <View
-                          style={{
-                            flexDirection: "row",
-                            justifyContent: "space-around",
-                            width: 250,
-                            backgroundColor: "orange",
-                          }}
-                        >
-                          <View>
-                            <Text>Quantidade</Text>
-                          </View>
-                          <View>
-                            <Text>Preço</Text>
-                          </View>
-                        </View>
+                      <View>
+                        <View></View>
+                        <View></View>
+                        
                       </View>
                     </>
                   ) : null}
