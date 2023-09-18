@@ -161,27 +161,10 @@ const ShoppingCart = () => {
       <View
         style={{
           flex: 0.2,
-          width: "100%",
           alignSelf: "center",
           backgroundColor: "pink",
-          flexDirection: "row",
         }}
-      >
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Total
-        </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Comprar
-        </Text>
-      </View>
+      ></View>
     </View>
   );
 };

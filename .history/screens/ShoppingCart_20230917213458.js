@@ -179,7 +179,7 @@ const ShoppingCart = () => {
             alignSelf: "center",
           }}
         >
-          Comprar
+          Pagar
         </Text>
       </View>
     </View>

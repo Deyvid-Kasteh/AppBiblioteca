@@ -14,21 +14,21 @@ const ShoppingCart = () => {
     <View
       style={{
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#F2E2C4",
       }}
     >
-      <View
-        style={{
-          flex: 0.8,
-          width: "100%",
-          overflow: "hidden",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {usuarioEstaLogado ? (
+      {usuarioEstaLogado ? (
+        <View
+          style={{
+            flex: 1,
+            width: "100%",
+            overflow: "hidden",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <ScrollView>
             <View
               style={{
@@ -52,24 +52,15 @@ const ShoppingCart = () => {
                   key={livro.idLivro}
                 >
                   {livro.imgLivro ? (
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <>
                       <BouncyCheckbox
-                        style={{
-                          margin: 0,
-                          marginLeft: 10,
-                          // backgroundColor: "#2B3640",
-                        }}
                         size={25}
-                        fillColor="#BF7F5A"
-                        unfillColor="#f5efe1"
+                        fillColor="red"
+                        unfillColor="#FFFFFF"
+                        // iconStyle={{ borderColor: "red" }}
                         innerIconStyle={{ borderWidth: 3 }}
-                        // onPress={(isChecked: boolean) => {}}
+                        textStyle={{ fontFamily: "JosefinSans-Regular" }}
+                        onPress={(isChecked: boolean) => {}}
                       />
                       <TouchableOpacity
                         key={livro.idLivro}
@@ -78,7 +69,7 @@ const ShoppingCart = () => {
                           borderColor: "#f5efe1",
                           borderRadius: 10,
                           overflow: "hidden",
-                          margin: 1,
+                          margin: 8,
                         }}
                         onPress={() => {
                           navigation.navigate("HomeStackRoutes", {
@@ -102,7 +93,7 @@ const ShoppingCart = () => {
                       <View
                         style={{
                           // backgroundColor: "blue",
-                          width: "55%",
+                          width: "60%",
                           height: 128,
                           borderRadius: 10,
                           overflow: "hidden",
@@ -123,7 +114,7 @@ const ShoppingCart = () => {
                               flexWrap: "wrap",
                             }}
                           >
-                            {livro.ttlLivro}
+                            Título: {livro.ttlLivro}
                           </Text>
                         </View>
                         <View
@@ -131,57 +122,33 @@ const ShoppingCart = () => {
                             flexDirection: "row",
                             justifyContent: "space-around",
                             height: 28,
-                            backgroundColor: "#D9B391",
+                            backgroundColor: "orange",
                           }}
                         >
                           <View>
-                            <Text>Preço</Text>
+                            <Text>Quantidade</Text>
                           </View>
                           <View>
-                            <Text>Quantidade</Text>
+                            <Text>Preço</Text>
                           </View>
                         </View>
                       </View>
-                    </View>
+                    </>
                   ) : null}
                 </View>
               ))}
             </View>
           </ScrollView>
-        ) : (
-          <Text
-            style={{
-              alignSelf: "center",
-            }}
-          >
-            Por favor faça login
-          </Text>
-        )}
-      </View>
-      <View
-        style={{
-          flex: 0.2,
-          width: "100%",
-          alignSelf: "center",
-          backgroundColor: "pink",
-          flexDirection: "row",
-        }}
-      >
+        </View>
+      ) : (
         <Text
           style={{
             alignSelf: "center",
           }}
         >
-          Total
+          Por favor faça login
         </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Comprar
-        </Text>
-      </View>
+      )}
     </View>
   );
 };

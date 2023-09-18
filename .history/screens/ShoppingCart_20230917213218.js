@@ -172,14 +172,14 @@ const ShoppingCart = () => {
             alignSelf: "center",
           }}
         >
-          Total
+          Por favor faça login
         </Text>
         <Text
           style={{
             alignSelf: "center",
           }}
         >
-          Comprar
+          Por favor faça login
         </Text>
       </View>
     </View>

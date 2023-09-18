@@ -160,11 +160,9 @@ const ShoppingCart = () => {
       </View>
       <View
         style={{
-          flex: 0.2,
-          width: "100%",
+          flex: 1,
           alignSelf: "center",
           backgroundColor: "pink",
-          flexDirection: "row",
         }}
       >
         <Text
@@ -172,14 +170,7 @@ const ShoppingCart = () => {
             alignSelf: "center",
           }}
         >
-          Total
-        </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Comprar
+          Por favor faça login
         </Text>
       </View>
     </View>

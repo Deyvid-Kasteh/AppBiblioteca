@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const ShoppingCart = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
@@ -14,21 +13,21 @@ const ShoppingCart = () => {
     <View
       style={{
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#F2E2C4",
       }}
     >
-      <View
-        style={{
-          flex: 0.8,
-          width: "100%",
-          overflow: "hidden",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {usuarioEstaLogado ? (
+      {usuarioEstaLogado ? (
+        <View
+          style={{
+            flex: 0.88,
+            width: "100%",
+            overflow: "hidden",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <ScrollView>
             <View
               style={{
@@ -44,7 +43,7 @@ const ShoppingCart = () => {
                     backgroundColor: "#f5efe1",
                     width: "90%",
                     height: 150,
-                    margin: 5,
+                    margin: 15,
                     flexDirection: "row",
                     alignItems: "center",
                     borderRadius: 10,
@@ -52,25 +51,7 @@ const ShoppingCart = () => {
                   key={livro.idLivro}
                 >
                   {livro.imgLivro ? (
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <BouncyCheckbox
-                        style={{
-                          margin: 0,
-                          marginLeft: 10,
-                          // backgroundColor: "#2B3640",
-                        }}
-                        size={25}
-                        fillColor="#BF7F5A"
-                        unfillColor="#f5efe1"
-                        innerIconStyle={{ borderWidth: 3 }}
-                        // onPress={(isChecked: boolean) => {}}
-                      />
+                    <>
                       <TouchableOpacity
                         key={livro.idLivro}
                         style={{
@@ -78,7 +59,7 @@ const ShoppingCart = () => {
                           borderColor: "#f5efe1",
                           borderRadius: 10,
                           overflow: "hidden",
-                          margin: 1,
+                          margin: 8,
                         }}
                         onPress={() => {
                           navigation.navigate("HomeStackRoutes", {
@@ -101,8 +82,7 @@ const ShoppingCart = () => {
                       </TouchableOpacity>
                       <View
                         style={{
-                          // backgroundColor: "blue",
-                          width: "55%",
+                          backgroundColor: "blue",
                           height: 128,
                           borderRadius: 10,
                           overflow: "hidden",
@@ -110,78 +90,48 @@ const ShoppingCart = () => {
                       >
                         <View
                           style={{
-                            // backgroundColor: "green",
+                            backgroundColor: "green",
                             height: 100,
                             flexDirection: "row",
                             flexWrap: "wrap",
-                            padding: 10,
                           }}
                         >
-                          <Text
-                            style={{
-                              flexDirection: "row",
-                              flexWrap: "wrap",
-                            }}
-                          >
-                            {livro.ttlLivro}
-                          </Text>
+                          <Text style={{
+
+                          }}>Descrição: {livro.ttlLivro}</Text>
                         </View>
                         <View
                           style={{
                             flexDirection: "row",
                             justifyContent: "space-around",
-                            height: 28,
-                            backgroundColor: "#D9B391",
+                            width: 250,
+                            backgroundColor: "orange",
                           }}
                         >
                           <View>
-                            <Text>Preço</Text>
+                            <Text>Quantidade</Text>
                           </View>
                           <View>
-                            <Text>Quantidade</Text>
+                            <Text>Preço</Text>
                           </View>
                         </View>
                       </View>
-                    </View>
+                    </>
                   ) : null}
                 </View>
               ))}
             </View>
           </ScrollView>
-        ) : (
-          <Text
-            style={{
-              alignSelf: "center",
-            }}
-          >
-            Por favor faça login
-          </Text>
-        )}
-      </View>
-      <View
-        style={{
-          flex: 0.2,
-          width: "100%",
-          alignSelf: "center",
-          backgroundColor: "pink",
-          flexDirection: "row",
-        }}
-      >
+        </View>
+      ) : (
         <Text
           style={{
             alignSelf: "center",
           }}
         >
-          Total
+          Por favor faça login
         </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Comprar
-        </Text>
-      </View>
+      )}
     </View>
   );
 };

@@ -17,18 +17,20 @@ const ShoppingCart = () => {
         justifyContent: "flex-start",
         alignItems: "center",
         backgroundColor: "#F2E2C4",
+
       }}
     >
-      <View
-        style={{
-          flex: 0.8,
-          width: "100%",
-          overflow: "hidden",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {usuarioEstaLogado ? (
+      <></>
+      {usuarioEstaLogado ? (
+        <View
+          style={{
+            flex: 0.8,
+            width: "100%",
+            overflow: "hidden",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <ScrollView>
             <View
               style={{
@@ -148,40 +150,16 @@ const ShoppingCart = () => {
               ))}
             </View>
           </ScrollView>
-        ) : (
-          <Text
-            style={{
-              alignSelf: "center",
-            }}
-          >
-            Por favor faça login
-          </Text>
-        )}
-      </View>
-      <View
-        style={{
-          flex: 0.2,
-          width: "100%",
-          alignSelf: "center",
-          backgroundColor: "pink",
-          flexDirection: "row",
-        }}
-      >
+        </View>
+      ) : (
         <Text
           style={{
             alignSelf: "center",
           }}
         >
-          Total
+          Por favor faça login
         </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          Comprar
-        </Text>
-      </View>
+      )}
     </View>
   );
 };
