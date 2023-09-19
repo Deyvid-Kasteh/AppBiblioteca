@@ -162,7 +162,7 @@ const ShoppingCart = () => {
                                 width: 90,
                                 flexDirection: "row",
                                 alignItems: "center",
-                                // backgroundColor: "red",
+                                backgroundColor: "red",
                               }}
                             >
                               <Text>$</Text>
@@ -202,8 +202,8 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
-                                // backgroundColor: "red",
+                                marginTop: 10,
+                                backgroundColor: "red",
                               }}
                             >
                               <TouchableOpacity

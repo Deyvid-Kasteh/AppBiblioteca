@@ -3,9 +3,9 @@ import { useState } from "react";
 const [quantidade, setQuantidade] = useState(1);
 
 style = {{
-    fontsize: 20,
-        fontWeight: "bold",
-            marginTop: 10,
+    fontsize: 20
+    fontWeight: "bold",
+        marginTop:
 }}
 
 setQuantidade(quantidade + 1)

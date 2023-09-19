@@ -152,6 +152,8 @@ const ShoppingCart = () => {
                               display: "flex",
                               // backgroundColor: "green",
                               width: 100,
+                              // justifyContent: "center",
+                              // alignContent: "center",
                               alignItems: "center",
                             }}
                           >
@@ -159,24 +161,23 @@ const ShoppingCart = () => {
                             <View
                               style={{
                                 display: "flex",
-                                width: 90,
                                 flexDirection: "row",
                                 alignItems: "center",
-                                // backgroundColor: "red",
+                                backgroundColor: "red",
                               }}
                             >
                               <Text>$</Text>
 
                               <View
                                 style={{
-                                  width: 80,
+                                  width: 60,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}
                               >
                                 <Text
                                   style={{
-                                    fontSize: 30,
+                                    fontSize: 24,
                                     fontWeight: "bold",
                                     color: "#2B3640",
                                   }}
@@ -202,7 +203,6 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
                                 // backgroundColor: "red",
                               }}
                             >

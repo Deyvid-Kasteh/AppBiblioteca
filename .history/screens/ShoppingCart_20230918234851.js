@@ -20,7 +20,7 @@ const ShoppingCart = () => {
   const [precoTotal, setPrecoTotal] = useState(0);
 
   const preco = 5.99;
-  // console.log(LivrosShoppingCart);
+  console.log(LivrosShoppingCart);
 
   return (
     <View
@@ -152,6 +152,8 @@ const ShoppingCart = () => {
                               display: "flex",
                               // backgroundColor: "green",
                               width: 100,
+                              // justifyContent: "center",
+                              // alignContent: "center",
                               alignItems: "center",
                             }}
                           >
@@ -159,7 +161,6 @@ const ShoppingCart = () => {
                             <View
                               style={{
                                 display: "flex",
-                                width: 90,
                                 flexDirection: "row",
                                 alignItems: "center",
                                 // backgroundColor: "red",
@@ -169,19 +170,19 @@ const ShoppingCart = () => {
 
                               <View
                                 style={{
-                                  width: 80,
+                                  width: 45,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}
                               >
                                 <Text
                                   style={{
-                                    fontSize: 30,
+                                    fontSize: 24,
                                     fontWeight: "bold",
                                     color: "#2B3640",
                                   }}
                                 >
-                                  {preco}
+                                  {quantidade}
                                 </Text>
                               </View>
                             </View>
@@ -202,7 +203,6 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
                                 // backgroundColor: "red",
                               }}
                             >

@@ -202,8 +202,9 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
-                                // backgroundColor: "red",
+                                marginTop: 10,
+
+                                backgroundColor: "red",
                               }}
                             >
                               <TouchableOpacity

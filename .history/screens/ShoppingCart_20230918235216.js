@@ -176,7 +176,7 @@ const ShoppingCart = () => {
                               >
                                 <Text
                                   style={{
-                                    fontSize: 30,
+                                    fontSize: 24,
                                     fontWeight: "bold",
                                     color: "#2B3640",
                                   }}
@@ -189,7 +189,7 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
+                              backgroundColor: "green",
                               width: 100,
                               // justifyContent: "center",
                               // alignContent: "center",
@@ -202,7 +202,6 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
                                 // backgroundColor: "red",
                               }}
                             >

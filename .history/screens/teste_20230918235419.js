@@ -4,8 +4,7 @@ const [quantidade, setQuantidade] = useState(1);
 
 style = {{
     fontsize: 20,
-        fontWeight: "bold",
-            marginTop: 10,
+    fontWeight: "bold",marginTop: 10,
 }}
 
 setQuantidade(quantidade + 1)

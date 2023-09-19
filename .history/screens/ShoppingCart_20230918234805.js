@@ -17,10 +17,7 @@ const ShoppingCart = () => {
   const [quantidade, setQuantidade] = useState(1);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
-  const [precoTotal, setPrecoTotal] = useState(0);
-
-  const preco = 5.99;
-  // console.log(LivrosShoppingCart);
+  console.log(LivrosShoppingCart);
 
   return (
     <View
@@ -152,6 +149,8 @@ const ShoppingCart = () => {
                               display: "flex",
                               // backgroundColor: "green",
                               width: 100,
+                              // justifyContent: "center",
+                              // alignContent: "center",
                               alignItems: "center",
                             }}
                           >
@@ -159,31 +158,39 @@ const ShoppingCart = () => {
                             <View
                               style={{
                                 display: "flex",
-                                width: 90,
                                 flexDirection: "row",
                                 alignItems: "center",
                                 // backgroundColor: "red",
                               }}
                             >
-                              <Text>$</Text>
+                              <Text>R$</Text>
 
                               <View
                                 style={{
-                                  width: 80,
+                                  width: 45,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}
                               >
                                 <Text
                                   style={{
-                                    fontSize: 30,
+                                    fontSize: 24,
                                     fontWeight: "bold",
                                     color: "#2B3640",
                                   }}
                                 >
-                                  {preco}
+                                  {quantidade}
                                 </Text>
                               </View>
+                              <TouchableOpacity
+                                onPress={() => setQuantidade(quantidade + 1)}
+                              >
+                                <AntDesign
+                                  name="pluscircleo"
+                                  size={18}
+                                  color="#2B3640"
+                                />
+                              </TouchableOpacity>
                             </View>
                           </View>
                           <View
@@ -202,7 +209,6 @@ const ShoppingCart = () => {
                                 display: "flex",
                                 flexDirection: "row",
                                 alignItems: "center",
-                                marginTop: 6,
                                 // backgroundColor: "red",
                               }}
                             >
