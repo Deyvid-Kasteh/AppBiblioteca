@@ -11,7 +11,6 @@ import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { AntDesign } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
 
 const ShoppingCart = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
@@ -48,7 +47,6 @@ const ShoppingCart = () => {
             height: 40,
             margin: 5,
             flexDirection: "row",
-            justifyContent: "space-between",
             alignItems: "center",
             borderRadius: 10,
           }}
@@ -65,46 +63,22 @@ const ShoppingCart = () => {
                 marginLeft: 10,
                 // backgroundColor: "#2B3640",
               }}
-              text="TUDO"
-              textStyle={{
-                fontSize: 16,
-                fontWeight: "bold",
-                color: "#2B3640",
-                textDecorationLine: "none",
-              }}
               size={25}
               fillColor="#D9B391"
               unfillColor="#f5efe1"
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
-              style={{
-                fontSize: 16,
-                fontWeight: "bold",
-                color: "#2B3640",
-              }}
-            >
-              TUDO
-            </Text> */}
+            <Text></Text>
           </View>
-          <TouchableOpacity
+          <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginRight: 10,
             }}
           >
-            <Ionicons name="ios-trash-outline" size={24} color="#2d3741" />
-            <Text
-              style={{
-                fontSize: 12,
-                color: "#2d3741",
-              }}
-            >
-              EXCLUIR
-            </Text>
-          </TouchableOpacity>
+            <Text>trgrthtr</Text>
+          </View>
         </View>
         {usuarioEstaLogado ? (
           <ScrollView>

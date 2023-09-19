@@ -65,20 +65,13 @@ const ShoppingCart = () => {
                 marginLeft: 10,
                 // backgroundColor: "#2B3640",
               }}
-              text="TUDO"
-              textStyle={{
-                fontSize: 16,
-                fontWeight: "bold",
-                color: "#2B3640",
-                textDecorationLine: "none",
-              }}
               size={25}
               fillColor="#D9B391"
               unfillColor="#f5efe1"
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 16,
                 fontWeight: "bold",
@@ -86,25 +79,24 @@ const ShoppingCart = () => {
               }}
             >
               TUDO
-            </Text> */}
+            </Text>
           </View>
-          <TouchableOpacity
+          <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              marginRight: 10,
             }}
           >
-            <Ionicons name="ios-trash-outline" size={24} color="#2d3741" />
+            <Ionicons name="ios-trash-outline" size={24} color="black" />
             <Text
               style={{
-                fontSize: 12,
+                fontSize: 20,
                 color: "#2d3741",
               }}
             >
               EXCLUIR
             </Text>
-          </TouchableOpacity>
+          </View>
         </View>
         {usuarioEstaLogado ? (
           <ScrollView>

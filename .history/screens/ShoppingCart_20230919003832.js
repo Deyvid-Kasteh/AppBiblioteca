@@ -66,12 +66,7 @@ const ShoppingCart = () => {
                 // backgroundColor: "#2B3640",
               }}
               text="TUDO"
-              textStyle={{
-                fontSize: 16,
-                fontWeight: "bold",
-                color: "#2B3640",
-                textDecorationLine: "none",
-              }}
+              textStyle={{ fontSize: 16, fontWeight: "bold", color: "#2B3640" }}
               size={25}
               fillColor="#D9B391"
               unfillColor="#f5efe1"

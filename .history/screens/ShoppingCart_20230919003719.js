@@ -65,20 +65,14 @@ const ShoppingCart = () => {
                 marginLeft: 10,
                 // backgroundColor: "#2B3640",
               }}
-              text="TUDO"
-              textStyle={{
-                fontSize: 16,
-                fontWeight: "bold",
-                color: "#2B3640",
-                textDecorationLine: "none",
-              }}
+              text="Custom Checkbox"
               size={25}
               fillColor="#D9B391"
               unfillColor="#f5efe1"
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 16,
                 fontWeight: "bold",
@@ -86,7 +80,7 @@ const ShoppingCart = () => {
               }}
             >
               TUDO
-            </Text> */}
+            </Text>
           </View>
           <TouchableOpacity
             style={{
