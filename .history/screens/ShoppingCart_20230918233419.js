@@ -166,19 +166,17 @@ const ShoppingCart = () => {
                                 // backgroundColor: "red",
                               }}
                             >
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade - 1)}
-                              >
+                              <TouchableOpacity>
                                 <AntDesign
                                   name="minuscircleo"
                                   size={18}
-                                  color="#2B3640"
+                                  color="black"
                                 />
                               </TouchableOpacity>
 
                               <View
                                 style={{
-                                  width: 45,
+                                  width: 40,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}
@@ -187,19 +185,16 @@ const ShoppingCart = () => {
                                   style={{
                                     fontSize: 24,
                                     fontWeight: "bold",
-                                    color: "#2B3640",
                                   }}
                                 >
                                   {quantidade}
                                 </Text>
                               </View>
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade + 1)}
-                              >
+                              <TouchableOpacity>
                                 <AntDesign
                                   name="pluscircleo"
                                   size={18}
-                                  color="#2B3640"
+                                  color="black"
                                 />
                               </TouchableOpacity>
                             </View>

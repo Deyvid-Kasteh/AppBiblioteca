@@ -1,20 +1,11 @@
-import React, { useContext, useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  TextInput,
-} from "react-native";
+import React, { useContext } from "react";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { AntDesign } from "@expo/vector-icons";
 
 const ShoppingCart = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
-  const [quantidade, setQuantidade] = useState(1);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
   console.log(LivrosShoppingCart);
@@ -75,7 +66,7 @@ const ShoppingCart = () => {
                           // backgroundColor: "#2B3640",
                         }}
                         size={25}
-                        fillColor="#D9B391"
+                        fillColor="#BF7F5A"
                         unfillColor="#f5efe1"
                         innerIconStyle={{ borderWidth: 3 }}
                         // onPress={(isChecked: boolean) => {}}
@@ -111,7 +102,7 @@ const ShoppingCart = () => {
                       <View
                         style={{
                           // backgroundColor: "blue",
-                          width: "60%",
+                          width: "55%",
                           height: 128,
                           borderRadius: 10,
                           overflow: "hidden",
@@ -120,7 +111,7 @@ const ShoppingCart = () => {
                         <View
                           style={{
                             // backgroundColor: "green",
-                            height: 60,
+                            height: 100,
                             flexDirection: "row",
                             flexWrap: "wrap",
                             padding: 10,
@@ -130,7 +121,6 @@ const ShoppingCart = () => {
                             style={{
                               flexDirection: "row",
                               flexWrap: "wrap",
-                              fontWeight: "bold",
                             }}
                           >
                             {livro.ttlLivro}
@@ -140,69 +130,15 @@ const ShoppingCart = () => {
                           style={{
                             flexDirection: "row",
                             justifyContent: "space-around",
-                            height: 60,
-                            // backgroundColor: "#D9B391",
+                            height: 28,
+                            backgroundColor: "#D9B391",
                           }}
                         >
                           <View>
-                            <Text>Preço:</Text>
+                            <Text>Preço</Text>
                           </View>
-                          <View
-                            style={{
-                              display: "flex",
-                              // backgroundColor: "green",
-                              width: 100,
-                              // justifyContent: "center",
-                              // alignContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <Text>Quantidade:</Text>
-                            <View
-                              style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                alignItems: "center",
-                                // backgroundColor: "red",
-                              }}
-                            >
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade - 1)}
-                              >
-                                <AntDesign
-                                  name="minuscircleo"
-                                  size={18}
-                                  color="#2B3640"
-                                />
-                              </TouchableOpacity>
-
-                              <View
-                                style={{
-                                  width: 45,
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                }}
-                              >
-                                <Text
-                                  style={{
-                                    fontSize: 24,
-                                    fontWeight: "bold",
-                                    color: "#2B3640",
-                                  }}
-                                >
-                                  {quantidade}
-                                </Text>
-                              </View>
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade + 1)}
-                              >
-                                <AntDesign
-                                  name="pluscircleo"
-                                  size={18}
-                                  color="#2B3640"
-                                />
-                              </TouchableOpacity>
-                            </View>
+                          <View>
+                            <Text>Quantidade</Text>
                           </View>
                         </View>
                       </View>
@@ -224,59 +160,33 @@ const ShoppingCart = () => {
       </View>
       <View
         style={{
-          flex: 0.12,
+          flex: 0.10,
           width: "100%",
-          backgroundColor: "#D9B391",
+          backgroundColor: "#BF7F5A",
           flexDirection: "row",
           justifyContent: "space-around",
-          alignItems: "flex-start",
-          borderTopRightRadius: 20,
-          borderTopLeftRadius: 20,
+          alignItems: "center",
         }}
       >
-        <View
-          style={{
-            display: "flex",
-            marginTop: 10,
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        >
+        <View style={{}}>
           <Text
             style={{
-              padding: 10,
-              fontSize: 20,
-              color: "#2d3741",
+              alignSelf: "center",
             }}
           >
             Total:
           </Text>
         </View>
-        <View
-          style={{
-            display: "flex",
-            marginTop: 10,
-            position: "absolute",
-            right: 16,
-          }}
-        >
+        <View>
           <TouchableOpacity
             style={{
               padding: 10,
               alignSelf: "center",
-              backgroundColor: "#BF7F5A",
-              borderRadius: 20,
+              backgroundColor: "#A65A49",
+              borderRadius: 5,
             }}
           >
-            <Text
-              style={{
-                fontSize: 20,
-                color: "#2d3741",
-              }}
-            >
-              Comprar
-            </Text>
+            <Text>Comprar</Text>
           </TouchableOpacity>
         </View>
       </View>

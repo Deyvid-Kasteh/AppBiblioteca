@@ -1,12 +1,5 @@
-import React, { useContext, useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  TextInput,
-} from "react-native";
+import React, { useContext } from "react";
+import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -14,7 +7,6 @@ import { AntDesign } from "@expo/vector-icons";
 
 const ShoppingCart = () => {
   const { usuarioEstaLogado, usuario } = useContext(AuthContext);
-  const [quantidade, setQuantidade] = useState(1);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
   console.log(LivrosShoppingCart);
@@ -141,7 +133,7 @@ const ShoppingCart = () => {
                             flexDirection: "row",
                             justifyContent: "space-around",
                             height: 60,
-                            // backgroundColor: "#D9B391",
+                            backgroundColor: "#D9B391",
                           }}
                         >
                           <View>
@@ -150,11 +142,9 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
+                              backgroundColor: "green",
                               width: 100,
-                              // justifyContent: "center",
-                              // alignContent: "center",
-                              alignItems: "center",
+                              justifyContent: "center",
                             }}
                           >
                             <Text>Quantidade:</Text>
@@ -162,46 +152,25 @@ const ShoppingCart = () => {
                               style={{
                                 display: "flex",
                                 flexDirection: "row",
-                                alignItems: "center",
                                 // backgroundColor: "red",
                               }}
                             >
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade - 1)}
-                              >
-                                <AntDesign
-                                  name="minuscircleo"
-                                  size={18}
-                                  color="#2B3640"
-                                />
-                              </TouchableOpacity>
-
+                              <AntDesign
+                                name="minuscircleo"
+                                size={18}
+                                color="black"
+                              />
                               <View
                                 style={{
-                                  width: 45,
-                                  justifyContent: "center",
-                                  alignItems: "center",
+                                  width: 50,
+
                                 }}
-                              >
-                                <Text
-                                  style={{
-                                    fontSize: 24,
-                                    fontWeight: "bold",
-                                    color: "#2B3640",
-                                  }}
-                                >
-                                  {quantidade}
-                                </Text>
-                              </View>
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade + 1)}
-                              >
-                                <AntDesign
-                                  name="pluscircleo"
-                                  size={18}
-                                  color="#2B3640"
-                                />
-                              </TouchableOpacity>
+                              ></View>
+                              <AntDesign
+                                name="pluscircleo"
+                                size={18}
+                                color="black"
+                              />
                             </View>
                           </View>
                         </View>

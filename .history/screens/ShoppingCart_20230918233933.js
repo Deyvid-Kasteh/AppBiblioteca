@@ -166,9 +166,7 @@ const ShoppingCart = () => {
                                 // backgroundColor: "red",
                               }}
                             >
-                              <TouchableOpacity
-                                onPress={() => setQuantidade(quantidade - 1)}
-                              >
+                              <TouchableOpacity>
                                 <AntDesign
                                   name="minuscircleo"
                                   size={18}
@@ -178,7 +176,7 @@ const ShoppingCart = () => {
 
                               <View
                                 style={{
-                                  width: 45,
+                                  width: 40,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}

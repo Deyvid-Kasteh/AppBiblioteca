@@ -1,0 +1,1 @@
+const [quantidade, setquantidade] = useState(initialState);
