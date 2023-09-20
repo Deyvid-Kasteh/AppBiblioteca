@@ -104,7 +104,7 @@ export default function Book({ navigation: { goBack }, route }) {
   };
 
   useEffect(() => {
-    BuscaLivro(route.params.idLivro);
+    // BuscaLivro(route.params.idLivro);
   }, []);
   return (
     <View
@@ -219,30 +219,13 @@ export default function Book({ navigation: { goBack }, route }) {
             <View
               style={{
                 flexDirection: "row",
-                width: "100%",
+                width: '90%',
                 marginTop: 20,
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "green",
               }}
             >
-              <View
-                style={{
-                  width: 80,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 30,
-                    fontWeight: "bold",
-                    color: "#2B3640",
-                  }}
-                >
-                  {/* {preco} */}
-                </Text>
-              </View>
               <TouchableOpacity
                 style={{
                   width: 120,

@@ -24,12 +24,9 @@ const ShoppingCart = () => {
   // console.log(LivrosShoppingCart);
 
   const handlequantity = (item, action) => {
-    if (action === decrease) {
+    if (action === increase) { } else if (action === decrease) { }
 
-    } else if (action === increase) {
-      
-    }
-
+    
 
   }
 

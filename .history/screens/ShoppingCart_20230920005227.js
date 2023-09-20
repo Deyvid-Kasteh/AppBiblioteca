@@ -23,16 +23,6 @@ const ShoppingCart = () => {
   const preco = 5.99;
   // console.log(LivrosShoppingCart);
 
-  const handlequantity = (item, action) => {
-    if (action === decrease) {
-
-    } else if (action === increase) {
-      
-    }
-
-
-  }
-
   return (
     <View
       style={{
@@ -88,6 +78,15 @@ const ShoppingCart = () => {
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
+            {/* <Text
+              style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: "#2B3640",
+              }}
+            >
+              TUDO
+            </Text> */}
           </View>
           <TouchableOpacity
             style={{
@@ -217,8 +216,8 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
-                              width: 90,
+                              backgroundColor: "green",
+                              width: 100,
                               alignItems: "center",
                             }}
                           >
@@ -256,8 +255,8 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
-                              width: 92,
+                              backgroundColor: "green",
+                              width: 100,
                               alignItems: "center",
                             }}
                           >
@@ -265,7 +264,7 @@ const ShoppingCart = () => {
                             <View
                               style={{
                                 display: "flex",
-                                width: 90,
+                                width: 100,
                                 flexDirection: "row",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -287,7 +286,7 @@ const ShoppingCart = () => {
 
                               <View
                                 style={{
-                                  width: 40,
+                                  width: 45,
                                   justifyContent: "center",
                                   alignItems: "center",
                                 }}
@@ -316,31 +315,11 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
-                              width: 40,
+                              backgroundColor: "green",
+                              width: 20,
                               alignItems: "center",
-                              justifyContent: "flex-end",
                             }}
-                          >
-                            <TouchableOpacity
-                              style={{
-                                display: "flex",
-                                backgroundColor: "white",
-                                padding: 4,
-                                borderRadius: 16,
-                                alignItems: "center",
-                                justifyContent: "flex-end",
-                                marginBottom: 3,
-                                marginLeft: 10,
-                              }}
-                            >
-                              <Ionicons
-                                name="ios-trash-outline"
-                                size={22}
-                                color="#2d3741"
-                              />
-                            </TouchableOpacity>
-                          </View>
+                          ></View>
                         </View>
                       </View>
                     </View>

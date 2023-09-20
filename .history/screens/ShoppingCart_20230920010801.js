@@ -28,7 +28,7 @@ const ShoppingCart = () => {
 
     } else if (action === increase) {
       
-    }
+        }
 
 
   }

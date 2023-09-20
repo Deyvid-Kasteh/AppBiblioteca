@@ -23,16 +23,6 @@ const ShoppingCart = () => {
   const preco = 5.99;
   // console.log(LivrosShoppingCart);
 
-  const handlequantity = (item, action) => {
-    if (action === decrease) {
-
-    } else if (action === increase) {
-      
-    }
-
-
-  }
-
   return (
     <View
       style={{
@@ -88,6 +78,15 @@ const ShoppingCart = () => {
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
+            {/* <Text
+              style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: "#2B3640",
+              }}
+            >
+              TUDO
+            </Text> */}
           </View>
           <TouchableOpacity
             style={{

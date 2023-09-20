@@ -23,16 +23,6 @@ const ShoppingCart = () => {
   const preco = 5.99;
   // console.log(LivrosShoppingCart);
 
-  const handlequantity = (item, action) => {
-    if (action === decrease) {
-
-    } else if (action === increase) {
-      
-    }
-
-
-  }
-
   return (
     <View
       style={{
@@ -88,6 +78,15 @@ const ShoppingCart = () => {
               innerIconStyle={{ borderWidth: 3 }}
               // onPress={(isChecked: boolean) => {}}
             />
+            {/* <Text
+              style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: "#2B3640",
+              }}
+            >
+              TUDO
+            </Text> */}
           </View>
           <TouchableOpacity
             style={{
@@ -217,7 +216,7 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
+                              backgroundColor: "green",
                               width: 90,
                               alignItems: "center",
                             }}
@@ -256,7 +255,7 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
+                              backgroundColor: "green",
                               width: 92,
                               alignItems: "center",
                             }}
@@ -316,13 +315,13 @@ const ShoppingCart = () => {
                           <View
                             style={{
                               display: "flex",
-                              // backgroundColor: "green",
+                              backgroundColor: "green",
                               width: 40,
                               alignItems: "center",
                               justifyContent: "flex-end",
                             }}
                           >
-                            <TouchableOpacity
+                            <View
                               style={{
                                 display: "flex",
                                 backgroundColor: "white",
@@ -330,16 +329,16 @@ const ShoppingCart = () => {
                                 borderRadius: 16,
                                 alignItems: "center",
                                 justifyContent: "flex-end",
-                                marginBottom: 3,
-                                marginLeft: 10,
+                                marginBottom: 10,
+                                marl
                               }}
                             >
                               <Ionicons
                                 name="ios-trash-outline"
-                                size={22}
+                                size={24}
                                 color="#2d3741"
                               />
-                            </TouchableOpacity>
+                            </View>
                           </View>
                         </View>
                       </View>

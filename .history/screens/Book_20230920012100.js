@@ -219,30 +219,11 @@ export default function Book({ navigation: { goBack }, route }) {
             <View
               style={{
                 flexDirection: "row",
-                width: "100%",
                 marginTop: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "green",
               }}
             >
-              <View
-                style={{
-                  width: 80,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 30,
-                    fontWeight: "bold",
-                    color: "#2B3640",
-                  }}
-                >
-                  {/* {preco} */}
-                </Text>
-              </View>
               <TouchableOpacity
                 style={{
                   width: 120,
@@ -274,8 +255,8 @@ export default function Book({ navigation: { goBack }, route }) {
                   borderRadius: 50,
                   justifyContent: "center",
                   alignItems: "center",
-                  // position: "absolute",
-                  // right: -52,
+                  position: "absolute",
+                  right: -52,
                 }}
                 onPress={() => bookAdderToCart()}
               >

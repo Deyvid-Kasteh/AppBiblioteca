@@ -26,9 +26,7 @@ const ShoppingCart = () => {
   const handlequantity = (item, action) => {
     if (action === decrease) {
 
-    } else if (action === increase) {
-      
-    }
+    } else if (action === increase) {}
 
 
   }

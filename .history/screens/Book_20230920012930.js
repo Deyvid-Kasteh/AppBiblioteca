@@ -104,7 +104,7 @@ export default function Book({ navigation: { goBack }, route }) {
   };
 
   useEffect(() => {
-    BuscaLivro(route.params.idLivro);
+    // BuscaLivro(route.params.idLivro);
   }, []);
   return (
     <View

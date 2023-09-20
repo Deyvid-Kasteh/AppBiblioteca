@@ -23,16 +23,6 @@ const ShoppingCart = () => {
   const preco = 5.99;
   // console.log(LivrosShoppingCart);
 
-  const handlequantity = (item, action) => {
-    if (action === decrease) {
-
-    } else if (action === increase) {
-      
-    }
-
-
-  }
-
   return (
     <View
       style={{

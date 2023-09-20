@@ -33,7 +33,7 @@ export default function Book({ navigation: { goBack }, route }) {
   const [bookFav, setBookFav] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
-  const price = 5.99
+  const price
 
   const bookfavoriter = async () => {
     try {
@@ -206,6 +206,7 @@ export default function Book({ navigation: { goBack }, route }) {
                       color: "#2B3640",
                     }}
                   >
+                    {/* {livro.volumeInfo.description} */}
                     {livro
                       ? sanitizeHtml(livro.volumeInfo.description, {
                           allowedTags: [],
@@ -219,30 +220,11 @@ export default function Book({ navigation: { goBack }, route }) {
             <View
               style={{
                 flexDirection: "row",
-                width: "100%",
                 marginTop: 20,
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "green",
               }}
             >
-              <View
-                style={{
-                  width: 80,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 30,
-                    fontWeight: "bold",
-                    color: "#2B3640",
-                  }}
-                >
-                  {/* {preco} */}
-                </Text>
-              </View>
               <TouchableOpacity
                 style={{
                   width: 120,
@@ -274,8 +256,8 @@ export default function Book({ navigation: { goBack }, route }) {
                   borderRadius: 50,
                   justifyContent: "center",
                   alignItems: "center",
-                  // position: "absolute",
-                  // right: -52,
+                  position: "absolute",
+                  right: -52,
                 }}
                 onPress={() => bookAdderToCart()}
               >
