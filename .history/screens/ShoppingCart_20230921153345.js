@@ -22,19 +22,13 @@ const ShoppingCart = () => {
   const [precoTotal, setPrecoTotal] = useState(0);
 
   const preco = 5.99;
-  console.log(usuario);
+  // console.log(LivrosShoppingCart);
 
+  const handlequantity = (item, action) => {
+    if (action === decrease) {
 
-  const handlequantity = (action) => {
-    if (action === "decrease") {
-      if (quantidade < 2) {
-        return;
-      } else {
-        setQuantidade(quantidade - 1);
-      }
+    } else if (action === increase) {
 
-    } else if (action === "increase") {
-      setQuantidade(quantidade + 1)
     }
 
 
@@ -212,7 +206,7 @@ const ShoppingCart = () => {
                       >
                         <View
                           style={{
-                            // backgroundColor: "green",
+                            backgroundColor: "green",
                             height: 60,
                             flexDirection: "row",
                             flexWrap: "wrap",
@@ -271,7 +265,7 @@ const ShoppingCart = () => {
                                     color: "#2B3640",
                                   }}
                                 >
-                                  {livro.price}
+                                  {preco}
                                 </Text>
                               </View>
                             </View>
@@ -299,7 +293,7 @@ const ShoppingCart = () => {
                               }}
                             >
                               <TouchableOpacity
-                                onPress={() => handlequantity("decrease")}
+                                onPress={() => setQuantidade(quantidade - 1)}
                               >
                                 <AntDesign
                                   name="minuscircleo"
@@ -326,7 +320,7 @@ const ShoppingCart = () => {
                                 </Text>
                               </View>
                               <TouchableOpacity
-                                onPress={() => handlequantity("increase")}
+                                onPress={() => setQuantidade(quantidade + 1)}
                               >
                                 <AntDesign
                                   name="pluscircleo"
@@ -356,9 +350,6 @@ const ShoppingCart = () => {
                                 marginBottom: 3,
                                 marginLeft: 10,
                               }}
-                              onPress={() =>
-                                RemoveFromCart(usuario?._id, livro.idLivro)
-                              }
                             >
                               <Ionicons
                                 name="ios-trash-outline"
@@ -377,7 +368,7 @@ const ShoppingCart = () => {
           </ScrollView>
           <View
             style={{
-              flex: 0.2,
+              flex: 0.20,
               width: "100%",
               backgroundColor: "#D9B391",
               flexDirection: "row",

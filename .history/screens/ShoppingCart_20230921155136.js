@@ -25,16 +25,17 @@ const ShoppingCart = () => {
   console.log(usuario);
 
 
-  const handlequantity = (action) => {
-    if (action === "decrease") {
-      if (quantidade < 2) {
+  const handlequantity = (item, action) => {
+    if (action === decrease) {
+      if (quantidade < 1) {
         return;
       } else {
-        setQuantidade(quantidade - 1);
+
+        
       }
 
-    } else if (action === "increase") {
-      setQuantidade(quantidade + 1)
+    } else if (action === increase) {
+
     }
 
 
@@ -299,7 +300,7 @@ const ShoppingCart = () => {
                               }}
                             >
                               <TouchableOpacity
-                                onPress={() => handlequantity("decrease")}
+                                onPress={() => setQuantidade(quantidade - 1)}
                               >
                                 <AntDesign
                                   name="minuscircleo"
@@ -326,7 +327,7 @@ const ShoppingCart = () => {
                                 </Text>
                               </View>
                               <TouchableOpacity
-                                onPress={() => handlequantity("increase")}
+                                onPress={() => setQuantidade(quantidade + 1)}
                               >
                                 <AntDesign
                                   name="pluscircleo"

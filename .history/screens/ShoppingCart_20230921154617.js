@@ -25,16 +25,11 @@ const ShoppingCart = () => {
   console.log(usuario);
 
 
-  const handlequantity = (action) => {
-    if (action === "decrease") {
-      if (quantidade < 2) {
-        return;
-      } else {
-        setQuantidade(quantidade - 1);
-      }
+  const handlequantity = (item, action) => {
+    if (action === decrease) {
 
-    } else if (action === "increase") {
-      setQuantidade(quantidade + 1)
+    } else if (action === increase) {
+
     }
 
 
@@ -201,7 +196,7 @@ const ShoppingCart = () => {
                           }}
                         />
                       </TouchableOpacity>
-                      <View
+                      {/* <View */}
                         style={{
                           // backgroundColor: "blue",
                           width: "60%",
@@ -271,7 +266,7 @@ const ShoppingCart = () => {
                                     color: "#2B3640",
                                   }}
                                 >
-                                  {livro.price}
+                                  {preco}
                                 </Text>
                               </View>
                             </View>
@@ -299,7 +294,7 @@ const ShoppingCart = () => {
                               }}
                             >
                               <TouchableOpacity
-                                onPress={() => handlequantity("decrease")}
+                                onPress={() => setQuantidade(quantidade - 1)}
                               >
                                 <AntDesign
                                   name="minuscircleo"
@@ -326,7 +321,7 @@ const ShoppingCart = () => {
                                 </Text>
                               </View>
                               <TouchableOpacity
-                                onPress={() => handlequantity("increase")}
+                                onPress={() => setQuantidade(quantidade + 1)}
                               >
                                 <AntDesign
                                   name="pluscircleo"
