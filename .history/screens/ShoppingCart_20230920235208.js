@@ -39,7 +39,7 @@ const ShoppingCart = () => {
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
-        backgroundColor: "#F2E2C4",
+        // backgroundColor: "#F2E2C4",
         // backgroundColor: "green",
       }}
     >

@@ -36,10 +36,6 @@ export default function Book({ navigation: { goBack }, route }) {
   const price = 5.99
   const quantity = 1
 
-
-
-
-
   const bookfavoriter = async () => {
     try {
       if (usuarioEstaLogado) {
@@ -71,7 +67,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)

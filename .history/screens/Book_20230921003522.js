@@ -71,7 +71,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro, price, q);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)

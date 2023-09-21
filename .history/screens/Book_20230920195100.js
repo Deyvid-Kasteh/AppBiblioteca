@@ -34,11 +34,6 @@ export default function Book({ navigation: { goBack }, route }) {
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
   const price = 5.99
-  const quantity = 1
-
-
-
-
 
   const bookfavoriter = async () => {
     try {
@@ -71,7 +66,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)
@@ -109,7 +104,7 @@ export default function Book({ navigation: { goBack }, route }) {
   };
 
   useEffect(() => {
-    BuscaLivro(route.params.idLivro);
+    // BuscaLivro(route.params.idLivro);
   }, []);
   return (
     <View
@@ -124,7 +119,7 @@ export default function Book({ navigation: { goBack }, route }) {
         <>
           <View
             style={{
-              flex: 1,
+              flex: 0.95,
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
@@ -223,54 +218,27 @@ export default function Book({ navigation: { goBack }, route }) {
 
             <View
               style={{
-                flex: 0.12,
-                width: "100%",
-                backgroundColor: "#D9B391",
                 flexDirection: "row",
-                justifyContent: "space-around",
-                alignItems: "flex-start",
-                borderTopRightRadius: 20,
-                borderTopLeftRadius: 20,
+                width: "100%",
+                marginTop: 20,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "green",
               }}
             >
-              <TouchableOpacity
-                style={{
-                  width: 40,
-                  height: 40,
-                  backgroundColor: "#D9B391",
-                  borderRadius: 50,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  // paddingTop: 10,
-                  marginTop: 8,
-                  // borderWidth: 2,
-                  // borderColor: "#F2E2C4",
-                }}
-                onPress={() => bookAdderToCart()}
-              >
-                {shoppingCart ? (
-                  <Ionicons name="cart-sharp" size={30} color="#2B3640" />
-                ) : (
-                  <Ionicons name="cart-outline" size={30} color="#F2E2C4" />
-                )}
-              </TouchableOpacity>
-
               <View
                 style={{
                   width: 100,
-                  flexDirection: "row",
                   justifyContent: "center",
                   alignItems: "center",
-                  // backgroundColor: "#d3e0d3",
+                  backgroundColor: "#d3e0d3",
                 }}
               >
-                <Text>$</Text>
                 <Text
                   style={{
-                    fontSize: 40,
+                    fontSize: 30,
                     fontWeight: "bold",
                     color: "#2B3640",
-                    marginLeft: 10,
                   }}
                 >
                   {price}
@@ -278,16 +246,15 @@ export default function Book({ navigation: { goBack }, route }) {
               </View>
               <TouchableOpacity
                 style={{
-                  width: 100,
-                  height: 40,
-                  backgroundColor: "#A65A49",
+                  width: 120,
+                  height: 52,
+                  backgroundColor: "#D9B391",
                   borderRadius: 50,
                   justifyContent: "center",
                   alignItems: "center",
-                  // paddingTop: 10,
-                  marginTop: 8,
-                  // borderWidth: 2,
-                  // borderColor: "#A65A49",
+                  marginRight: 12,
+                  borderWidth: 2,
+                  borderColor: "#A65A49",
                 }}
               >
                 <Text
@@ -298,6 +265,23 @@ export default function Book({ navigation: { goBack }, route }) {
                 >
                   Comprar
                 </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  width: 48,
+                  height: 48,
+                  backgroundColor: "#D9B391",
+                  borderRadius: 50,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                onPress={() => bookAdderToCart()}
+              >
+                {shoppingCart ? (
+                  <Ionicons name="cart-sharp" size={30} color="#A65A49" />
+                ) : (
+                  <Ionicons name="cart-outline" size={30} color="#A65A49" />
+                )}
               </TouchableOpacity>
             </View>
           </View>

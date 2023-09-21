@@ -39,7 +39,7 @@ export default function Book({ navigation: { goBack }, route }) {
 
 
 
-
+  
   const bookfavoriter = async () => {
     try {
       if (usuarioEstaLogado) {
@@ -71,7 +71,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)

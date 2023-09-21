@@ -40,94 +40,77 @@ const ShoppingCart = () => {
         justifyContent: "flex-start",
         alignItems: "center",
         backgroundColor: "#F2E2C4",
-        // backgroundColor: "green",
       }}
     >
-      {usuarioEstaLogado ? (
+      <View
+        style={{
+          flex: 0.85,
+          width: "100%",
+          overflow: "hidden",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <View
           style={{
-            flex: 1,
-            width: "100%",
-            overflow: "hidden",
+            backgroundColor: "#f5efe1",
+            width: "95%",
+            height: 40,
+            margin: 5,
+            flexDirection: "row",
+            justifyContent: "space-between",
             alignItems: "center",
-            justifyContent: "center",
+            borderRadius: 10,
           }}
         >
           <View
             style={{
-              flex: 0.09,
-              width: "100%",
-              overflow: "hidden",
+              flexDirection: "row",
               alignItems: "center",
-              justifyContent: "center",
             }}
           >
-            <View
+            <BouncyCheckbox
               style={{
-                backgroundColor: "#f5efe1",
-                width: "95%",
-                height: 40,
-                margin: 5,
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                borderRadius: 10,
+                margin: 0,
+                marginLeft: 10,
+              }}
+              text="TUDO"
+              textStyle={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: "#2B3640",
+                textDecorationLine: "none",
+              }}
+              size={25}
+              fillColor="#D9B391"
+              unfillColor="#f5efe1"
+              innerIconStyle={{ borderWidth: 3 }}
+              // onPress={(isChecked: boolean) => {}}
+            />
+          </View>
+          <TouchableOpacity
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginRight: 10,
+            }}
+          >
+            <Ionicons name="ios-trash-outline" size={24} color="#2d3741" />
+            <Text
+              style={{
+                fontSize: 12,
+                color: "#2d3741",
               }}
             >
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                }}
-              >
-                <BouncyCheckbox
-                  style={{
-                    margin: 0,
-                    marginLeft: 10,
-                  }}
-                  text="TUDO"
-                  textStyle={{
-                    fontSize: 16,
-                    fontWeight: "bold",
-                    color: "#2B3640",
-                    textDecorationLine: "none",
-                  }}
-                  size={25}
-                  fillColor="#D9B391"
-                  unfillColor="#f5efe1"
-                  innerIconStyle={{ borderWidth: 3 }}
-                  // onPress={(isChecked: boolean) => {}}
-                />
-              </View>
-              <TouchableOpacity
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  marginRight: 10,
-                }}
-              >
-                <Ionicons name="ios-trash-outline" size={24} color="#2d3741" />
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: "#2d3741",
-                  }}
-                >
-                  EXCLUIR
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <ScrollView
-            style={{
-              flex: 0.01,
-              width: "100%",
-              overflow: "hidden",
-            }}
-          >
+              EXCLUIR
+            </Text>
+          </TouchableOpacity>
+        </View>
+        {usuarioEstaLogado ? (
+          <ScrollView>
             <View
               style={{
-                // flex: 0.1,
+                flex: 1,
                 flexDirection: "row",
                 flexWrap: "wrap",
                 justifyContent: "center",
@@ -365,84 +348,84 @@ const ShoppingCart = () => {
               ))}
             </View>
           </ScrollView>
-          <View
+        ) : (
+          <Text
             style={{
-              flex: 0.20,
-              width: "100%",
-              backgroundColor: "#D9B391",
-              flexDirection: "row",
-              justifyContent: "space-around",
-              alignItems: "flex-start",
-              borderTopRightRadius: 20,
-              borderTopLeftRadius: 20,
+              alignSelf: "center",
             }}
           >
-            <View
-              style={{
-                display: "flex",
-                marginTop: 10,
-                position: "absolute",
-                top: 0,
-                left: 0,
-                flexDirection: "row",
-              }}
-            >
-              <Text
-                style={{
-                  padding: 10,
-                  fontSize: 20,
-                  color: "#2d3741",
-                }}
-              >
-                Total:
-              </Text>
-              <Text
-                style={{
-                  fontSize: 30,
-                  fontWeight: "bold",
-                  color: "#2B3640",
-                }}
-              >
-                {precoTotal}
-              </Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                marginTop: 10,
-                position: "absolute",
-                right: 16,
-              }}
-            >
-              <TouchableOpacity
-                style={{
-                  padding: 10,
-                  alignSelf: "center",
-                  backgroundColor: "#BF7F5A",
-                  borderRadius: 20,
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 20,
-                    color: "#2d3741",
-                  }}
-                >
-                  Comprar
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      ) : (
-        <Text
+            Por favor faça login
+          </Text>
+        )}
+      </View>
+      <View
+        style={{
+          flex: 0.12,
+          width: "100%",
+          backgroundColor: "#D9B391",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "flex-start",
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+        }}
+      >
+        <View
           style={{
-            alignSelf: "center",
+            display: "flex",
+            marginTop: 10,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            flexDirection: "row",
           }}
         >
-          Por favor faça login
-        </Text>
-      )}
+          <Text
+            style={{
+              padding: 10,
+              fontSize: 20,
+              color: "#2d3741",
+            }}
+          >
+            Total:
+          </Text>
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: "bold",
+              color: "#2B3640",
+            }}
+          >
+            {precoTotal}
+          </Text>
+        </View>
+        <View
+          style={{
+            display: "flex",
+            marginTop: 10,
+            position: "absolute",
+            right: 16,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              padding: 10,
+              alignSelf: "center",
+              backgroundColor: "#BF7F5A",
+              borderRadius: 20,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                color: "#2d3741",
+              }}
+            >
+              Comprar
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };

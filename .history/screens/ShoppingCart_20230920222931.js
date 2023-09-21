@@ -39,23 +39,15 @@ const ShoppingCart = () => {
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
-        backgroundColor: "#F2E2C4",
-        // backgroundColor: "green",
+        // backgroundColor: "#F2E2C4",
+        backgroundColor: "green",
       }}
     >
       {usuarioEstaLogado ? (
-        <View
-          style={{
-            flex: 1,
-            width: "100%",
-            overflow: "hidden",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <>
           <View
             style={{
-              flex: 0.09,
+              flex: 0.85,
               width: "100%",
               overflow: "hidden",
               alignItems: "center",
@@ -118,16 +110,10 @@ const ShoppingCart = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <ScrollView
-            style={{
-              flex: 0.01,
-              width: "100%",
-              overflow: "hidden",
-            }}
-          >
+          <ScrollView>
             <View
               style={{
-                // flex: 0.1,
+                // flex: 1,
                 flexDirection: "row",
                 flexWrap: "wrap",
                 justifyContent: "center",
@@ -367,7 +353,7 @@ const ShoppingCart = () => {
           </ScrollView>
           <View
             style={{
-              flex: 0.20,
+              flex: 0.12,
               width: "100%",
               backgroundColor: "#D9B391",
               flexDirection: "row",
@@ -433,7 +419,7 @@ const ShoppingCart = () => {
               </TouchableOpacity>
             </View>
           </View>
-        </View>
+        </>
       ) : (
         <Text
           style={{

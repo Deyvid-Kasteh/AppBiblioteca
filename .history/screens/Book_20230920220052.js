@@ -34,11 +34,6 @@ export default function Book({ navigation: { goBack }, route }) {
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
   const price = 5.99
-  const quantity = 1
-
-
-
-
 
   const bookfavoriter = async () => {
     try {
@@ -71,7 +66,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)
@@ -109,7 +104,7 @@ export default function Book({ navigation: { goBack }, route }) {
   };
 
   useEffect(() => {
-    BuscaLivro(route.params.idLivro);
+    // BuscaLivro(route.params.idLivro);
   }, []);
   return (
     <View
@@ -222,6 +217,15 @@ export default function Book({ navigation: { goBack }, route }) {
             </View>
 
             <View
+              // style={{
+              //   flexDirection: "row",
+              //   width: "100%",
+              //   marginTop: 20,
+              //   justifyContent: "space-around",
+              //   alignItems: "center",
+              //   backgroundColor: "green",
+              // }}
+
               style={{
                 flex: 0.12,
                 width: "100%",
@@ -235,26 +239,43 @@ export default function Book({ navigation: { goBack }, route }) {
             >
               <TouchableOpacity
                 style={{
-                  width: 40,
-                  height: 40,
+                  width: 48,
+                  height: 48,
                   backgroundColor: "#D9B391",
                   borderRadius: 50,
                   justifyContent: "center",
                   alignItems: "center",
-                  // paddingTop: 10,
-                  marginTop: 8,
-                  // borderWidth: 2,
-                  // borderColor: "#F2E2C4",
                 }}
                 onPress={() => bookAdderToCart()}
               >
                 {shoppingCart ? (
-                  <Ionicons name="cart-sharp" size={30} color="#2B3640" />
+                  <Ionicons name="cart-sharp" size={30} color="#A65A49" />
                 ) : (
-                  <Ionicons name="cart-outline" size={30} color="#F2E2C4" />
+                  <Ionicons name="cart-outline" size={30} color="#A65A49" />
                 )}
               </TouchableOpacity>
-
+              <TouchableOpacity
+                style={{
+                  width: 120,
+                  height: 52,
+                  backgroundColor: "#D9B391",
+                  borderRadius: 50,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginRight: 12,
+                  borderWidth: 2,
+                  borderColor: "#A65A49",
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 20,
+                    color: "#2d3741",
+                  }}
+                >
+                  Comprar
+                </Text>
+              </TouchableOpacity>
               <View
                 style={{
                   width: 100,
@@ -276,29 +297,6 @@ export default function Book({ navigation: { goBack }, route }) {
                   {price}
                 </Text>
               </View>
-              <TouchableOpacity
-                style={{
-                  width: 100,
-                  height: 40,
-                  backgroundColor: "#A65A49",
-                  borderRadius: 50,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  // paddingTop: 10,
-                  marginTop: 8,
-                  // borderWidth: 2,
-                  // borderColor: "#A65A49",
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 20,
-                    color: "#2d3741",
-                  }}
-                >
-                  Comprar
-                </Text>
-              </TouchableOpacity>
             </View>
           </View>
         </>

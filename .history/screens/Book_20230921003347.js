@@ -34,11 +34,7 @@ export default function Book({ navigation: { goBack }, route }) {
   const [shoppingCart, setShoppingCart] = useState(false);
   const book = route.params.idLivro;
   const price = 5.99
-  const quantity = 1
-
-
-
-
+  const quantity
 
   const bookfavoriter = async () => {
     try {
@@ -71,7 +67,7 @@ export default function Book({ navigation: { goBack }, route }) {
         const imgLivro = livro.volumeInfo.imageLinks.thumbnail;
 
         if (!shoppingCart) {
-          AddToCart(id, idLivro, imgLivro, ttlLivro, price, quantity);
+          AddToCart(id, idLivro, imgLivro, ttlLivro);
           setShoppingCart(true);
         } else {
           RemoveFromCart(id, idLivro)

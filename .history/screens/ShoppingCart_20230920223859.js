@@ -39,8 +39,8 @@ const ShoppingCart = () => {
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "center",
-        backgroundColor: "#F2E2C4",
-        // backgroundColor: "green",
+        // backgroundColor: "#F2E2C4",
+        backgroundColor: "green",
       }}
     >
       {usuarioEstaLogado ? (
@@ -55,7 +55,7 @@ const ShoppingCart = () => {
         >
           <View
             style={{
-              flex: 0.09,
+              flex: 0.08,
               width: "100%",
               overflow: "hidden",
               alignItems: "center",
