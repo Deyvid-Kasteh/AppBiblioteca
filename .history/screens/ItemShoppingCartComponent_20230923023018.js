@@ -35,8 +35,12 @@ const ItemShoppingCartComponent = ({
   function checkAllBooksFunction() {
     checkboxState = false
     console.log(checkAllBooks);
-    console.log("Aqui em baixo");
-    console.log(checkboxState);
+      console.log(~);
+  console.log(checkboxState);
+
+
+
+
   }
 
 

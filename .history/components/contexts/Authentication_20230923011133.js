@@ -16,6 +16,7 @@ function AuthProvider({ children }) {
 
 
 
+  
   const showToastAndroid = (text) => {
     ToastAndroid.showWithGravityAndOffset(
       `${text}`,
@@ -294,6 +295,9 @@ function AuthProvider({ children }) {
 
 
 
+  AllChecked = () => {
+
+  }
 
 
 

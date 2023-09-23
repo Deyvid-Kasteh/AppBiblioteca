@@ -30,23 +30,12 @@ const ItemShoppingCartComponent = ({
     }
   };
 
-  let checkboxState = checkAllBooks;
-
-  function checkAllBooksFunction() {
-    checkboxState = false
-    console.log(checkAllBooks);
-    console.log("Aqui em baixo");
-    console.log(checkboxState);
+  let checkboxState = false;
+  if (checkAllBooks) {
+    checkboxState = true;
+  } else if (!checkAllBooks) {
+    checkboxState = false;
   }
-
-
-
-
-  // if (checkAllBooks) {
-  //   checkboxState = true;
-  // } else if (!checkAllBooks) {
-  //   checkboxState = false;
-  // }
     return (
       <>
         {imgLivro ? (
@@ -69,7 +58,6 @@ const ItemShoppingCartComponent = ({
               fillColor="#D9B391"
               unfillColor="#f5efe1"
               innerIconStyle={{ borderWidth: 3 }}
-              onPress={() => checkAllBooksFunction()}
             />
             <TouchableOpacity
               key={idLivro}

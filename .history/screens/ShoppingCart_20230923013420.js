@@ -8,22 +8,20 @@ import {
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { Ionicons } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 import ItemShoppingCartComponent from "./ItemShoppingCartComponent";
 
 const ShoppingCart = () => {
-  const { usuarioEstaLogado, usuario } = useContext(AuthContext);
+  const { usuarioEstaLogado, usuario, CheckAllBooks } = useContext(AuthContext);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
-  const [checkAllBooks, setCheckAllBooks] = useState(false);
 
-  // console.log(usuario);
+  console.log(usuario);
 
-  // let checkAllBooks = false;
 
-  console.log(checkAllBooks);
+
 
   return (
     <View
@@ -84,13 +82,13 @@ const ShoppingCart = () => {
                     color: "#2B3640",
                     textDecorationLine: "none",
                   }}
-                  isChecked={checkAllBooks}
-                  disableBuiltInState
+                  isChecked={false}
+                  // disableBuiltInState
                   size={25}
                   fillColor="#D9B391"
                   unfillColor="#f5efe1"
                   innerIconStyle={{ borderWidth: 3 }}
-                  onPress={() => setCheckAllBooks(!checkAllBooks)}
+                  onPress={() => CheckAllBooks(!boolean)}
                 />
               </View>
               <TouchableOpacity
@@ -145,7 +143,6 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    checkAllBooks={checkAllBooks}
                   />
                 </View>
               ))}

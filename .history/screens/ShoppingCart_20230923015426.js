@@ -145,7 +145,7 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    checkAllBooks={checkAllBooks}
+                    
                   />
                 </View>
               ))}

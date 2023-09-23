@@ -13,6 +13,8 @@ function AuthProvider({ children }) {
 
   const [usuarioEstaLogado, setUsuarioEstaLogado] = useState(false);
   const [usuario, setUsuario] = useState(null);
+  const [allChecked, setAllChecked] = useState(false);
+
 
 
 
@@ -294,6 +296,9 @@ function AuthProvider({ children }) {
 
 
 
+  AllChecked = () => {
+
+  }
 
 
 

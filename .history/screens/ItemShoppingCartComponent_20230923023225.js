@@ -37,6 +37,10 @@ const ItemShoppingCartComponent = ({
     console.log(checkAllBooks);
     console.log("Aqui em baixo");
     console.log(checkboxState);
+
+
+
+
   }
 
 

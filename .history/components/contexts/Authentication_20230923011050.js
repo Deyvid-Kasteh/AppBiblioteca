@@ -14,8 +14,6 @@ function AuthProvider({ children }) {
   const [usuarioEstaLogado, setUsuarioEstaLogado] = useState(false);
   const [usuario, setUsuario] = useState(null);
 
-
-
   const showToastAndroid = (text) => {
     ToastAndroid.showWithGravityAndOffset(
       `${text}`,
@@ -294,6 +292,9 @@ function AuthProvider({ children }) {
 
 
 
+  AllChecked = () => {
+    
+  }
 
 
 

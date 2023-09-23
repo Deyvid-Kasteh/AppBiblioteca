@@ -23,7 +23,7 @@ const ShoppingCart = () => {
 
   // let checkAllBooks = false;
 
-  console.log(checkAllBooks);
+  // console.log(checkAllBooks);
 
   return (
     <View
@@ -84,13 +84,13 @@ const ShoppingCart = () => {
                     color: "#2B3640",
                     textDecorationLine: "none",
                   }}
-                  isChecked={checkAllBooks}
-                  disableBuiltInState
+                  isChecked={false}
+                  // disableBuiltInState
                   size={25}
                   fillColor="#D9B391"
                   unfillColor="#f5efe1"
                   innerIconStyle={{ borderWidth: 3 }}
-                  onPress={() => setCheckAllBooks(!checkAllBooks)}
+                  onPress={() => !checkAllBooks}
                 />
               </View>
               <TouchableOpacity
@@ -145,7 +145,6 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    checkAllBooks={checkAllBooks}
                   />
                 </View>
               ))}

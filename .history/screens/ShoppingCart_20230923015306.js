@@ -23,7 +23,7 @@ const ShoppingCart = () => {
 
   // let checkAllBooks = false;
 
-  console.log(checkAllBooks);
+  // console.log(checkAllBooks);
 
   return (
     <View
@@ -145,7 +145,6 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    checkAllBooks={checkAllBooks}
                   />
                 </View>
               ))}

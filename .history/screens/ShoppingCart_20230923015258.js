@@ -23,7 +23,7 @@ const ShoppingCart = () => {
 
   // let checkAllBooks = false;
 
-  console.log(checkAllBooks);
+  // console.log(checkAllBooks);
 
   return (
     <View
@@ -90,7 +90,7 @@ const ShoppingCart = () => {
                   fillColor="#D9B391"
                   unfillColor="#f5efe1"
                   innerIconStyle={{ borderWidth: 3 }}
-                  onPress={() => setCheckAllBooks(!checkAllBooks)}
+                  onPress={() => setCheckAllBooks()}
                 />
               </View>
               <TouchableOpacity
@@ -145,7 +145,6 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    checkAllBooks={checkAllBooks}
                   />
                 </View>
               ))}

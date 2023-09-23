@@ -14,8 +14,6 @@ function AuthProvider({ children }) {
   const [usuarioEstaLogado, setUsuarioEstaLogado] = useState(false);
   const [usuario, setUsuario] = useState(null);
 
-
-
   const showToastAndroid = (text) => {
     ToastAndroid.showWithGravityAndOffset(
       `${text}`,
@@ -293,10 +291,7 @@ function AuthProvider({ children }) {
   const myKey = "&key=AIzaSyD0IpRB2DoQ2v82pvzOtl9S6T92xJsytV4";
 
 
-
-
-
-
+  
   return (
     <AuthContext.Provider
       value={{
