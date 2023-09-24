@@ -13,8 +13,8 @@ const ShoppingCart = () => {
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
   const [checkAllBooks, setCheckAllBooks] = useState(false);
-  // const id = usuario._id;
-  // console.log(id);
+  const id = usuario._id;
+  console.log(id);
 
   // let checkAllBooks = false;
 

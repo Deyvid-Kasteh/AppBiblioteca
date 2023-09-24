@@ -1,5 +1,10 @@
 import React, { useContext, useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -13,8 +18,8 @@ const ShoppingCart = () => {
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
   const [checkAllBooks, setCheckAllBooks] = useState(false);
-  // const id = usuario._id;
-  // console.log(id);
+
+  // console.log(usuario);
 
   // let checkAllBooks = false;
 
@@ -136,7 +141,6 @@ const ShoppingCart = () => {
                   key={livro.idLivro}
                 >
                   <ItemShoppingCartComponent
-                    checkboxState={livro.checkboxState}
                     idLivro={livro.idLivro}
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}

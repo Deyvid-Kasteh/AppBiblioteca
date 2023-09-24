@@ -14,6 +14,8 @@ function AuthProvider({ children }) {
   const [usuarioEstaLogado, setUsuarioEstaLogado] = useState(false);
   const [usuario, setUsuario] = useState(null);
 
+
+
   const showToastAndroid = (text) => {
     ToastAndroid.showWithGravityAndOffset(
       `${text}`,
@@ -248,23 +250,25 @@ function AuthProvider({ children }) {
     }
   };
 
-  ChangeCheckboxState = async function (id, idLivro) {
-    console.log(id);
-    console.log(idLivro);
-    try {
-      const response = await api.patch(
-        `/Perfil/${id}/changeCheckboxState/${idLivro}`
-      );
 
-      data = response.data;
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      setUsuario(data);
-      showToastAndroid("Mudando o estado do checkbox");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
+
+  ChangeCheckboxState = async function (id, ) {};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   RemoveFromCart = async function (id, idLivro) {
     console.log("Começou REMOVE FROM CART");
@@ -308,6 +312,11 @@ function AuthProvider({ children }) {
 
   const myKey = "&key=AIzaSyD0IpRB2DoQ2v82pvzOtl9S6T92xJsytV4";
 
+
+
+
+
+
   return (
     <AuthContext.Provider
       value={{
@@ -320,7 +329,6 @@ function AuthProvider({ children }) {
         Favoriter,
         Unfavorater,
         AddToCart,
-        ChangeCheckboxState,
         RemoveFromCart,
         signOutProcess,
         showToastAndroid,

@@ -249,21 +249,11 @@ function AuthProvider({ children }) {
   };
 
   ChangeCheckboxState = async function (id, idLivro) {
-    console.log(id);
-    console.log(idLivro);
     try {
       const response = await api.patch(
         `/Perfil/${id}/changeCheckboxState/${idLivro}`
       );
-
-      data = response.data;
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      setUsuario(data);
-      showToastAndroid("Mudando o estado do checkbox");
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   RemoveFromCart = async function (id, idLivro) {
@@ -320,7 +310,6 @@ function AuthProvider({ children }) {
         Favoriter,
         Unfavorater,
         AddToCart,
-        ChangeCheckboxState,
         RemoveFromCart,
         signOutProcess,
         showToastAndroid,

@@ -20,6 +20,11 @@ const ItemShoppingCartComponent = ({
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(1);
 
+
+  console.log(usuario?)
+
+
+
   const handleQuantity = (action) => {
     if (action === "decrease") {
       if (quantidade === 1) {
@@ -51,13 +56,16 @@ const ItemShoppingCartComponent = ({
             style={{
               margin: 0,
               marginLeft: 10,
+              // backgroundColor: "#2B3640",
             }}
             size={25}
+            // ref={(ref) => (bouncyCheckboxRef = ref)}
             disableBuiltInState
-            isChecked={checkboxState}
+            isChecked={checkboxState1}
             fillColor="#D9B391"
             unfillColor="#f5efe1"
             innerIconStyle={{ borderWidth: 3 }}
+            // onPress={() => checkAllBooksFunction()}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
             }}

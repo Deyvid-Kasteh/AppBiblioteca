@@ -249,8 +249,8 @@ function AuthProvider({ children }) {
   };
 
   ChangeCheckboxState = async function (id, idLivro) {
-    console.log(id);
-    console.log(idLivro);
+
+    console.log(")
     try {
       const response = await api.patch(
         `/Perfil/${id}/changeCheckboxState/${idLivro}`

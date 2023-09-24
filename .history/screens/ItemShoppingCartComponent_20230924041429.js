@@ -19,6 +19,9 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(1);
+  // const id = usuario._id;
+
+  let bouncyCheckboxRef = BouncyCheckbox;
 
   const handleQuantity = (action) => {
     if (action === "decrease") {
@@ -32,10 +35,18 @@ const ItemShoppingCartComponent = ({
     }
   };
 
+  // let checkboxState = checkAllBooks;
+
   let checkboxState1 = checkboxState;
 
   console.log(checkboxState1);
 
+  function checkAllBooksFunction() {
+    checkboxState1 = !checkboxState1;
+    console.log(checkboxState1);
+    console.log("Aqui em baixo");
+    console.log(checkboxState1);
+  }
 
   return (
     <>
@@ -51,15 +62,18 @@ const ItemShoppingCartComponent = ({
             style={{
               margin: 0,
               marginLeft: 10,
+              // backgroundColor: "#2B3640",
             }}
             size={25}
+            ref={(ref) => (bouncyCheckboxRef = ref)}
             disableBuiltInState
-            isChecked={checkboxState}
+            isChecked={checkboxState1}
             fillColor="#D9B391"
             unfillColor="#f5efe1"
             innerIconStyle={{ borderWidth: 3 }}
+            // onPress={() => checkAllBooksFunction()}
             onPress={() => {
-              ChangeCheckboxState(usuario?._id, idLivro);
+              checkAllBooksFunction();
             }}
           />
           <TouchableOpacity

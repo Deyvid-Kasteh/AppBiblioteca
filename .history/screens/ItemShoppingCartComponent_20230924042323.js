@@ -54,10 +54,11 @@ const ItemShoppingCartComponent = ({
             }}
             size={25}
             disableBuiltInState
-            isChecked={checkboxState}
+            isChecked={checkboxState1}
             fillColor="#D9B391"
             unfillColor="#f5efe1"
             innerIconStyle={{ borderWidth: 3 }}
+            // onPress={() => checkAllBooksFunction()}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
             }}
