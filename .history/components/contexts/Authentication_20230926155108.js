@@ -261,17 +261,17 @@ function AuthProvider({ children }) {
       });
       // console.log(newUsuario);
 
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
-      setUsuario(newUsuario);
+      // await AsyncStorage.removeItem("@user");
+      // await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
+      // setUsuario(newUsuario);
 
-      const response = await api.patch(
-        `/Perfil/${id}/changeCheckboxState/${idLivro}`
-      );
-      data = response.data;
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      setUsuario(data);
+      // const response = await api.patch(
+      //   `/Perfil/${id}/changeCheckboxState/${idLivro}`
+      // );
+      // data = response.data;
+      // await AsyncStorage.removeItem("@user");
+      // await AsyncStorage.setItem("@user", JSON.stringify(data));
+      // setUsuario(data);
       showToastAndroid("Mudando o estado do checkbox");
 
       // console.log(usuario.shoppingCart);

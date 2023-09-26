@@ -259,7 +259,7 @@ function AuthProvider({ children }) {
           item.checkboxState = !item.checkboxState;
         }
       });
-      // console.log(newUsuario);
+      console.log(newUsuario);
 
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
@@ -273,8 +273,8 @@ function AuthProvider({ children }) {
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
       showToastAndroid("Mudando o estado do checkbox");
-
-      // console.log(usuario.shoppingCart);
+      
+      console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }

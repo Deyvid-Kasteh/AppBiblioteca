@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -73,7 +73,7 @@ const ItemShoppingCartComponent = ({
             innerIconStyle={{ borderWidth: 3 }}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
-              setDoRender(()=> !doRender);
+              setDoRender(()=> doRender);
             }}
           />
           <TouchableOpacity

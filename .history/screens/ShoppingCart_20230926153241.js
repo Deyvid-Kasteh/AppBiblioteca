@@ -122,7 +122,7 @@ const ShoppingCart = () => {
                 justifyContent: "center",
               }}
             >
-              {usuario?.shoppingCart?.map((livro, index) => (
+              {usuario?.shoppingCart?.map((livro, inde) => (
                 <View
                   style={{
                     backgroundColor: "#f5efe1",
@@ -136,7 +136,6 @@ const ShoppingCart = () => {
                   key={livro.idLivro}
                 >
                   <ItemShoppingCartComponent
-                    index={index}
                     checkboxState={livro.checkboxState}
                     idLivro={livro.idLivro}
                     imgLivro={livro.imgLivro}

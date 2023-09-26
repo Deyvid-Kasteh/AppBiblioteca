@@ -274,7 +274,7 @@ function AuthProvider({ children }) {
       setUsuario(data);
       showToastAndroid("Mudando o estado do checkbox");
 
-      // console.log(usuario.shoppingCart);
+      console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }

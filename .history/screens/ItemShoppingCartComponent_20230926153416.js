@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -20,17 +20,6 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(1);
-    const [doRender, setDoRender] = useState(false);
-
-
-
-
-  useEffect(() => {}, [doRender]);
-
-
-
-
-
 
   const handleQuantity = (action) => {
     if (action === "decrease") {
@@ -45,10 +34,8 @@ const ItemShoppingCartComponent = ({
   };
 
   let checkboxState1 = checkboxState;
-  let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
 
-  console.log(index);
-  console.log(usuario.shoppingCart[index].checkboxState);
+  // console.log(index);
 
   return (
     <>
@@ -67,13 +54,12 @@ const ItemShoppingCartComponent = ({
             }}
             size={25}
             disableBuiltInState
-            isChecked={checkboxStateFromUsuario}
+            isChecked={checkboxState}
             fillColor="#D9B391"
             unfillColor="#f5efe1"
             innerIconStyle={{ borderWidth: 3 }}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
-              setDoRender(()=> !doRender);
             }}
           />
           <TouchableOpacity
