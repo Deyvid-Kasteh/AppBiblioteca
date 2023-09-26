@@ -1,3 +1,4 @@
+import { View, Text } from "react-native";
 import React from "react";
 
 export default function AsyncStorage() {
@@ -12,10 +13,8 @@ export default function AsyncStorage() {
     console.log("GetUser Done");
   };
 
-  AsyncStorageUpdate = async (data) => {
+  AsyncStorageUpdate = async () => {
     await AsyncStorage.removeItem("@user");
     await AsyncStorage.setItem("@user", JSON.stringify(data));
-
-    return data;
   };
 }

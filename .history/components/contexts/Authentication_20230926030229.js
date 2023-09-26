@@ -253,28 +253,42 @@ function AuthProvider({ children }) {
     console.log(id);
     console.log(idLivro);
     try {
-      let newUsuario = usuario;
-      newUsuario.shoppingCart.forEach((item) => {
-        if (item.idLivro === idLivro) {
-          item.checkboxState = !item.checkboxState;
-        }
+      const newArray = usuario.shoppingCart.filter(function (el) {
+        return el.idLivro === idLivro;
       });
-      console.log(newUsuario);
+      console.log(newArray);
+      const userCheckboxState = newArray[0].checkboxState;
 
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
-      setUsuario(newUsuario);
 
-      // const response = await api.patch(
-      //   `/Perfil/${id}/changeCheckboxState/${idLivro}`
-      // );
-      // data = response.data;
-      // await AsyncStorage.removeItem("@user");
-      // await AsyncStorage.setItem("@user", JSON.stringify(data));
-      // setUsuario(data);
-      // showToastAndroid("Mudando o estado do checkbox");
+
+
+
+
       
-      console.log(usuario.shoppingCart);
+
+
+
+
+
+
+
+
+
+
+
+      const response = await api.patch(
+        `/Perfil/${id}/changeCheckboxState/${idLivro}`
+      );
+
+      data = response.data;
+      await AsyncStorage.removeItem("@user");
+      await AsyncStorage.setItem("@user", JSON.stringify(data));
+      setUsuario(data);
+      showToastAndroid("Mudando o estado do checkbox");
+
+      const stringify = JSON.stringify(data);
+      const parsed = JSON.parse(stringify);
+      // console.log(usuario)
     } catch (error) {
       console.error(error);
     }

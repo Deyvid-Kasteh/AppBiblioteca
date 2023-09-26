@@ -259,12 +259,7 @@ function AuthProvider({ children }) {
           item.checkboxState = !item.checkboxState;
         }
       });
-      console.log(newUsuario);
-
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
       setUsuario(newUsuario);
-
       // const response = await api.patch(
       //   `/Perfil/${id}/changeCheckboxState/${idLivro}`
       // );
@@ -273,8 +268,9 @@ function AuthProvider({ children }) {
       // await AsyncStorage.setItem("@user", JSON.stringify(data));
       // setUsuario(data);
       // showToastAndroid("Mudando o estado do checkbox");
-      
-      console.log(usuario.shoppingCart);
+      // const stringify = JSON.stringify(data);
+      // const parsed = JSON.parse(stringify);
+      console.log(usuario.shoppingCart)
     } catch (error) {
       console.error(error);
     }

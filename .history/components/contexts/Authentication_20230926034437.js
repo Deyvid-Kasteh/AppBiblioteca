@@ -259,21 +259,34 @@ function AuthProvider({ children }) {
           item.checkboxState = !item.checkboxState;
         }
       });
-      console.log(newUsuario);
+
+
 
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(newUsuario));
       setUsuario(newUsuario);
 
-      // const response = await api.patch(
-      //   `/Perfil/${id}/changeCheckboxState/${idLivro}`
-      // );
-      // data = response.data;
-      // await AsyncStorage.removeItem("@user");
-      // await AsyncStorage.setItem("@user", JSON.stringify(data));
-      // setUsuario(data);
+
+
+
+
+
+
+
+
+
+
+
+      const response = await api.patch(
+        `/Perfil/${id}/changeCheckboxState/${idLivro}`
+      );
+      data = response.data;
+      await AsyncStorage.removeItem("@user");
+      await AsyncStorage.setItem("@user", JSON.stringify(data));
+      setUsuario(data);
       // showToastAndroid("Mudando o estado do checkbox");
-      
+      // const stringify = JSON.stringify(data);
+      // const parsed = JSON.parse(stringify);
       console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);

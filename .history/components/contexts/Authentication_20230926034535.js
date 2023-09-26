@@ -273,7 +273,8 @@ function AuthProvider({ children }) {
       // await AsyncStorage.setItem("@user", JSON.stringify(data));
       // setUsuario(data);
       // showToastAndroid("Mudando o estado do checkbox");
-      
+      // const stringify = JSON.stringify(data);
+      // const parsed = JSON.parse(stringify);
       console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);

@@ -1,3 +1,4 @@
+import { View, Text } from "react-native";
 import React from "react";
 
 export default function AsyncStorage() {
@@ -6,16 +7,15 @@ export default function AsyncStorage() {
       const jsonValue = await AsyncStorage.getItem("@user");
       return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
-      console.log(e);
+    console.log();
     }
 
-    console.log("GetUser Done");
+    console.log("Done.");
   };
 
-  AsyncStorageUpdate = async (data) => {
-    await AsyncStorage.removeItem("@user");
-    await AsyncStorage.setItem("@user", JSON.stringify(data));
-
-    return data;
-  };
+  return (
+    <View>
+      <Text>AsyncStorage</Text>
+    </View>
+  );
 }
