@@ -34,7 +34,7 @@ const ItemShoppingCartComponent = ({
 
   let checkboxState1 = checkboxState;
 
-  // console.log(typeof checkboxState);
+  console.log(typeof checkboxState);
 
   return (
     <>

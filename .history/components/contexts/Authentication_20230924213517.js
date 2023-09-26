@@ -261,7 +261,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
       showToastAndroid("Mudando o estado do checkbox");
-      console.log(data)
+      conso
     } catch (error) {
       console.error(error);
     }
