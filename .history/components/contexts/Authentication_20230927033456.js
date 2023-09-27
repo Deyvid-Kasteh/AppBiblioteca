@@ -249,9 +249,7 @@ function AuthProvider({ children }) {
     }
   };
 
-  changeAllCheckboxStates = async function (checkAllBooks) {
-    const idUsuario = usuario._id;
-
+  changeAllCheckboxStates = async function (checkAllBooks, id) {
     try {
       let newUsuario = usuario;
       if (!checkAllBooks) {
@@ -272,14 +270,13 @@ function AuthProvider({ children }) {
       console.log(usuario.shoppingCart);
 
       const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBooks}`
+        `/Perfil/${id}/changeAllCheckboxStates/state/${checkAllBooks}`
       );
       data = response.data;
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
-      console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }
@@ -290,6 +287,7 @@ function AuthProvider({ children }) {
     console.log(idLivro);
     try {
       let newUsuario = usuario;
+      const 
       newUsuario.shoppingCart.forEach((item) => {
         if (item.idLivro === idLivro) {
           item.checkboxState = !item.checkboxState;

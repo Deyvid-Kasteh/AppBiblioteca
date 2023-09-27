@@ -14,7 +14,7 @@ const ShoppingCart = () => {
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
   const [checkAllBooks, setCheckAllBooks] = useState(false);
-  // const id = usuario._id;
+  const id = usuario._id;
   // console.log(id);
 
   // let checkAllBooks = false;
@@ -89,7 +89,7 @@ const ShoppingCart = () => {
                   onPress={() => {
                     console.log(checkAllBooks);
                     setCheckAllBooks(!checkAllBooks);
-                    changeAllCheckboxStates(checkAllBooks);
+                    changeAllCheckboxStates(checkAllBooks, id);
                   }}
                 />
               </View>

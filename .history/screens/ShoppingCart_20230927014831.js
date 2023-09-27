@@ -8,8 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import ItemShoppingCartComponent from "./ItemShoppingCartComponent";
 
 const ShoppingCart = () => {
-  const { usuarioEstaLogado, usuario, changeAllCheckboxStates } =
-    useContext(AuthContext);
+  const { usuarioEstaLogado, usuario } = useContext(AuthContext);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
@@ -86,11 +85,7 @@ const ShoppingCart = () => {
                   fillColor="#D9B391"
                   unfillColor="#f5efe1"
                   innerIconStyle={{ borderWidth: 3 }}
-                  onPress={() => {
-                    console.log(checkAllBooks);
-                    setCheckAllBooks(!checkAllBooks);
-                    changeAllCheckboxStates(checkAllBooks);
-                  }}
+                  onPress={() => {setCheckAllBooks(!checkAllBooks)}}
                 />
               </View>
               <TouchableOpacity

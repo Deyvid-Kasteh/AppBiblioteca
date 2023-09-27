@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import ItemShoppingCartComponent from "./ItemShoppingCartComponent";
 
 const ShoppingCart = () => {
-  const { usuarioEstaLogado, usuario, changeAllCheckboxStates } =
+  const { usuarioEstaLogado, usuario, CheckAllCheckboxs } =
     useContext(AuthContext);
   const navigation = useNavigation();
   const LivrosShoppingCart = usuario?.shoppingCart;
@@ -89,7 +89,7 @@ const ShoppingCart = () => {
                   onPress={() => {
                     console.log(checkAllBooks);
                     setCheckAllBooks(!checkAllBooks);
-                    changeAllCheckboxStates(checkAllBooks);
+                    CheckAllCheckboxs(checkAllBooks);
                   }}
                 />
               </View>

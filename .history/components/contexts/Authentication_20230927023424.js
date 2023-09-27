@@ -249,9 +249,7 @@ function AuthProvider({ children }) {
     }
   };
 
-  changeAllCheckboxStates = async function (checkAllBooks) {
-    const idUsuario = usuario._id;
-
+  CheckAllCheckboxs = async function (checkAllBooks) {
     try {
       let newUsuario = usuario;
       if (!checkAllBooks) {
@@ -271,15 +269,11 @@ function AuthProvider({ children }) {
       setUsuario(newUsuario);
       console.log(usuario.shoppingCart);
 
+
+
       const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBooks}`
+        `/Perfil/${id}/changeCheckboxState/state/${state}`
       );
-      data = response.data;
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      setUsuario(data);
-      showToastAndroid("Mudando TODOS os estados dos checkboxes");
-      console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }
@@ -370,7 +364,7 @@ function AuthProvider({ children }) {
         Favoriter,
         Unfavorater,
         AddToCart,
-        changeAllCheckboxStates,
+        CheckAllCheckboxs,
         ChangeCheckboxState,
         RemoveFromCart,
         signOutProcess,

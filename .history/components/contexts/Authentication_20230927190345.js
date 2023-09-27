@@ -248,7 +248,7 @@ function AuthProvider({ children }) {
       console.error(error);
     }
   };
-
+()=>()=>
   changeAllCheckboxStates = async function (checkAllBooks) {
     const idUsuario = usuario._id;
 

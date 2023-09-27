@@ -89,7 +89,7 @@ const ShoppingCart = () => {
                   onPress={() => {
                     console.log(checkAllBooks);
                     setCheckAllBooks(!checkAllBooks);
-                    changeAllCheckboxStates(checkAllBooks);
+                    changeAllCheckboxStates(checkAllBooks, id);
                   }}
                 />
               </View>
