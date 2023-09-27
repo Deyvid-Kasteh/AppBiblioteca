@@ -276,7 +276,7 @@ function AuthProvider({ children }) {
       console.log(usuario.shoppingCart);
 
       const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookState}`
+        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookStatus}`
       );
       data = response.data;
       await AsyncStorage.removeItem("@user");

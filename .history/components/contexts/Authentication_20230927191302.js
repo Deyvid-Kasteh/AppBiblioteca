@@ -254,7 +254,7 @@ function AuthProvider({ children }) {
 
     try {
       let newUsuario = usuario;
-      let checkAllBookState = Boolean;
+      let checkAllBookStatus = Boolean;
 
       if (!checkAllBooks) {
         // Setar todos os checkboxes para TRUE
@@ -262,21 +262,22 @@ function AuthProvider({ children }) {
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = true;
         });
-        checkAllBookState= true
+        checkAllBookStatus= true
       } else {
         // Setar todos os checkboxes para FALSE
         console.log("Setar todos os checkboxes para FALSE");
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = false;
         });
-        checkAllBookState = false;
+        checkAllBookStatus = false;
+
       }
       console.log(newUsuario.shoppingCart);
       setUsuario(newUsuario);
       console.log(usuario.shoppingCart);
 
       const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookState}`
+        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookStatus}`
       );
       data = response.data;
       await AsyncStorage.removeItem("@user");

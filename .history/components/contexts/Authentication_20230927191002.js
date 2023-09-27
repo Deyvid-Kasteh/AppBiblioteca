@@ -254,29 +254,28 @@ function AuthProvider({ children }) {
 
     try {
       let newUsuario = usuario;
-      let checkAllBookState = Boolean;
-
       if (!checkAllBooks) {
         // Setar todos os checkboxes para TRUE
         console.log("Setar todos os checkboxes para TRUE");
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = true;
         });
-        checkAllBookState= true
+        const checkAllBookStatus= true
       } else {
         // Setar todos os checkboxes para FALSE
         console.log("Setar todos os checkboxes para FALSE");
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = false;
         });
-        checkAllBookState = false;
+                const checkAllBookStatus = true;
+
       }
       console.log(newUsuario.shoppingCart);
       setUsuario(newUsuario);
       console.log(usuario.shoppingCart);
 
       const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookState}`
+        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBooks}`
       );
       data = response.data;
       await AsyncStorage.removeItem("@user");

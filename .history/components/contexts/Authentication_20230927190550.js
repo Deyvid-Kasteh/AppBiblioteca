@@ -254,36 +254,46 @@ function AuthProvider({ children }) {
 
     try {
       let newUsuario = usuario;
-      let checkAllBookState = Boolean;
-
       if (!checkAllBooks) {
         // Setar todos os checkboxes para TRUE
         console.log("Setar todos os checkboxes para TRUE");
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = true;
         });
-        checkAllBookState= true
+        console.log(newUsuario.shoppingCart);
+        setUsuario(newUsuario);
+        console.log(usuario.shoppingCart);
+
+        const response = await api.patch(
+          `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBooks}`
+        );
+        data = response.data;
+        await AsyncStorage.removeItem("@user");
+        await AsyncStorage.setItem("@user", JSON.stringify(data));
+        setUsuario(data);
+        showToastAndroid("Mudando TODOS os estados dos checkboxes");
+        console.log(usuario.shoppingCart);
       } else {
         // Setar todos os checkboxes para FALSE
         console.log("Setar todos os checkboxes para FALSE");
         newUsuario.shoppingCart.forEach((item) => {
           item.checkboxState = false;
         });
-        checkAllBookState = false;
-      }
-      console.log(newUsuario.shoppingCart);
-      setUsuario(newUsuario);
-      console.log(usuario.shoppingCart);
+        console.log(newUsuario.shoppingCart);
+        setUsuario(newUsuario);
+        console.log(usuario.shoppingCart);
 
-      const response = await api.patch(
-        `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookState}`
-      );
-      data = response.data;
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      setUsuario(data);
-      showToastAndroid("Mudando TODOS os estados dos checkboxes");
-      console.log(usuario.shoppingCart);
+        const response = await api.patch(
+          `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBooks}`
+        );
+        data = response.data;
+        await AsyncStorage.removeItem("@user");
+        await AsyncStorage.setItem("@user", JSON.stringify(data));
+        setUsuario(data);
+        showToastAndroid("Mudando TODOS os estados dos checkboxes");
+        console.log(usuario.shoppingCart);
+      }
+
     } catch (error) {
       console.error(error);
     }
