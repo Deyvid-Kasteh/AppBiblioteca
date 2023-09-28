@@ -22,15 +22,23 @@ const ItemShoppingCartComponent = ({
   const [quantidade, setQuantidade] = useState(1);
     const [doRender, setDoRender] = useState(false);
 
-let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState
-
+let checkboxStateFromUsuario = JSON.parse(stringTrue) usuario.shoppingCart[index].checkboxState;
 
 
   useEffect(() => {
 
 
     console.log(checkboxStateFromUsuario);
+
+    checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
+    console.log(checkboxStateFromUsuario);
     console.log(typeof checkboxStateFromUsuario);
+
+
+
+
+
+
 
   }, [doRender | quantidade]);
 

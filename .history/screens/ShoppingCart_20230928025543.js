@@ -16,7 +16,7 @@ const ShoppingCart = () => {
   const [checkAllBooks, setCheckAllBooks] = useState(false);
   const [forceRender, setForceRender] = useState(false);
 
-  useEffect(() => {console.log(usuario?.shoppingCart)}, [forceRender]);
+  useEffect(() => {conso}, [forceRender]);
 
 
 

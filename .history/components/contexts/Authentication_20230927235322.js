@@ -283,7 +283,7 @@ function AuthProvider({ children }) {
         });
         checkAllBookState = false;
       }
-      // console.log(newUsuario.shoppingCart);
+      console.log(newUsuario.shoppingCart);
       setUsuario(newUsuario);
       console.log(usuario.shoppingCart);
 
@@ -296,8 +296,19 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      console.log(usuario.shoppingCart);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
+      console.log("Mudando TODOS os estados dos checkboxes");
+      console.log(response);
+
+      const n11 = JSON.stringify(response);
+      const n22 = JSON.parse(n11);
+            console.log(n22);
+
+
+            // console.log(data.shoppingCart);
+
+
+      // console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }

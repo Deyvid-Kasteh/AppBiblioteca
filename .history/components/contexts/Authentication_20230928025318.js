@@ -296,7 +296,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      console.log(usuario.shoppingCart);
+      console.log(usuario);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
     } catch (error) {
       console.error(error);

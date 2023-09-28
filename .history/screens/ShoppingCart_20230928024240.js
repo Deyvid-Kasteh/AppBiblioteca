@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
@@ -14,12 +14,6 @@ const ShoppingCart = () => {
   const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
   const [checkAllBooks, setCheckAllBooks] = useState(false);
-  const [forceRender, setForceRender] = useState(false);
-
-  useEffect(() => {console.log(usuario?.shoppingCart)}, [forceRender]);
-
-
-
 
   return (
     <View
@@ -88,9 +82,8 @@ const ShoppingCart = () => {
                   innerIconStyle={{ borderWidth: 3 }}
                   onPress={() => {
                     console.log(checkAllBooks);
+                    changeAllCheckboxStates(!checkAllBooks);
                     setCheckAllBooks(!checkAllBooks);
-                    changeAllCheckboxStates(checkAllBooks);
-                    setForceRender(() => !forceRender);
                   }}
                 />
               </View>

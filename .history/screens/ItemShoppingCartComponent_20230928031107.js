@@ -22,8 +22,12 @@ const ItemShoppingCartComponent = ({
   const [quantidade, setQuantidade] = useState(1);
     const [doRender, setDoRender] = useState(false);
 
-let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState
+let checkboxStateFromUsuario = JSON.parse(
+  usuario.shoppingCart[index].checkboxState
+  );
 
+  let ffrdght = JSON.parse(
+  );
 
 
   useEffect(() => {
@@ -31,6 +35,12 @@ let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState
 
     console.log(checkboxStateFromUsuario);
     console.log(typeof checkboxStateFromUsuario);
+
+
+
+
+
+
 
   }, [doRender | quantidade]);
 

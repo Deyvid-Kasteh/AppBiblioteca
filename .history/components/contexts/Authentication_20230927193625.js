@@ -255,10 +255,7 @@ function AuthProvider({ children }) {
 
 
 
-
-
-
-
+  
 
   changeAllCheckboxStates = async function (checkAllBooks) {
     const idUsuario = usuario._id;
@@ -284,8 +281,8 @@ function AuthProvider({ children }) {
         checkAllBookState = false;
       }
       // console.log(newUsuario.shoppingCart);
-      setUsuario(newUsuario);
-      console.log(usuario.shoppingCart);
+      // setUsuario(newUsuario);
+      // console.log(usuario.shoppingCart);
 
       console.log(checkAllBookState);
 
@@ -296,8 +293,8 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
-      console.log(usuario.shoppingCart);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
+      // console.log(usuario.shoppingCart);
     } catch (error) {
       console.error(error);
     }

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
 import { useNavigation } from "@react-navigation/native";
@@ -16,7 +16,7 @@ const ShoppingCart = () => {
   const [checkAllBooks, setCheckAllBooks] = useState(false);
   const [forceRender, setForceRender] = useState(false);
 
-  useEffect(() => {console.log(usuario?.shoppingCart)}, [forceRender]);
+  useEffect(() => {}, [forceRender]);
 
 
 
