@@ -53,14 +53,12 @@ const ItemShoppingCartComponent = ({
 
   const teste = () => {
     const testeTotal = price * quantidade;
-    console.log(testeTotal);
+    // console.log(testeTotal);
   };
 
   console.log("fora do useEfect");
   console.log(quantidade);
   console.log("fora do useEfect");
-  teste();
-
 
   useEffect(() => {
     console.log("dentro do useEfect");

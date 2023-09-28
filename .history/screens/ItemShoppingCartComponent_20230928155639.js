@@ -29,6 +29,8 @@ const ItemShoppingCartComponent = ({
     setDoRender(() => !doRender);
   };
 
+
+
   const handleQuantity = (action) => {
     if (action === "decrease") {
       if (quantidade === 1) {
@@ -53,20 +55,21 @@ const ItemShoppingCartComponent = ({
 
   const teste = () => {
     const testeTotal = price * quantidade;
-    console.log(testeTotal);
+    // console.log(testeTotal);
   };
 
-  console.log("fora do useEfect");
-  console.log(quantidade);
-  console.log("fora do useEfect");
-  teste();
 
+
+
+
+    console.log("");
+  console.log(quantidade);
+    console.log();
 
   useEffect(() => {
-    console.log("dentro do useEfect");
-    console.log(quantidade);
-    console.log("dentro do useEfect");
+  console.log(quantidade);
   }, []);
+
 
   // console.log(index);
   // console.log(usuario.shoppingCart[index].checkboxState);

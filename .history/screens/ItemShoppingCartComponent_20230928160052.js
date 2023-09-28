@@ -59,7 +59,7 @@ const ItemShoppingCartComponent = ({
   console.log("fora do useEfect");
   console.log(quantidade);
   console.log("fora do useEfect");
-  teste();
+        teste();
 
 
   useEffect(() => {

@@ -20,53 +20,35 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(1);
-  const [doRender, setDoRender] = useState(false);
+    const [doRender, setDoRender] = useState(false);
 
-  let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
+let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState
 
-  const whenCheck = () => {
-    ChangeCheckboxState(usuario?._id, idLivro);
-    setDoRender(() => !doRender);
-  };
+
+
+  // useEffect(() => {
+  //   console.log(checkboxStateFromUsuario);
+  //   console.log(typeof checkboxStateFromUsuario);
+  // }, [doRender | quantidade]);
+
+
+
+
+
 
   const handleQuantity = (action) => {
     if (action === "decrease") {
       if (quantidade === 1) {
-        // console.log(quantidade);
         return;
       } else {
-        // console.log(quantidade);
-        setQuantidade((prevState) => prevState - 1);
-        teste();
-        // console.log(quantidade);
+        setQuantidade(quantidade - 1);
       }
     } else if (action === "increase") {
-      console.log(quantidade);
-
-      setQuantidade((prevState) => prevState + 1);
-      // console.log(quantidade);
-
-      teste();
-      // console.log(quantidade);
+      setQuantidade(quantidade + 1);
     }
   };
 
-  const teste = () => {
-    const testeTotal = price * quantidade;
-    console.log(testeTotal);
-  };
-
-  console.log("fora do useEfect");
-  console.log(quantidade);
-  console.log("fora do useEfect");
-  teste();
-
-
-  useEffect(() => {
-    console.log("dentro do useEfect");
-    console.log(quantidade);
-    console.log("dentro do useEfect");
-  }, []);
+  let checkboxState1 = checkboxState;
 
   // console.log(index);
   // console.log(usuario.shoppingCart[index].checkboxState);
@@ -94,8 +76,7 @@ const ItemShoppingCartComponent = ({
             innerIconStyle={{ borderWidth: 3 }}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
-              teste();
-              setDoRender(() => !doRender);
+              // setDoRender(()=> !doRender);
             }}
           />
           <TouchableOpacity
@@ -115,6 +96,7 @@ const ItemShoppingCartComponent = ({
                 },
               });
             }}
+
           >
             <Image
               style={{
