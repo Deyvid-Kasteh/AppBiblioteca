@@ -37,7 +37,7 @@ const ShoppingCart = () => {
         console.log("jjjjjjjjjjj");
         console.log(valor);
         console.log("jjjjjjjjjjj");
-        setPrecoTotal(valor.toFixed(2));
+        setPrecoTotal(valor);
       } else {
         setPrecoTotal(0);
         console.log("NÃO TEM CHECKED");
@@ -176,7 +176,7 @@ const ShoppingCart = () => {
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
                     checkAllBooks={checkAllBooks}
-                    precoTotalFunction={precoTotalFunction}
+                    precoTotalFunction=
                   />
                 </View>
               ))}

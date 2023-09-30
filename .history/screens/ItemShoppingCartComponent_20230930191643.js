@@ -22,8 +22,6 @@ const ItemShoppingCartComponent = ({
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(1);
   const [doRender, setDoRender] = useState(false);
-
-
   let tituloLimitado = ttlLivro;
   if (ttlLivro.length > 50) {
     tituloLimitado = ttlLivro.slice(0, 50) + "...";
@@ -143,7 +141,7 @@ const ItemShoppingCartComponent = ({
                   fontWeight: "bold",
                 }}
               >
-                {tituloLimitado}
+                {ttlLivro}
               </Text>
             </View>
             <View

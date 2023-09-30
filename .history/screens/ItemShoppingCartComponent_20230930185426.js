@@ -23,11 +23,18 @@ const ItemShoppingCartComponent = ({
   const [quantidade, setQuantidade] = useState(1);
   const [doRender, setDoRender] = useState(false);
 
-
-  let tituloLimitado = ttlLivro;
-  if (ttlLivro.length > 50) {
-    tituloLimitado = ttlLivro.slice(0, 50) + "...";
+  const tituloLimitado = ttlLivro;
+  if (texto.length > limiteDeCaracteres) {
+    const textoLimitado = texto.slice(0, limiteDeCaracteres) + "..."; // Truncar o texto, você pode fazer de outra forma também.
+    console.log(textoLimitado);
+  } else {
+    console.log(texto);
   }
+
+
+
+
+
   let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
 
   const whenCheck = () => {
@@ -86,7 +93,7 @@ const ItemShoppingCartComponent = ({
             innerIconStyle={{ borderWidth: 3 }}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
-              precoTotalFunction();
+              precoTotalFunction()
               setDoRender(() => !doRender);
             }}
           />
@@ -143,7 +150,7 @@ const ItemShoppingCartComponent = ({
                   fontWeight: "bold",
                 }}
               >
-                {tituloLimitado}
+                {ttlLivro}
               </Text>
             </View>
             <View

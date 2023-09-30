@@ -16,38 +16,21 @@ const ShoppingCart = () => {
   const [checkAllBooks, setCheckAllBooks] = useState(false);
   const [forceRender, setForceRender] = useState(false);
 
-  useEffect(() => {
-    console.log(usuario?.shoppingCart);
-  }, [forceRender]);
+  useEffect(() => { console.log(usuario?.shoppingCart) }, [forceRender]);
+
+
 
   const precoTotalFunction = () => {
-    if (usuarioEstaLogado) {
-      const bookChecked = usuario.shoppingCart.filter(
-        (checked) => checked.checkboxState === true
-      );
-      if (bookChecked.length > 0) {
-        console.log("TEM TEM TEM TEM");
-        console.log(bookChecked.length);
-        console.log(bookChecked);
-        console.log(bookChecked.length);
-        console.log("TEM TEM TEM TEM");
-        const valor = bookChecked.reduce((acumulador, elemento) => {
-          return acumulador + elemento.price;
-        }, 0);
-        console.log("jjjjjjjjjjj");
-        console.log(valor);
-        console.log("jjjjjjjjjjj");
-        setPrecoTotal(valor.toFixed(2));
-      } else {
-        setPrecoTotal(0);
-        console.log("NÃO TEM CHECKED");
-      }
-    } else {
-      return;
-    }
-  };
 
-  // precoTotalFunction()
+
+    console.log(usuario?.shoppingCart.reduce(() => { }))
+
+
+        console.log(usuario?.shoppingCart.price);
+  }
+
+
+
 
   return (
     <View
@@ -114,10 +97,10 @@ const ShoppingCart = () => {
                   unfillColor="#f5efe1"
                   innerIconStyle={{ borderWidth: 3 }}
                   onPress={() => {
+                    console.log(checkAllBooks);
                     setCheckAllBooks(!checkAllBooks);
                     changeAllCheckboxStates(checkAllBooks);
                     setForceRender(() => !forceRender);
-                    precoTotalFunction();
                   }}
                 />
               </View>
@@ -176,7 +159,6 @@ const ShoppingCart = () => {
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
                     checkAllBooks={checkAllBooks}
-                    precoTotalFunction={precoTotalFunction}
                   />
                 </View>
               ))}

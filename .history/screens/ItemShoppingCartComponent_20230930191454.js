@@ -23,11 +23,16 @@ const ItemShoppingCartComponent = ({
   const [quantidade, setQuantidade] = useState(1);
   const [doRender, setDoRender] = useState(false);
 
-
   let tituloLimitado = ttlLivro;
   if (ttlLivro.length > 50) {
-    tituloLimitado = ttlLivro.slice(0, 50) + "...";
+    const textoLimitado = texto.slice(0, 50) + "...";
+    console.log(textoLimitado);
+  } else {
+    console.log(texto);
   }
+
+    console.log(ttlLivro.length);
+
   let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
 
   const whenCheck = () => {
@@ -143,7 +148,7 @@ const ItemShoppingCartComponent = ({
                   fontWeight: "bold",
                 }}
               >
-                {tituloLimitado}
+                {ttlLivro}
               </Text>
             </View>
             <View

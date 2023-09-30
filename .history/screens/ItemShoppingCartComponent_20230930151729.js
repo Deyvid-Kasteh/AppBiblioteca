@@ -15,7 +15,6 @@ const ItemShoppingCartComponent = ({
   ttlLivro,
   price,
   checkAllBooks,
-  precoTotalFunction,
 }) => {
   const { usuario, ChangeCheckboxState, RemoveFromCart } =
     useContext(AuthContext);
@@ -23,11 +22,6 @@ const ItemShoppingCartComponent = ({
   const [quantidade, setQuantidade] = useState(1);
   const [doRender, setDoRender] = useState(false);
 
-
-  let tituloLimitado = ttlLivro;
-  if (ttlLivro.length > 50) {
-    tituloLimitado = ttlLivro.slice(0, 50) + "...";
-  }
   let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
 
   const whenCheck = () => {
@@ -47,18 +41,28 @@ const ItemShoppingCartComponent = ({
       }
     } else if (action === "increase") {
       console.log(quantidade);
+
       setQuantidade((prevState) => prevState + 1);
+      // console.log(quantidade);
+
+      // console.log(quantidade);
     }
   };
 
-  // const precoTotalDoLivro = price * quantidade;
-  // console.log(precoTotalDoLivro);
+    const precoTotalDoLivro = price * quantidade;
+    console.log(precoTotalDoLivro);
 
-  // useEffect(() => {
-  //   console.log("dentro do useEfect");
-  //   console.log(quantidade);
-  //   console.log("dentro do useEfect");
-  // }, []);
+
+  console.log("fora do useEfect");
+  console.log(quantidade);
+  console.log("fora do useEfect");
+
+
+  useEffect(() => {
+    console.log("dentro do useEfect");
+    console.log(quantidade);
+    console.log("dentro do useEfect");
+  }, []);
 
   // console.log(index);
   // console.log(usuario.shoppingCart[index].checkboxState);
@@ -86,7 +90,6 @@ const ItemShoppingCartComponent = ({
             innerIconStyle={{ borderWidth: 3 }}
             onPress={() => {
               ChangeCheckboxState(usuario?._id, idLivro);
-              precoTotalFunction();
               setDoRender(() => !doRender);
             }}
           />
@@ -143,7 +146,7 @@ const ItemShoppingCartComponent = ({
                   fontWeight: "bold",
                 }}
               >
-                {tituloLimitado}
+                {ttlLivro}
               </Text>
             </View>
             <View

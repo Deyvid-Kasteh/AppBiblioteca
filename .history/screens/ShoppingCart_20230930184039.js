@@ -37,9 +37,10 @@ const ShoppingCart = () => {
         console.log("jjjjjjjjjjj");
         console.log(valor);
         console.log("jjjjjjjjjjj");
-        setPrecoTotal(valor.toFixed(2));
+        setPrecoTotal(valor);
       } else {
-        setPrecoTotal(0);
+                setPrecoTotal(valor);
+
         console.log("NÃO TEM CHECKED");
       }
     } else {
@@ -117,7 +118,7 @@ const ShoppingCart = () => {
                     setCheckAllBooks(!checkAllBooks);
                     changeAllCheckboxStates(checkAllBooks);
                     setForceRender(() => !forceRender);
-                    precoTotalFunction();
+                    precoTotalFunction()
                   }}
                 />
               </View>
@@ -176,7 +177,6 @@ const ShoppingCart = () => {
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
                     checkAllBooks={checkAllBooks}
-                    precoTotalFunction={precoTotalFunction}
                   />
                 </View>
               ))}
