@@ -322,14 +322,23 @@ function AuthProvider({ children }) {
       const response = await api.patch(
         `/Perfil/${idUsuario}/changeBookQuantity/${idLivro}/${quantity}`
       );
-      data = response.data;
-      setUsuario(data);
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      showToastAndroid("Mudando quantidade do livro");
+
+
+
+
+
     } catch (error) {
       console.error(error);
+
     }
+
+
+
+
+
+
+
+
   };
 
   RemoveFromCart = async function (id, idLivro) {

@@ -326,10 +326,19 @@ function AuthProvider({ children }) {
       setUsuario(data);
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
-      showToastAndroid("Mudando quantidade do livro");
+      showToastAndroid("Mudando TODOS os estados dos checkboxes");
     } catch (error) {
       console.error(error);
+
     }
+
+
+
+
+
+
+
+
   };
 
   RemoveFromCart = async function (id, idLivro) {

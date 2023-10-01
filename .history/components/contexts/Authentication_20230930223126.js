@@ -330,6 +330,14 @@ function AuthProvider({ children }) {
     } catch (error) {
       console.error(error);
     }
+
+
+
+
+
+
+
+
   };
 
   RemoveFromCart = async function (id, idLivro) {

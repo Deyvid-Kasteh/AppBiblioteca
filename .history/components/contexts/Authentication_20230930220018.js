@@ -12,8 +12,7 @@ function AuthProvider({ children }) {
   const navigation = useNavigation();
 
   const [usuarioEstaLogado, setUsuarioEstaLogado] = useState(false);
-  const [usuario, setUsuario] = useState(null);const idUsuario = usuario?._id;
-
+  const [usuario, setUsuario] = useState(null);
 
   const showToastAndroid = (text) => {
     ToastAndroid.showWithGravityAndOffset(
@@ -251,6 +250,7 @@ function AuthProvider({ children }) {
   };
 
   changeAllCheckboxStates = async function (checkAllBooks) {
+    const idUsuario = usuario._id;
 
     try {
       let newUsuario = usuario;
@@ -274,6 +274,9 @@ function AuthProvider({ children }) {
       }
       // console.log(newUsuario.shoppingCart);
       setUsuario(newUsuario);
+      console.log(usuario.shoppingCart);
+
+      console.log(checkAllBookState);
 
       const response = await api.patch(
         `/Perfil/${idUsuario}/changeAllCheckboxStates/state/${checkAllBookState}`
@@ -282,6 +285,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
+      console.log(usuario.shoppingCart);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
     } catch (error) {
       console.error(error);
@@ -289,6 +293,8 @@ function AuthProvider({ children }) {
   };
 
   ChangeCheckboxState = async function (id, idLivro) {
+    console.log(id);
+    console.log(idLivro);
     try {
       let newUsuario = usuario;
       newUsuario.shoppingCart.forEach((item) => {
@@ -312,21 +318,6 @@ function AuthProvider({ children }) {
       showToastAndroid("Mudando o estado do checkbox");
 
       // console.log(usuario.shoppingCart);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  ChangeBookQuantity = async function (idLivro, quantity) {
-    try {
-      const response = await api.patch(
-        `/Perfil/${idUsuario}/changeBookQuantity/${idLivro}/${quantity}`
-      );
-      data = response.data;
-      setUsuario(data);
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      showToastAndroid("Mudando quantidade do livro");
     } catch (error) {
       console.error(error);
     }

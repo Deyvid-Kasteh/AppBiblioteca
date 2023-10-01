@@ -282,6 +282,7 @@ function AuthProvider({ children }) {
       await AsyncStorage.removeItem("@user");
       await AsyncStorage.setItem("@user", JSON.stringify(data));
       setUsuario(data);
+      console.log(usuario.shoppingCart);
       showToastAndroid("Mudando TODOS os estados dos checkboxes");
     } catch (error) {
       console.error(error);
@@ -318,18 +319,14 @@ function AuthProvider({ children }) {
   };
 
   ChangeBookQuantity = async function (idLivro, quantity) {
-    try {
-      const response = await api.patch(
-        `/Perfil/${idUsuario}/changeBookQuantity/${idLivro}/${quantity}`
-      );
-      data = response.data;
-      setUsuario(data);
-      await AsyncStorage.removeItem("@user");
-      await AsyncStorage.setItem("@user", JSON.stringify(data));
-      showToastAndroid("Mudando quantidade do livro");
-    } catch (error) {
-      console.error(error);
-    }
+
+    
+
+
+
+
+
+
   };
 
   RemoveFromCart = async function (id, idLivro) {

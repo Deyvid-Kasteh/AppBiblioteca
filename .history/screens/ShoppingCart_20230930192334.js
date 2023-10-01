@@ -16,9 +16,10 @@ const ShoppingCart = () => {
   const [checkAllBooks, setCheckAllBooks] = useState(false);
   const [forceRender, setForceRender] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(usuario?.shoppingCart);
-  // }, [forceRender]);
+  useEffect(() => {
+    console.log(usuario?.shoppingCart);
+  }, [forceRender]);
+
   const precoTotalFunction = () => {
     if (usuarioEstaLogado) {
       const bookChecked = usuario.shoppingCart.filter(
@@ -26,7 +27,7 @@ const ShoppingCart = () => {
       );
       if (bookChecked.length > 0) {
         const valor = bookChecked.reduce((acumulador, elemento) => {
-          return acumulador + elemento.price * elemento.quantity;
+          return acumulador + elemento.price;
         }, 0);
         setPrecoTotal(valor.toFixed(2));
       } else {

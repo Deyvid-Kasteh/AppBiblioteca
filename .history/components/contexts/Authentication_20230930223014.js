@@ -329,7 +329,16 @@ function AuthProvider({ children }) {
       showToastAndroid("Mudando quantidade do livro");
     } catch (error) {
       console.error(error);
+
     }
+
+
+
+
+
+
+
+
   };
 
   RemoveFromCart = async function (id, idLivro) {
