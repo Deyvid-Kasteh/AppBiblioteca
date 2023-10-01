@@ -14,14 +14,13 @@ const ItemShoppingCartComponent = ({
   imgLivro,
   ttlLivro,
   price,
-  quantity,
   checkAllBooks,
   precoTotalFunction,
 }) => {
   const { usuario, ChangeCheckboxState, ChangeBookQuantity, RemoveFromCart } =
     useContext(AuthContext);
   const navigation = useNavigation();
-  const [quantidade, setQuantidade] = useState(quantity);
+  const [quantidade, setQuantidade] = useState(1);
   const [doRender, setDoRender] = useState(false);
 
 

@@ -163,7 +163,7 @@ const ShoppingCart = () => {
                     imgLivro={livro.imgLivro}
                     ttlLivro={livro.ttlLivro}
                     price={livro.price}
-                    quantity={livro.quantity}
+                    quantity={}
                     checkAllBooks={checkAllBooks}
                     precoTotalFunction={precoTotalFunction}
                   />

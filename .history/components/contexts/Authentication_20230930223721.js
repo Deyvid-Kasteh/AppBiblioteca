@@ -388,7 +388,7 @@ function AuthProvider({ children }) {
         AddToCart,
         changeAllCheckboxStates,
         ChangeCheckboxState,
-        ChangeBookQuantity,
+        ChangeBookQuantity
         RemoveFromCart,
         signOutProcess,
         showToastAndroid,
