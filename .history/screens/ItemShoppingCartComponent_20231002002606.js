@@ -58,14 +58,10 @@ const ItemShoppingCartComponent = ({
     }
   };
 
-  useEffect(() => {
-    
-  }, [quantidade]);
 
 
 
-
-
+  
   return (
     <>
       {imgLivro ? (

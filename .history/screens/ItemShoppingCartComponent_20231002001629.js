@@ -40,6 +40,7 @@ const ItemShoppingCartComponent = ({
         console.log(quantidade);
         setQuantidade(() => quantidade - 1);
         console.log(quantidade);
+
         quantidadeOperação--;
         console.log(quantidadeOperação);
         // ChangeBookQuantity(idLivro, quantidade);
@@ -51,20 +52,14 @@ const ItemShoppingCartComponent = ({
       setQuantidade(() => quantidade + 1);
       quantidadeOperação++;
       console.log(quantidade);
+
       console.log(quantidadeOperação);
+
       // ChangeBookQuantity(idLivro, quantidade);
       ChangeBookQuantity(idLivro, quantidadeOperação);
       precoTotalFunction();
     }
   };
-
-  useEffect(() => {
-    
-  }, [quantidade]);
-
-
-
-
 
   return (
     <>

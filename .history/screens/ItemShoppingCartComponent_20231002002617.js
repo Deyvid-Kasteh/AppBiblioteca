@@ -59,8 +59,11 @@ const ItemShoppingCartComponent = ({
   };
 
   useEffect(() => {
-    
-  }, [quantidade]);
+    effect
+    return () => {
+      cleanup
+    };
+  }, [input]);
 
 
 

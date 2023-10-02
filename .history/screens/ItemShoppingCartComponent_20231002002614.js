@@ -58,9 +58,7 @@ const ItemShoppingCartComponent = ({
     }
   };
 
-  useEffect(() => {
-    
-  }, [quantidade]);
+  useef
 
 
 

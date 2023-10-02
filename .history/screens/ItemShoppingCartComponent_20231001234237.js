@@ -22,6 +22,7 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(quantity);
+  let quantidadeTeste = quantity;
   let quantidadeOperação = quantity;
 
   const [doRender, setDoRender] = useState(false);
@@ -37,34 +38,35 @@ const ItemShoppingCartComponent = ({
       if (quantidade === 1) {
         return;
       } else {
-        console.log(quantidade);
-        setQuantidade(() => quantidade - 1);
-        console.log(quantidade);
+        setQuantidade((prevState) => prevState - 1);
         quantidadeOperação--;
-        console.log(quantidadeOperação);
         // ChangeBookQuantity(idLivro, quantidade);
         ChangeBookQuantity(idLivro, quantidadeOperação);
-        precoTotalFunction();
       }
     } else if (action === "increase") {
       console.log(quantidade);
-      setQuantidade(() => quantidade + 1);
+      setQuantidade((prevState) => prevState + 1);
       quantidadeOperação++;
-      console.log(quantidade);
-      console.log(quantidadeOperação);
       // ChangeBookQuantity(idLivro, quantidade);
       ChangeBookQuantity(idLivro, quantidadeOperação);
-      precoTotalFunction();
     }
   };
 
-  useEffect(() => {
-    
-  }, [quantidade]);
-
-
-
-
+  const handleQuantityTeste = (action) => {
+    if (action === "decrease") {
+      if (quantidadeTeste === 1) {
+        return;
+      } else {
+        // console.log(quantidadeTeste);
+        quantidadeTeste--;
+        console.log(quantidadeTeste);
+      }
+    } else if (action === "increase") {
+      // console.log(quantidadeTeste);
+      quantidadeTeste++;
+      console.log(quantidadeTeste);
+    }
+  };
 
   return (
     <>
@@ -218,7 +220,9 @@ const ItemShoppingCartComponent = ({
                     // backgroundColor: "red",
                   }}
                 >
-                  <TouchableOpacity onPress={() => handleQuantity("decrease")}>
+                  <TouchableOpacity
+                    onPress={() => handleQuantityTeste("decrease")}
+                  >
                     <AntDesign name="minuscircleo" size={18} color="#2B3640" />
                   </TouchableOpacity>
 
@@ -236,10 +240,13 @@ const ItemShoppingCartComponent = ({
                         color: "#2B3640",
                       }}
                     >
-                      {quantidade}
+                      {/* {quantidade} */}
+                      {quantidadeTeste}
                     </Text>
                   </View>
-                  <TouchableOpacity onPress={() => handleQuantity("increase")}>
+                  <TouchableOpacity
+                    onPress={() => handleQuantityTeste("increase")}
+                  >
                     <AntDesign name="pluscircleo" size={18} color="#2B3640" />
                   </TouchableOpacity>
                 </View>
