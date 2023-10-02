@@ -22,7 +22,6 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(quantity);
-  let quantidadeTeste = quantity;
   const [doRender, setDoRender] = useState(false);
 
   let tituloLimitado = ttlLivro;
@@ -31,36 +30,30 @@ const ItemShoppingCartComponent = ({
   }
   let checkboxStateFromUsuario = usuario.shoppingCart[index].checkboxState;
 
-  // const handleQuantity = (action) => {
-  //   if (action === "decrease") {
-  //     if (quantidade === 1) {
-  //       return;
-  //     } else {
-  //       setQuantidade((prevState) => prevState - 1);
-  //       ChangeBookQuantity(idLivro, quantidade);
-  //     }
-  //   } else if (action === "increase") {
-  //     console.log(quantidade);
-  //     setQuantidade((prevState) => prevState + 1);
-  //     ChangeBookQuantity(idLivro, quantidade);
-  //   }
-  // };
+  const whenCheck = () => {
+    ChangeCheckboxState(usuario?._id, idLivro);
+    setDoRender(() => !doRender);
+  };
 
-  const handleQuantityTeste = (action) => {
+  const handleQuantity = (action) => {
     if (action === "decrease") {
-      if (quantidadeTeste === 1) {
+      if (quantidade === 1) {
+        // console.log(quantidade);
         return;
       } else {
-        // console.log(quantidadeTeste);
-        quantidadeTeste--;
-        console.log(quantidadeTeste);
+        // console.log(quantidade);
+        setQuantidade((prevState) => prevState - 1);
+        ChangeBookQuantity(idLivro, quantidade);
+        // console.log(quantidade);
       }
     } else if (action === "increase") {
-      // console.log(quantidadeTeste);
-      quantidadeTeste++;
-      console.log(quantidadeTeste);
+      console.log(quantidade);
+      setQuantidade((prevState) => prevState + 1);
+      ChangeBookQuantity(idLivro, quantidade);
     }
   };
+
+  const handleQuantityTeste = 
 
   return (
     <>
@@ -214,9 +207,7 @@ const ItemShoppingCartComponent = ({
                     // backgroundColor: "red",
                   }}
                 >
-                  <TouchableOpacity
-                    onPress={() => handleQuantityTeste("decrease")}
-                  >
+                  <TouchableOpacity onPress={() => handleQuantity("decrease")}>
                     <AntDesign name="minuscircleo" size={18} color="#2B3640" />
                   </TouchableOpacity>
 
@@ -234,13 +225,10 @@ const ItemShoppingCartComponent = ({
                         color: "#2B3640",
                       }}
                     >
-                      {/* {quantidade} */}
-                      {quantidadeTeste}
+                      {quantidade}
                     </Text>
                   </View>
-                  <TouchableOpacity
-                    onPress={() => handleQuantityTeste("increase")}
-                  >
+                  <TouchableOpacity onPress={() => handleQuantity("increase")}>
                     <AntDesign name="pluscircleo" size={18} color="#2B3640" />
                   </TouchableOpacity>
                 </View>

@@ -22,7 +22,7 @@ const ItemShoppingCartComponent = ({
     useContext(AuthContext);
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(quantity);
-  let quantidadeTeste = quantity;
+  let quantidadeTeste = 1;
   const [doRender, setDoRender] = useState(false);
 
   let tituloLimitado = ttlLivro;
@@ -51,12 +51,12 @@ const ItemShoppingCartComponent = ({
       if (quantidadeTeste === 1) {
         return;
       } else {
-        // console.log(quantidadeTeste);
+        console.log(quantidadeTeste);
         quantidadeTeste--;
         console.log(quantidadeTeste);
       }
     } else if (action === "increase") {
-      // console.log(quantidadeTeste);
+      console.log(quantidadeTeste);
       quantidadeTeste++;
       console.log(quantidadeTeste);
     }

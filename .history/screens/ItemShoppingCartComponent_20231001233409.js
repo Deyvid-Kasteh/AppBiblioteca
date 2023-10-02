@@ -56,7 +56,7 @@ const ItemShoppingCartComponent = ({
         console.log(quantidadeTeste);
       }
     } else if (action === "increase") {
-      // console.log(quantidadeTeste);
+      console.log(quantidadeTeste);
       quantidadeTeste++;
       console.log(quantidadeTeste);
     }
