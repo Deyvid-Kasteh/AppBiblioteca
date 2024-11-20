@@ -47,10 +47,10 @@ export default function BottomTabRoutes() {
           elevation: 0,
           height: 50,
           borderTopWidth: 0,
-          backgroundColor: COLORS.caramel,
+          backgroundColor: COLORS,
         },
-        tabBarActiveTintColor: COLORS.charcoal,
-        tabBarInactiveTintColor: COLORS.cream,
+        tabBarActiveTintColor: "#2B3640",
+        tabBarInactiveTintColor: "#F2E2C4",
       }}
     >
       <Tab.Screen

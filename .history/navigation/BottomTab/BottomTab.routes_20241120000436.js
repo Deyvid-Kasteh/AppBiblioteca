@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import HomeStackRoutes from "../NativeStack/HomeStack.routes";
 import Home from "../../screens/Home";
 import TopTabRoutes from "../TopTabs/TopTabs.routes";
-import COLORS from "../../components/Colors/Colors";
+import
 
 const Tab = createBottomTabNavigator();
 
@@ -23,9 +23,9 @@ export default function BottomTabRoutes() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerTintColor: COLORS.cream,
+        headerTintColor: "#F2E2C4",
         headerStyle: {
-          backgroundColor: COLORS.caramel,
+          backgroundColor: "#A65A49",
         },
         headerTitleAlign: "center",
         headerRight: () => (
@@ -47,10 +47,10 @@ export default function BottomTabRoutes() {
           elevation: 0,
           height: 50,
           borderTopWidth: 0,
-          backgroundColor: COLORS.caramel,
+          backgroundColor: "#A65A49",
         },
-        tabBarActiveTintColor: COLORS.charcoal,
-        tabBarInactiveTintColor: COLORS.cream,
+        tabBarActiveTintColor: "#2B3640",
+        tabBarInactiveTintColor: "#F2E2C4",
       }}
     >
       <Tab.Screen
