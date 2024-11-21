@@ -11,8 +11,21 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { AuthContext } from "../components/contexts/Authentication";
 import KeyboardDismiss from "../components/components/KeyboardDismiss";
-import COLORS from "../components/Colors/Colors";
 
+// Constante de cores fornecida
+const COLORS = {
+  // Cores mais claras
+  ivory: "#f5efe1", // Um tom suave de bege claro
+  cream: "#F2E2C4", // Cor creme, suave e agradável
+
+  // Cores intermediárias
+  sand: "#D9B391", // Um tom de areia, suave e neutro
+  cinnamon: "#BF7F5A", // Um tom de canela, quente e aconchegante
+  caramel: "#A65A49", // Um tom de caramelo, quente e terroso
+
+  // Cor escura
+  charcoal: "#2B3640", // Um tom de carvão, escuro e elegante
+};
 
 export default function SignInScreen({ navigation }) {
   const { SignInGoogleProcess, SignIn } = useContext(AuthContext);
