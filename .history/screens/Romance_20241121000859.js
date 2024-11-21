@@ -1,3 +1,5 @@
+
+
 import {
   View,
   Text,
@@ -9,14 +11,14 @@ import {
 import React, { useEffect, useState } from "react";
 import COLORS from "../components/Colors/Colors";
 
-export default function Ficcao({ navigation }) {
-  const nomeDeAutorFiccao = "subject:fiction";
-  const [resultadosLivrosFiccao, setResultadosLivrosFiccao] = useState();
+export default function Romance({ navigation }) {
+  const nomeDaObraRomance = "subject:novel";
+  const [resultadosLivrosRomance, setResultadosLivrosRomance] = useState();
   const myKey = "&key=AIzaSyD0IpRB2DoQ2v82pvzOtl9S6T92xJsytV4";
 
   useEffect(() => {
     fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${nomeDeAutorFiccao}&maxResults=40${myKey}`,
+      `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraRomance}&maxResults=40${myKey}`,
       {
         method: "GET",
         headers: {
@@ -25,17 +27,17 @@ export default function Ficcao({ navigation }) {
       }
     )
       .then((resp) => resp.json())
-      .then((data) => setResultadosLivrosFiccao(() => data.items))
-      .then(() => console.log("fetch ficcao"));
+      .then((data) => setResultadosLivrosRomance(() => data.items))
+      .then(() => console.log("fetch romance"));
   }, []);
 
   return (
     <View style={styles.container}>
-      {resultadosLivrosFiccao ? (
+      {resultadosLivrosRomance ? (
         <View style={styles.resultsContainer}>
           <ScrollView>
             <View style={styles.booksWrapper}>
-              {resultadosLivrosFiccao?.map((livro) => (
+              {resultadosLivrosRomance?.map((livro) => (
                 <View key={livro.id}>
                   {livro.volumeInfo.imageLinks ? (
                     <TouchableOpacity
@@ -64,7 +66,7 @@ export default function Ficcao({ navigation }) {
           </ScrollView>
         </View>
       ) : (
-        <Text style={styles.noBooksText}>Ficção Não tem livros</Text>
+        <Text style={styles.noBooksText}>Romance Não tem livros</Text>
       )}
     </View>
   );
