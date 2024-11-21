@@ -23,7 +23,9 @@ const ItemShoppingCartComponent = ({
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(quantity);
   let quantidadeOperação = quantity;
+
   const [doRender, setDoRender] = useState(false);
+
   let tituloLimitado = ttlLivro;
   if (ttlLivro.length > 50) {
     tituloLimitado = ttlLivro.slice(0, 50) + "...";
@@ -40,6 +42,7 @@ const ItemShoppingCartComponent = ({
         console.log(quantidade);
         quantidadeOperação--;
         console.log(quantidadeOperação);
+        // ChangeBookQuantity(idLivro, quantidade);
         ChangeBookQuantity(idLivro, quantidadeOperação);
         precoTotalFunction();
       }
@@ -58,6 +61,11 @@ const ItemShoppingCartComponent = ({
   useEffect(() => {
 
   }, [quantidade]);
+
+
+
+
+
   return (
     <>
       {imgLivro ? (

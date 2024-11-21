@@ -12,6 +12,7 @@ import ItemShoppingCartComponent from "./ItemShoppingCartComponent";
 const ShoppingCart = () => {
   const { usuarioEstaLogado, usuario, changeAllCheckboxStates } =
     useContext(AuthContext);
+  const LivrosShoppingCart = usuario?.shoppingCart;
   const [precoTotal, setPrecoTotal] = useState(0);
   const [checkAllBooks, setCheckAllBooks] = useState(false);
   const [forceRender, setForceRender] = useState(false);

@@ -23,6 +23,7 @@ const ItemShoppingCartComponent = ({
   const navigation = useNavigation();
   const [quantidade, setQuantidade] = useState(quantity);
   let quantidadeOperação = quantity;
+
   const [doRender, setDoRender] = useState(false);
   let tituloLimitado = ttlLivro;
   if (ttlLivro.length > 50) {
