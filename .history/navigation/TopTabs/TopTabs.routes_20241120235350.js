@@ -10,6 +10,8 @@ import { StyleSheet } from "react-native";
 const TopTab = createMaterialTopTabNavigator();
 
 export default function TopTabRoutes() {
+  const navigation = useNavigation();
+
   return (
     <TopTab.Navigator screenOptions={styles.screenOptions}>
       <TopTab.Screen name="Best-Sellers" component={BestSellers} />
