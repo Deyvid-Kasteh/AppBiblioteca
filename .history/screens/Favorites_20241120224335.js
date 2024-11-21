@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import { AuthContext } from "../components/contexts/Authentication";
