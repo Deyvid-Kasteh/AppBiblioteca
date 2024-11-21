@@ -1,3 +1,4 @@
+
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import React from "react";
 import { StyleSheet } from "react-native";
@@ -10,7 +11,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
 import CustomDrawer from "../../components/components/CustomDrawer";
-import COLORS from "../../components/Colors/Colors";
 
 const Drawer = createDrawerNavigator();
 
@@ -89,7 +89,7 @@ export default function DrawerRoutes() {
 // Criação do StyleSheet para separar os estilos
 const styles = StyleSheet.create({
   drawerActiveBackgroundColor: {
-    backgroundColor: COLORS.caramel,
+    backgroundColor: "#BF7F5A",
   },
   drawerActiveTintColor: {
     color: "#F2E2C4",

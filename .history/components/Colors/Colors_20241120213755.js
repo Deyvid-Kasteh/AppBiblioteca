@@ -1,3 +1,4 @@
+
 // COLORS.js
 const COLORS = {
   // Cores mais claras

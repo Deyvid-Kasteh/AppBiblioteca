@@ -1,4 +1,5 @@
-// COLORS.js
+
+/ COLORS.js
 const COLORS = {
   // Cores mais claras
   ivory: "#f5efe1", // Um tom suave de bege claro

@@ -89,7 +89,7 @@ export default function DrawerRoutes() {
 // Criação do StyleSheet para separar os estilos
 const styles = StyleSheet.create({
   drawerActiveBackgroundColor: {
-    backgroundColor: COLORS.caramel,
+    backgroundColor: C,
   },
   drawerActiveTintColor: {
     color: "#F2E2C4",
