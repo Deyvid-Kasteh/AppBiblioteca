@@ -1,15 +1,6 @@
-
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import COLORS from "../components/Colors/Colors";
-
+imp
 
 export default function BestSellers({ navigation }) {
   const nomeDaObraBestSellers = "best sellers";
@@ -29,21 +20,47 @@ export default function BestSellers({ navigation }) {
     )
       .then((resp) => resp.json())
       .then((data) => setResultadosLivrosBestSellers(() => data.items))
-      .then(() => console.log("fetch Best Sellers"));
+      .then(console.log("fetch Best Sellers"));
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "flex-start",
+        backgroundColor: "#F2E2C4",
+      }}
+    >
       {resultadosLivrosBestSellers ? (
-        <View style={styles.resultsContainer}>
+        <View
+          style={{
+            flex: 0.88,
+            width: "100%",
+            overflow: "hidden",
+          }}
+        >
           <ScrollView>
-            <View style={styles.booksWrapper}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
               {resultadosLivrosBestSellers?.map((livro) => (
                 <View key={livro.id}>
                   {livro.volumeInfo.imageLinks ? (
                     <TouchableOpacity
                       key={livro.id}
-                      style={styles.bookItem}
+                      style={{
+                        borderWidth: 1,
+                        borderColor: "#f5efe1",
+                        borderRadius: 10,
+                        overflow: "hidden",
+                        margin: 8,
+                      }}
                       onPress={() => {
                         navigation.navigate("HomeStackRoutes", {
                           screen: "Book",
@@ -54,7 +71,10 @@ export default function BestSellers({ navigation }) {
                       }}
                     >
                       <Image
-                        style={styles.bookImage}
+                        style={{
+                          width: 80,
+                          height: 128,
+                        }}
                         source={{
                           uri: `${livro.volumeInfo.imageLinks.thumbnail}`,
                         }}
@@ -67,45 +87,10 @@ export default function BestSellers({ navigation }) {
           </ScrollView>
         </View>
       ) : (
-        <Text style={styles.noBooksText}>BestSellers Não tem livros</Text>
+        <Text>BestSellers Não tem livros</Text>
       )}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
-    backgroundColor: COLORS.cream, // Usando a cor cream de COLORS
-  },
-  resultsContainer: {
-    flex: 0.88,
-    width: "100%",
-    overflow: "hidden",
-  },
-  booksWrapper: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  bookItem: {
-    borderWidth: 1,
-    borderColor: COLORS.ivory, // Usando a cor ivory de COLORS
-    borderRadius: 10,
-    overflow: "hidden",
-    margin: 8,
-  },
-  bookImage: {
-    width: 80,
-    height: 128,
-  },
-  noBooksText: {
-    fontSize: 18,
-    color: COLORS.charcoal, // Usando a cor charcoal de COLORS
-    textAlign: "center",
-    marginTop: 20,
-  },
-});
+
