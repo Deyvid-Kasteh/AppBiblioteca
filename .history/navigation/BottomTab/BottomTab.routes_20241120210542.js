@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable } from "react-native";
 import Search from "../../screens/Search";
 import Favorites from "../../screens/Favorites";
 import ShoppingCart from "../../screens/ShoppingCart";
@@ -10,6 +10,8 @@ import { Ionicons } from "@expo/vector-icons";
 import Avatar from "../../assets/Avatar/Avatar";
 import { useNavigation } from "@react-navigation/native";
 import HomeStackRoutes from "../NativeStack/HomeStack.routes";
+import Home from "../../screens/Home";
+import TopTabRoutes from "../TopTabs/TopTabs.routes";
 import COLORS from "../../components/Colors/Colors";
 
 const Tab = createBottomTabNavigator();
@@ -22,18 +24,31 @@ export default function BottomTabRoutes() {
       initialRouteName="Home"
       screenOptions={{
         headerTintColor: COLORS.cream,
-        headerStyle: styles.headerStyle,
+        headerStyle: {
+          backgroundColor: COLORS.caramel,
+        },
         headerTitleAlign: "center",
         headerRight: () => (
           <Pressable
-            style={styles.headerRight}
+            style={{ marginRight: 15 }}
             onPress={() => navigation.openDrawer()}
           >
             <Avatar width={40} height={40} />
           </Pressable>
         ),
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBarStyle,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          elevation: 0,
+          height: 50,
+          borderTopWidth: 0,
+          backgroundColor: COLORS.caramel,
+        },
         tabBarActiveTintColor: COLORS.charcoal,
         tabBarInactiveTintColor: COLORS.cream,
       }}
@@ -69,7 +84,9 @@ export default function BottomTabRoutes() {
       <Tab.Screen
         name="Favorites"
         component={Favorites}
+        // component={TopTabRoutes}
         options={{
+          // headerShown: false,
           tabBarIcon: ({ color, size, focused }) => {
             if (focused) {
               return <AntDesign name="heart" size={size} color={color} />;
@@ -82,6 +99,7 @@ export default function BottomTabRoutes() {
         name="ShoppingCart"
         component={ShoppingCart}
         options={{
+          // headerShown: false,
           tabBarIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Ionicons name="cart-sharp" size={size} color={color} />;
@@ -94,50 +112,11 @@ export default function BottomTabRoutes() {
   );
 }
 
-// Criação do StyleSheet para separar os estilos
-const styles = StyleSheet.create({
-  headerStyle: {
-    backgroundColor: COLORS.caramel,
-  },
-  headerRight: {
-    marginRight: 15,
-  },
-  tabBarStyle: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-    elevation: 0,
-    height: 50,
-    borderTopWidth: 0,
-    backgroundColor: COLORS.caramel,
-  },
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // import React from "react";
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import { Pressable } from "react-native";
+// import { Pressable, StyleSheet } from "react-native";
 // import Search from "../../screens/Search";
 // import Favorites from "../../screens/Favorites";
 // import ShoppingCart from "../../screens/ShoppingCart";
@@ -147,8 +126,6 @@ const styles = StyleSheet.create({
 // import Avatar from "../../assets/Avatar/Avatar";
 // import { useNavigation } from "@react-navigation/native";
 // import HomeStackRoutes from "../NativeStack/HomeStack.routes";
-// import Home from "../../screens/Home";
-// import TopTabRoutes from "../TopTabs/TopTabs.routes";
 // import COLORS from "../../components/Colors/Colors";
 
 // const Tab = createBottomTabNavigator();
@@ -161,31 +138,18 @@ const styles = StyleSheet.create({
 //       initialRouteName="Home"
 //       screenOptions={{
 //         headerTintColor: COLORS.cream,
-//         headerStyle: {
-//           backgroundColor: COLORS.caramel,
-//         },
+//         headerStyle: styles.headerStyle,
 //         headerTitleAlign: "center",
 //         headerRight: () => (
 //           <Pressable
-//             style={{ marginRight: 15 }}
+//             style={styles.headerRight}
 //             onPress={() => navigation.openDrawer()}
 //           >
 //             <Avatar width={40} height={40} />
 //           </Pressable>
 //         ),
 //         tabBarShowLabel: false,
-//         tabBarStyle: {
-//           position: "absolute",
-//           bottom: 0,
-//           left: 0,
-//           right: 0,
-//           borderTopRightRadius: 20,
-//           borderTopLeftRadius: 20,
-//           elevation: 0,
-//           height: 50,
-//           borderTopWidth: 0,
-//           backgroundColor: COLORS.caramel,
-//         },
+//         tabBarStyle: styles.tabBarStyle,
 //         tabBarActiveTintColor: COLORS.charcoal,
 //         tabBarInactiveTintColor: COLORS.cream,
 //       }}
@@ -221,9 +185,7 @@ const styles = StyleSheet.create({
 //       <Tab.Screen
 //         name="Favorites"
 //         component={Favorites}
-//         // component={TopTabRoutes}
 //         options={{
-//           // headerShown: false,
 //           tabBarIcon: ({ color, size, focused }) => {
 //             if (focused) {
 //               return <AntDesign name="heart" size={size} color={color} />;
@@ -236,7 +198,6 @@ const styles = StyleSheet.create({
 //         name="ShoppingCart"
 //         component={ShoppingCart}
 //         options={{
-//           // headerShown: false,
 //           tabBarIcon: ({ color, size, focused }) => {
 //             if (focused) {
 //               return <Ionicons name="cart-sharp" size={size} color={color} />;
@@ -248,3 +209,26 @@ const styles = StyleSheet.create({
 //     </Tab.Navigator>
 //   );
 // }
+
+// // Criação do StyleSheet para separar os estilos
+// const styles = StyleSheet.create({
+//   headerStyle: {
+//     backgroundColor: COLORS.caramel,
+//   },
+//   headerRight: {
+//     marginRight: 15,
+//   },
+//   tabBarStyle: {
+//     position: "absolute",
+//     bottom: 0,
+//     left: 0,
+//     right: 0,
+//     borderTopRightRadius: 20,
+//     borderTopLeftRadius: 20,
+//     elevation: 0,
+//     height: 50,
+//     borderTopWidth: 0,
+//     backgroundColor: COLORS.caramel,
+//   },
+// });
+

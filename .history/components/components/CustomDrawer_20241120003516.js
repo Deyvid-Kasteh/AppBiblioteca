@@ -38,7 +38,7 @@ export default function CustomDrawer(props) {
         <View style={styles.avatarContainer}>
           <Avatar width={110} height={110} />
         </View>
-        <Text style={styles.userName}>{usuario?.name || "Sem usuário"}</Text>
+        <Text style={styles.userName}>{usuario?.name || "Sem u"}</Text>
       </View>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
