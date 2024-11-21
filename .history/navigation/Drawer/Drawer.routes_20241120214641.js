@@ -70,10 +70,10 @@ export default function DrawerRoutes() {
         }}
       />
       <Drawer.Screen
-        name="Sign-out"
+        name="Sair"
         component={SignOutScreen}
         options={{
-          title: "Sair",
+          title: "Logout",
           drawerIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Octicons name="sign-out" size={size} color={color} />;

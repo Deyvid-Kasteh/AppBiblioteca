@@ -47,7 +47,7 @@ export default function DrawerRoutes() {
         name="Sign-in"
         component={SignInScreen}
         options={{
-          title: "Inscrever-se",
+          title: "Inscrever",
           drawerIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Octicons name="sign-in" size={size} color={color} />;
@@ -73,7 +73,7 @@ export default function DrawerRoutes() {
         name="Sign-out"
         component={SignOutScreen}
         options={{
-          title: "Sair",
+          title: "Logout",
           drawerIcon: ({ color, size, focused }) => {
             if (focused) {
               return <Octicons name="sign-out" size={size} color={color} />;
