@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   bookImage: {
-    width: 240,
-    height: 384,
+    width: ,
+    height: 128,
   },
   noBooksText: {
     fontSize: 18,

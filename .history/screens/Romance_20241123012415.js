@@ -47,9 +47,8 @@ export default function Romance({ navigation }) {
       <View style={styles.resultsContainer1}>
         <Text style={styles.title}>{item.id}</Text>
         <Image
-          style={styles.bookImage}
           source={{
-            uri: `${item.volumeInfo.imageLinks?.thumbnail}`,
+            uri: `https://www.googleapis.com/books/v1/volumes?q=${nomeDaObraRomance}&maxResults=10${myKey}`,
           }}
         />
       </View>
@@ -139,8 +138,8 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   bookImage: {
-    width: 240,
-    height: 384,
+    width: 80,
+    height: 128,
   },
   noBooksText: {
     fontSize: 18,

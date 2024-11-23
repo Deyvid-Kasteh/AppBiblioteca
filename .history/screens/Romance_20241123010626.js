@@ -34,40 +34,17 @@ export default function Romance({ navigation }) {
       // .then(() => console.log(resultadosLivrosRomance[0]));
   }, []);
 
-  // function renderItem({ item, index }) {
-  //   <View style={styles.resultsContainer1}>
-  //     {console.log(item.id)}
-  //     <Text style={styles.resultsContainer2}>{item.id}</Text>
-  //     <Image style={styles.resultsContainer3}></Image>
-  //   </View>;
-  // }
-
-  const renderItem = ({ item, index }) => {
-    return (
-      <View style={styles.resultsContainer1}>
-        <Text style={styles.title}>{item.id}</Text>
-        <Image
-          style={styles.bookImage}
-          source={{
-            uri: `${item.volumeInfo.imageLinks?.thumbnail}`,
-          }}
-        />
-      </View>
-    );
-  };
+  function renderItem({ item }) {
+    <View style={styles.resultsContainer1}>
+      {console.log(item.id)}
+      <Text style={styles.resultsContainer2}>{item.id}</Text>
+      <Image style={styles.resultsContainer3}></Image>
+    </View>;
+  }
 
   return (
     <View style={styles.container}>
       {resultadosLivrosRomance ? (
-        <>
-          <Carousel
-            data={resultadosLivrosRomance}
-            sliderWidth={300}
-            itemWidth={300}
-            renderItem={renderItem}
-          />
-        </>
-      ) : (
         // <View style={styles.resultsContainer}>
         //   <ScrollView>
         //     <View style={styles.booksWrapper}>
@@ -99,8 +76,16 @@ export default function Romance({ navigation }) {
         //     </View>
         //   </ScrollView>
         // </View>
+      ) : (
         <Text style={styles.noBooksText}>Romance Não tem livros</Text>
       )}
+
+      <Carousel
+        data={resultadosLivrosRomance}
+        sliderWidth={300}
+        itemWidth={300}
+        renderItem={renderItem}
+      />
     </View>
   );
 }
@@ -110,7 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
-    backgroundColor: COLORS.cream,
+    backgroundColor: COLORS.cream, // Usando a cor cream de COLORS
   },
   resultsContainer: {
     flex: 0.88,
@@ -118,9 +103,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   resultsContainer1: {
-    width: 300,
-    height: 300,
-    backgroundColor: COLORS.charcoal,
+    width: 80,
+    height: 128,
+    backgroundColor: COLORS.charcoal, // Usando a cor cream de COLORS
   },
   resultsContainer2: {},
   resultsContainer3: {},
@@ -133,18 +118,18 @@ const styles = StyleSheet.create({
   },
   bookItem: {
     borderWidth: 1,
-    borderColor: COLORS.ivory,
+    borderColor: COLORS.ivory, // Usando a cor ivory de COLORS
     borderRadius: 10,
     overflow: "hidden",
     margin: 8,
   },
   bookImage: {
-    width: 240,
-    height: 384,
+    width: 80,
+    height: 128,
   },
   noBooksText: {
     fontSize: 18,
-    color: COLORS.charcoal,
+    color: COLORS.charcoal, // Usando a cor charcoal de COLORS
     textAlign: "center",
     marginTop: 20,
   },

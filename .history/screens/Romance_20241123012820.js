@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   },
   bookImage: {
     width: 240,
-    height: 384,
+    height: 128,
   },
   noBooksText: {
     fontSize: 18,

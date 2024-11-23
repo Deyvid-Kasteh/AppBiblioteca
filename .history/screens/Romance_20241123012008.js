@@ -46,12 +46,6 @@ export default function Romance({ navigation }) {
     return (
       <View style={styles.resultsContainer1}>
         <Text style={styles.title}>{item.id}</Text>
-        <Image
-          style={styles.bookImage}
-          source={{
-            uri: `${item.volumeInfo.imageLinks?.thumbnail}`,
-          }}
-        />
       </View>
     );
   };
@@ -66,6 +60,7 @@ export default function Romance({ navigation }) {
             itemWidth={300}
             renderItem={renderItem}
           />
+          <Text>8</Text>
         </>
       ) : (
         // <View style={styles.resultsContainer}>
@@ -139,8 +134,8 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   bookImage: {
-    width: 240,
-    height: 384,
+    width: 80,
+    height: 128,
   },
   noBooksText: {
     fontSize: 18,
